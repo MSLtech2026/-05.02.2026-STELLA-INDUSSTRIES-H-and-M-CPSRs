@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSR — H&M Silk Stone EDP 50ml — CPSR-HM-SILKSTONEEDP50-2026-001</title>
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+		:root{
+			--primary-blue:#43B296; --primary-dark:#2E8B72; --primary-light:#5CC4A8;
+			--black:#212121; --dark-gray:#424242; --medium-gray:#757575;
+			--light-gray:#F5F5F5; --border-gray:#E0E0E0; --white:#FFFFFF;
+			--pass-green:#2E7D32; --pass-green-bg:#E8F5E9;
+			--warning-amber:#FF9800; --warning-amber-bg:#FFF3E0;
+			--fail-red:#C62828; --fail-red-bg:#FFEBEE;
+			--check-green:#2E7D32; --check-bg:#E8F5E9;
+		}
+		*{margin:0;padding:0;box-sizing:border-box;}
+		body{font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:7.5pt;line-height:1.6;color:var(--dark-gray);background:var(--white);}
+		.document{max-width:210mm;margin:0 auto;background:var(--white);}
+		@page{size:A4;margin:0;}
+		.page{padding:20mm 20mm 28mm 20mm;width:210mm;min-height:297mm;position:relative;page-break-after:always;box-sizing:border-box;background:white;}
+		.page-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:2px solid var(--primary-blue);margin-bottom:18px;}
+		.page-header-logo{font-size:12pt;font-weight:300;color:var(--primary-blue);letter-spacing:1.5px;}
+		.page-header-title{font-size:7.5pt;color:var(--medium-gray);}
+		.page-footer{position:absolute;bottom:15mm;left:20mm;right:20mm;display:flex;justify-content:space-between;align-items:center;padding-top:7px;border-top:1px solid var(--border-gray);font-size:6.8pt;color:var(--medium-gray);}
+		h1{font-size:11.2pt;font-weight:600;color:var(--primary-blue);margin-bottom:14px;padding-bottom:7px;border-bottom:2px solid var(--primary-blue);}
+		h2{font-size:9.8pt;font-weight:600;color:var(--dark-gray);margin:16px 0 8px 0;}
+		h3{font-size:9pt;font-weight:600;color:var(--primary-blue);margin:12px 0 6px 0;}
+		h4{font-size:8.5pt;font-weight:600;color:var(--dark-gray);margin:10px 0 5px 0;}
+		p{margin-bottom:7px;text-align:justify;font-size:7.5pt;line-height:1.6;}
+		.part-header{background:var(--primary-blue);color:var(--white);padding:11px 16px;margin:16px 0 14px 0;}
+		.part-label{font-size:7.5pt;text-transform:uppercase;letter-spacing:2px;opacity:.85;margin-bottom:3px;}
+		.part-title{font-size:13pt;font-weight:600;}
+		.info-grid{display:grid;grid-template-columns:160px 1fr;gap:0;margin:10px 0;font-size:7.5pt;}
+		.info-label{font-weight:400;color:var(--dark-gray);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;}
+		.info-value{font-weight:600;color:var(--black);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;line-height:1.4;}
+		table{width:100%;border-collapse:collapse;margin:10px 0 14px 0;font-size:7.5pt;}
+		th{background:var(--light-gray);color:var(--dark-gray);font-weight:600;text-align:left;padding:6px 9px;border:1px solid var(--border-gray);font-size:7.5pt;}
+		td{padding:5px 9px;border:1px solid var(--border-gray);vertical-align:middle;font-size:7.5pt;}
+		tr:nth-child(even){background:var(--light-gray);}
+		.stability-table th,.stability-table td{text-align:left;}
+		.stability-table td:first-child,.stability-table th:first-child,.stability-table td:nth-child(2),.stability-table th:nth-child(2){text-align:left;}
+		.check-pass{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:var(--check-green);color:var(--white);border-radius:2px;font-size:11px;}
+		.check-pass::before{content:"\2713";}
+		.badge{display:inline-block;padding:2px 8px;font-size:5pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border-radius:2px;}
+		.badge-pass{background:var(--pass-green);color:var(--white);}
+		.badge-safe{background:var(--pass-green-bg);color:var(--pass-green);}
+		.badge-compliant{background:var(--check-bg);color:var(--check-green);}
+		.badge-na{background:var(--light-gray);color:var(--medium-gray);}
+		.badge-warning{background:var(--warning-amber-bg);color:var(--warning-amber);border:1px solid var(--warning-amber);}
+		.method-box{background:var(--light-gray);padding:10px 14px;margin:10px 0;border-left:3px solid var(--primary-blue);font-size:7.5pt;line-height:1.55;}
+		.method-box-title{font-weight:600;color:var(--dark-gray);margin-bottom:5px;font-size:7.5pt;}
+		.method-box ul,.method-box ol{margin:4px 0 0 14px;}
+		.method-box li{margin-bottom:2px;}
+		.method-box p{font-size:7.5pt;margin-bottom:4px;line-height:1.5;}
+		.conclusion-box{background:var(--pass-green-bg);border:1px solid var(--pass-green);padding:12px 16px;margin:12px 0;}
+		.conclusion-title{font-size:7.5pt;font-weight:600;color:var(--pass-green);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
+		.conclusion-text{font-size:7.5pt;color:var(--dark-gray);font-weight:600;line-height:1.5;}
+		.warning-box{background:var(--warning-amber-bg);border-left:3px solid var(--warning-amber);padding:10px 14px;margin:10px 0;font-size:7.5pt;}
+		.warning-box-title{font-weight:600;color:var(--warning-amber);margin-bottom:5px;font-size:7.5pt;}
+		.warning-box ul{margin:4px 0 0 14px;}
+		.warning-box li{margin-bottom:2px;}
+		.warning-box p{font-size:7.5pt;margin-bottom:3px;line-height:1.5;}
+		.comments-box{background:var(--light-gray);padding:10px 14px;margin:10px 0;font-size:7.5pt;color:var(--dark-gray);line-height:1.55;}
+		.comments-label{font-weight:600;margin-bottom:4px;font-size:7.5pt;}
+		.mos-safe{color:var(--pass-green);font-weight:700;}
+		.mos-review{color:var(--warning-amber);font-weight:700;}
+		.mos-na{color:var(--medium-gray);}
+		.mos-na-cell{color:var(--medium-gray);font-style:italic;font-size:6.5pt;}
+		.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px;}
+		.signature-item{padding:11px;background:var(--light-gray);}
+		.signature-label{font-size:7.5pt;color:var(--medium-gray);margin-bottom:8px;}
+		.signature-line{border-bottom:1px solid var(--dark-gray);margin-bottom:8px;min-height:52px;}
+		.signature-date{font-size:7.5pt;color:var(--dark-gray);margin-top:6px;}
+		.hcode,.pcode{font-weight:700;font-family:"Courier New",Courier,monospace;font-size:7pt;color:var(--dark-gray);margin-right:3px;}
+		.inci-box{background:var(--light-gray);padding:12px 16px;margin:10px 0;border-left:3px solid var(--primary-blue);font-size:7.5pt;line-height:1.65;word-break:break-word;}
+		.inci-box p{font-size:7.5pt;margin-bottom:5px;line-height:1.6;}
+		.inci-footnote{font-size:6.8pt;color:var(--medium-gray);font-style:italic;line-height:1.5;margin-top:6px;}
+		.row-highlight td{background:var(--pass-green-bg) !important;font-weight:600;color:var(--pass-green);}
+		.references-list{margin:6px 0 0 14px;font-size:7.1pt;line-height:1.55;color:var(--dark-gray);}
+		.references-list li{margin-bottom:3px;}
+		.disclaimer{font-size:6.5pt;color:var(--medium-gray);line-height:1.5;margin-top:14px;text-align:justify;}
+		.doc-control-grid{display:grid;grid-template-columns:165px 1fr;gap:0;margin:10px 0;font-size:7.5pt;}
+		.doc-control-grid .info-label{font-weight:400;color:var(--dark-gray);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;}
+		.doc-control-grid .info-value{font-weight:600;color:var(--black);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;line-height:1.4;}
+		.toc{margin:14px 0;}
+		.toc-title{font-size:13pt;font-weight:600;color:var(--primary-blue);margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--primary-blue);}
+		.toc-part{font-weight:700;color:var(--primary-blue);padding:10px 0 4px 0;font-size:7.5pt;text-transform:uppercase;letter-spacing:1.2px;}
+		.toc-section{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px dotted var(--border-gray);font-size:7.5pt;}
+		.toc-number{color:var(--primary-blue);font-weight:600;width:22px;flex-shrink:0;}
+		.toc-text{flex:1;color:var(--dark-gray);padding-left:4px;}
+		.toc-page{color:var(--medium-gray);font-weight:600;padding-left:10px;}
+		.ingredient-profile{border-left:2px solid var(--border-gray);padding-left:12px;margin-bottom:10px;}
+		.tox-meta{font-size:7pt;color:var(--medium-gray);margin-bottom:3px;line-height:1.4;}
+		.tox-meta strong{color:var(--dark-gray);font-weight:600;}
+		.tox-assessment{font-size:7.5pt;color:var(--dark-gray);margin-bottom:3px;line-height:1.55;text-align:justify;}
+		.mos-inline{display:inline-block;background:var(--pass-green-bg);color:var(--pass-green);font-size:7pt;font-weight:700;padding:1px 6px;border-radius:2px;margin-left:4px;}
+		.mos-inline-warn{display:inline-block;background:var(--warning-amber-bg);color:var(--warning-amber);font-size:7pt;font-weight:700;padding:1px 6px;border-radius:2px;margin-left:4px;}
+		.ingredient-divider{border:none;border-top:1px dotted var(--border-gray);margin:8px 0;}
+		.cover-page{min-height:297mm;display:flex;flex-direction:column;page-break-after:always;overflow:hidden;}
+		.cover-header{background:var(--primary-blue);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+		.cover-logo{font-size:34px;font-weight:300;color:var(--white);letter-spacing:2px;}
+		.cover-date{color:rgba(255,255,255,.85);font-size:9pt;}
+		.cover-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:45px 40px 35px 40px;background:var(--white);}
+		.cover-document-type{font-size:8.2pt;font-weight:600;color:var(--primary-blue);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px;}
+		.cover-title{font-size:27pt;font-weight:300;color:var(--black);line-height:1.25;margin-bottom:10px;}
+		.cover-subtitle{font-size:10.5pt;font-weight:400;color:var(--medium-gray);margin-bottom:30px;}
+		.cover-product-name{font-size:16.5pt;font-weight:600;color:var(--primary-blue);padding:16px 0;border-top:2px solid var(--border-gray);border-bottom:2px solid var(--border-gray);margin:22px 0;line-height:1.3;}
+		.cover-meta{display:grid;grid-template-columns:130px 1fr 130px 1fr;gap:0 18px;margin-top:22px;}
+		.cover-meta-label{font-size:7.5pt;text-transform:uppercase;letter-spacing:.8px;color:var(--medium-gray);padding:6px 0 2px 0;border-top:1px solid var(--border-gray);}
+		.cover-meta-value{font-size:9pt;font-weight:600;color:var(--dark-gray);padding:6px 0 2px 0;border-top:1px solid var(--border-gray);}
+		.cover-footer{background:var(--light-gray);padding:18px 40px;border-top:1px solid var(--border-gray);flex-shrink:0;}
+		.cover-confidential{display:inline-block;background:var(--warning-amber);color:var(--white);padding:3px 10px;font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px;}
+		.cover-footer-text{font-size:7.5pt;color:var(--medium-gray);line-height:1.55;}
+		.mos-table{font-size:7pt;table-layout:fixed;}
+		.mos-table th{font-size:7pt;padding:5px 7px;}
+		.mos-table td{font-size:7pt;padding:4px 7px;}
+		.allergen-table{font-size:7pt;}
+		.allergen-table th{font-size:7pt;padding:5px 7px;}
+		.allergen-table td{font-size:7pt;padding:4px 7px;}
+		.stability-table th{font-size:7pt;padding:5px 6px;}
+		.stability-table td{font-size:7pt;padding:4px 5px;}
+		.docs-table{font-size:7.5pt;table-layout:fixed;}
+		.docs-table th{padding:6px 9px;}
+		.docs-table td{padding:5px 9px;vertical-align:top;word-wrap:break-word;overflow-wrap:break-word;line-height:1.45;}
+		.appendix-title{text-align:center;font-size:22pt;font-weight:600;color:var(--primary-blue);margin-top:180px;letter-spacing:4px;text-transform:uppercase;}
+		.appendix-subtitle{text-align:center;font-size:9pt;color:var(--medium-gray);margin-top:12px;}
+		@media print{
+			.document{max-width:none;}
+			body{font-size:7.5pt;}
+			.page{page-break-after:always;min-height:auto;}
+			thead{display:table-header-group;}
+			h1,h2,h3,h4{page-break-after:avoid;}
+			.info-grid,.method-box,.conclusion-box,.warning-box,.comments-box{page-break-inside:avoid;}
+			.ingredient-profile{page-break-inside:avoid;}
+			.mos-table{page-break-inside:auto;}
+			.mos-table tr{page-break-inside:avoid;}
+		}
+	</style>
+</head>
+<body>
+<div class="document">
+
+    <!-- PAGE 1: COVER -->
+    <div class="cover-page">
+        <div class="cover-header"><div class="cover-logo">CPSR</div><div class="cover-date">02.03.2026</div></div>
+        <div class="cover-body">
+            <div class="cover-document-type">R E G U L A T O R Y &nbsp; D O C U M E N T</div>
+            <div class="cover-title">Cosmetic Product<br>Safety Report</div>
+            <div class="cover-subtitle">In accordance with Regulation (EC) No 1223/2009 — Annex I</div>
+            <div class="cover-product-name">H&M Silk Stone Eau De Parfum 50 ml<br><span style="font-size:10.5pt;font-weight:400;color:var(--medium-gray);">H&M Beauty | Fine Fragrance Spray — Leave-on</span></div>
+            <div class="cover-meta">
+                <div class="cover-meta-label">BRAND / PRODUCT</div><div class="cover-meta-value">H&M Beauty — Silk Stone EDP</div>
+                <div class="cover-meta-label">PRODUCT CATEGORY</div><div class="cover-meta-value">Fine Fragrance (Eau de Parfum)</div>
+                <div class="cover-meta-label">RESPONSIBLE PERSON</div><div class="cover-meta-value">M/S STELLA INDUSSTRIES LIMITED</div>
+                <div class="cover-meta-label">DOCUMENT REFERENCE</div><div class="cover-meta-value">CPSR-HM-SILKSTONEEDP50-2026-001</div>
+                <div class="cover-meta-label">MANUFACTURER</div><div class="cover-meta-value">M/S STELLA INDUSSTRIES LIMITED</div>
+                <div class="cover-meta-label">REPORT DATE</div><div class="cover-meta-value">02.03.2026</div>
+            </div>
+        </div>
+        <div class="cover-footer">
+            <div class="cover-confidential">CONFIDENTIAL</div>
+            <div class="cover-footer-text">This document contains confidential information intended for regulatory compliance purposes. This CPSR must be kept available for 10 years after the last batch is placed on the market.</div>
+        </div>
+    </div>
+
+    <!-- PAGE 2: TOC -->
+	
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<div class="toc"><div class="toc-title">Contents</div>
+		<div class="toc-part">Part A — Safety Information</div>
+		<div class="toc-section"><span class="toc-number">1.</span><span class="toc-text">Quantitative and Qualitative Composition</span><span class="toc-page">3</span></div>
+		<div class="toc-section"><span class="toc-number">2.</span><span class="toc-text">Physical and Chemical Characteristics</span><span class="toc-page">5</span></div>
+		<div class="toc-section"><span class="toc-number">3.</span><span class="toc-text">Stability of the Cosmetic Product</span><span class="toc-page">6</span></div>
+		<div class="toc-section"><span class="toc-number">4.</span><span class="toc-text">Microbiological Quality</span><span class="toc-page">8</span></div>
+		<div class="toc-section"><span class="toc-number">5.</span><span class="toc-text">Impurities, Traces, Packaging Material Information</span><span class="toc-page">9</span></div>
+		<div class="toc-section"><span class="toc-number">6.</span><span class="toc-text">Normal and Reasonably Foreseeable Use</span><span class="toc-page">10</span></div>
+		<div class="toc-section"><span class="toc-number">7.</span><span class="toc-text">Exposure to the Cosmetic Product</span><span class="toc-page">11</span></div>
+		<div class="toc-section"><span class="toc-number">8.</span><span class="toc-text">Exposure to the Substances</span><span class="toc-page">12</span></div>
+		<div class="toc-section"><span class="toc-number">9.</span><span class="toc-text">Toxicological Profile</span><span class="toc-page">13</span></div>
+		<div class="toc-section"><span class="toc-number">10.</span><span class="toc-text">Undesirable Effects</span><span class="toc-page">15</span></div>
+		<div class="toc-section"><span class="toc-number">11.</span><span class="toc-text">Product Information</span><span class="toc-page">16</span></div>
+		<div class="toc-part" style="margin-top:11px;">Part B — Cosmetic Product Safety Assessment</div>
+		<div class="toc-section"><span class="toc-number">1.</span><span class="toc-text">Assessment Conclusion</span><span class="toc-page">17</span></div>
+		<div class="toc-section"><span class="toc-number">2.</span><span class="toc-text">Labelled Warnings and Instructions for Use</span><span class="toc-page">18</span></div>
+		<div class="toc-section"><span class="toc-number">3.</span><span class="toc-text">Reasoning</span><span class="toc-page">19</span></div>
+		<div class="toc-section"><span class="toc-number">4.</span><span class="toc-text">Assessor Credentials</span><span class="toc-page">20</span></div>
+		<div class="toc-section"><span class="toc-number"></span><span class="toc-text">Appendix — Supporting Documentation</span><span class="toc-page">21</span></div>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 2</span><span>Confidential</span></div>
+	</div>
+
+    <!-- PAGE 3: SECTION 1 - PRODUCT ID -->
+	
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<div class="part-header"><div class="part-label">Part A</div><div class="part-title">Safety Information</div></div>
+		<h1>1. Quantitative and Qualitative Composition</h1>
+		<h2>Product Identification</h2>
+		<div class="info-grid">
+		<div class="info-label">Product Name</div><div class="info-value">H&amp;M Silk Stone Eau De Parfum 50 ml</div>
+		<div class="info-label">Brand</div><div class="info-value">H&amp;M Beauty</div>
+		<div class="info-label">Formula Code</div><div class="info-value">SIL/MFEDP/SS/001-00 (dated 14.01.2026)</div>
+		<div class="info-label">CPSR Reference</div><div class="info-value">CPSR-HM-SILKSTONEEDP50-2026-001</div>
+		<div class="info-label">Pack Size</div><div class="info-value">50 ml</div>
+		<div class="info-label">Product Category</div><div class="info-value">Eau de Parfum / Fine Fragrance</div>
+		<div class="info-label">Product Type</div><div class="info-value">Fine fragrance spray, leave-on, non-pressurised</div>
+		<div class="info-label">Areas of Application</div><div class="info-value">Pulse points — neck, wrists, d&eacute;collet&eacute;</div>
+		<div class="info-label">Target Group</div><div class="info-value">Adults (18 years and over)</div>
+		<div class="info-label">Assessment Date</div><div class="info-value">02.03.2026</div>
+		</div>
+		<h2>Responsible Person</h2>
+		<div class="info-grid">
+		<div class="info-label">Company Name</div><div class="info-value">M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Contact Person</div><div class="info-value">MS SHIVKANTI BAKSHI, QC Manager</div>
+		<div class="info-label">Address</div><div class="info-value">OLD KHANDSA ROAD, SECTOR 37, HSIIDC, KHERKI DAULA, GURUGRAM (HARYANA), 122004, INDIA</div>
+		<div class="info-label">Email</div><div class="info-value">shivkanti.bakshi@stella-indusstries.com</div>
+		<div class="info-label">Phone</div><div class="info-value">+91 9868252724</div>
+		</div>
+		<h2>Manufacturer</h2>
+		<div class="info-grid">
+		<div class="info-label">Company Name</div><div class="info-value">M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Address</div><div class="info-value">OLD KHANDSA ROAD, SECTOR 37, HSIIDC, KHERKI DAULA, GURUGRAM (HARYANA), 122004, INDIA</div>
+		<div class="info-label">GMP Standard</div><div class="info-value">ISO 22716:2007 Good Manufacturing Practices (documentation held on file)</div>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 3</span><span>Confidential</span></div>
+	</div>
+	
+
+    <!-- PAGE 4: FORMULA & ALLERGENS -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-logo">CPSR</div></div>
+        <h2>Qualitative and Quantitative Formula</h2>
+        <table>
+            <thead><tr><th style="width:35%;">INCI Name</th><th style="width:25%;">Function</th><th style="width:20%;">CAS No.</th><th style="width:20%;">% w/w</th></tr></thead>
+            <tbody>
+                <tr><td>ALCOHOL DENAT.</td><td>Solvent / Self-preserving</td><td>64-17-5</td><td>75.0000</td></tr>
+                <tr><td>PARFUM (Nuage Blanc RW)</td><td>Fragrance</td><td>—</td><td>19.8993</td></tr>
+                <tr><td>AQUA</td><td>Carrier / Solvent</td><td>7732-18-5</td><td>5.0000</td></tr>
+                <tr style="background:var(--light-gray); font-weight:700;"><td>Total</td><td></td><td></td><td>100.0000</td></tr>
+            </tbody>
+        </table>
+        <h3>Declared Fragrance Allergens (≥ 0.001% threshold)</h3>
+        <p>Consistent with Commission Regulation (EU) 2023/1545, the following allergens are identified for mandatory labeling:</p>
+        <table>
+            <thead><tr><th>INCI Name (Allergen)</th><th>CAS Number</th><th>% in Product</th><th>Declare</th></tr></thead>
+            <tbody>
+                <tr><td>VANILLIN</td><td>121-33-5</td><td>0.05050</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>CITRAL</td><td>5392-40-5</td><td>0.03012</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>GERANIOL</td><td>106-24-1</td><td>0.01008</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>CITRONELLOL</td><td>7540-51-4</td><td>0.01002</td><td><span class="badge badge-pass">YES</span></td></tr>
+            </tbody>
+        </table>
+        <div class="method-box"><strong>IFRA Compliance Statement:</strong> All ingredients in H&M Silk Stone Eau de Parfum (50 ml) comply with Regulation (EC) No 1223/2009. The fragrance mixture (Nuage Blanc RW) at 19.89% w/w is accompanied by an IFRA 51st Amendment Certificate (Ref: IFRACERTIFICATEEU_IN_EN_P02R790_NUAGEBLANCRW_20251003_25288961), confirming compliance at the stated usage level. All identified fragrance allergens exceeding the 0.001% leave-on threshold are required to be declared on the product label per Commission Regulation (EU) 2023/1545, with the full EU 80-allergen declaration provided in document FRAG_ALLERG_80_HM_SS_20260215_1102.pdf. No prohibited, restricted, or CMR substances are present at concentrations exceeding regulatory safety limits.</div>
+        <br></br><br></br>
+        <div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 4</span><span>Confidential</span></div>
+    </div>
+
+    <!-- PAGE 5: PHYSICAL/CHEMICAL -->
+		<div class="page">
+			<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>2. Physical and Chemical Characteristics</h1>
+		<p>Physical and chemical characteristics of the finished product as determined by the manufacturer and confirmed via the Certificate of Analysis (CoA), stability testing report and Safety Data Sheet (SDS).</p>
+			<div class="info-grid" style="grid-template-columns:185px 1fr;">
+			<div class="info-label">Appearance</div><div class="info-value">Clear, colourless liquid; free from turbidity and suspended matter</div>
+			<div class="info-label">Colour</div><div class="info-value">Colourless</div>
+			<div class="info-label">Aroma / Fragrance</div><div class="info-value">Characteristic fine fragrance — Nuage Blanc RW (P02R790); floral-powdery accord with soft musky undertones (vanillin, musk), fresh citrus-floral lift (citral), and delicate rose-like nuances (geraniol, citronellol)</div>
+			<div class="info-label">Physical Form</div><div class="info-value">Non-pressurised liquid; pump spray dispenser</div>
+			<div class="info-label">pH</div><div class="info-value">~5.5–6.5 (aqueous phase present at 5.00%)</div>
+			<div class="info-label">Density at 25°C</div><div class="info-value">0.848 g/mL (specification: 0.845–0.875 g/mL — PASS)</div>
+			<div class="info-label">Alcohol Content</div><div class="info-value">75.18% v/v (specification: 75 &#177; 3% — PASS)</div>
+			<div class="info-label">Flash Point</div><div class="info-value">~13&#176;C (Tag closed cup — ethanol-based)</div>
+			<div class="info-label">Flammability Classification</div><div class="info-value">Flammable Liquid, Category 2 (H225) per Regulation (EC) No 1272/2008 (CLP)</div>
+			<div class="info-label">Net Content</div><div class="info-value">50 ml</div>
+			<div class="info-label">Container</div><div class="info-value">50 ml glass bottle with pump dispenser and actuator</div>
+		</div>
+		<div class="method-box"><div class="method-box-title">Method</div>Physical and chemical properties were determined using the following methods:<ul>
+			<li>Appearance &amp; Colour: Visual inspection against white and black backgrounds</li>
+			<li>Odour / Fragrance: Olfactory evaluation by trained perfumer</li>
+			<li>pH: pH meter (aqueous phase; 5.00% water content)</li>
+			<li>Density at 25&#176;C: Pycnometer / digital density meter (result: 0.848 g/mL — PASS; spec: 0.845–0.875)</li>
+			<li>Alcohol Content: Gas chromatography (result: 75.18% — PASS; spec: 75 &#177; 3%)</li>
+			<li>Flash Point: Tag closed cup method (~13&#176;C)</li>
+			<li>Flammability Classification: Per Regulation (EC) No 1272/2008 (CLP) criteria — Flammable Liquid Cat. 2</li>
+			</ul></div>
+			<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">CONCLUSION</div><div class="conclusion-text">All physical and chemical characteristics meet the product specification as confirmed by the Certificate of Analysis and stability testing report. Density at 25&#176;C is confirmed at 0.848 g/mL (specification 0.845–0.875 g/mL — PASS). Alcohol content is confirmed at 75.18% (specification 75 &#177; 3% — PASS). Flash point of approximately 13&#176;C confirms Flammable Liquid Category 2 (H225) classification under CLP. All required GHS/CLP hazard labelling is applied to the product.</div></div>
+			<br><br>
+			<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 5</span><span>Confidential</span></div>
+		</div>
+
+    <!-- PAGE 6: STABILITY (Full Expansion) -->
+    <div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>3. Stability of the Cosmetic Product</h1>
+		<div class="info-grid" style="grid-template-columns:175px 1fr;">
+		<div class="info-label">Shelf Life</div><div class="info-value">36 months from date of manufacture</div>
+		<div class="info-label">PAO</div><div class="info-value">24M (24 months after opening)</div>
+		<div class="info-label">Storage Conditions</div><div class="info-value">Store in a cool, dry place away from direct sunlight and heat. Keep container tightly closed.</div>
+		<div class="info-label">Study Duration</div><div class="info-value">9 months (real-time and accelerated)</div>
+		<div class="info-label">Test Conditions</div><div class="info-value">5&#176;C | Ambient (23–25&#176;C) | 40&#176;C; plus Freeze-Thaw (4 cycles at &#8722;20&#176;C)</div>
+		<div class="info-label">Parameters Tested</div><div class="info-value">Packaging integrity, appearance, fragrance, colour, alcohol content (% v/v), vacuum leak test, specific gravity</div>
+		<div class="info-label">Specification Reference</div><div class="info-value">FG/Spec-SIL/QC/STS/FG/1838</div>
+		<div class="info-label">Signed By</div><div class="info-value">Shivkanti Bakshi, QC Manager, M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Overall Result</div><div class="info-value"><span class="badge badge-pass">PASS — All parameters at all time points</span></div>
+	</div>        
+		<h2>Stability Test Results — 9-Month Study</h2>
+		<table class="stability-table"><thead><tr><th style="width:15%;">Condition</th><th style="width:18%;">Parameter</th><th style="width:12%;">Specification</th><th>Initial</th><th>1 Mo.</th><th>3 Mo.</th><th>6 Mo.</th><th>9 Mo.</th><th>Result</th></tr></thead>
+		<tbody>
+		<tr><td rowspan="7"><strong>Low Temp.</strong><br><small>5&#176;C</small></td><td>Packaging</td><td>Intact</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Appearance</td><td>Clear</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Fragrance</td><td>Characteristic</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Colour</td><td>Colourless</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Alcohol %</td><td>75 &#177; 3%</td><td>75.32</td><td>75.32</td><td>75.32</td><td>75.32</td><td>75.32</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Vacuum Leak</td><td>No leakage</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Sp. Gravity</td><td>0.845–0.875</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td rowspan="7"><strong>Ambient</strong><br><small>23–25&#176;C</small></td><td>Packaging</td><td>Intact</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Appearance</td><td>Clear</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Fragrance</td><td>Characteristic</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Colour</td><td>Colourless</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Alcohol %</td><td>75 &#177; 3%</td><td>75.32</td><td>75.32</td><td>75.32</td><td>75.32</td><td>75.32</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Vacuum Leak</td><td>No leakage</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Sp. Gravity</td><td>0.845–0.875</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td rowspan="7"><strong>High Temp.</strong><br><small>40&#176;C</small></td><td>Packaging</td><td>Intact</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Appearance</td><td>Clear</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Fragrance</td><td>Characteristic</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Colour</td><td>Colourless</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Alcohol %</td><td>75 &#177; 3%</td><td>75.32</td><td>75.32</td><td>75.32</td><td>75.32</td><td>75.32</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Vacuum Leak</td><td>No leakage</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Sp. Gravity</td><td>0.845–0.875</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		</tbody></table>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 6</span><span>Confidential</span></div>
+    </div>
+	
+	<!-- PAGE 7: SECTION 3 — STABILITY (Part 2: Freeze-Thaw + Conclusion) -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>3. Stability of the Cosmetic Product <span style="font-size:8pt;font-weight:400;color:var(--medium-gray);">(continued — Freeze-Thaw)</span></h1>
+		<h2>Freeze-Thaw Cycling Results</h2>
+	<p>Freeze-thaw cycling was conducted over 4 cycles at &#8722;20&#176;C (frozen) / ambient (thawed). Each cycle consisted of 24 hours at &#8722;20&#176;C followed by 24 hours at ambient temperature. All parameters were assessed after each complete cycle.</p>
+	<table class="stability-table"><colgroup><col style="width:12%;"><col style="width:16%;"><col style="width:16%;"><col style="width:13%;"><col style="width:13%;"><col style="width:13%;"><col style="width:17%;"></colgroup>
+	<thead><tr><th>Cycle</th><th>Condition</th><th>Appearance</th><th>Alcohol %</th><th>Sp. Gravity</th><th>Fragrance</th><th>Result</th></tr></thead>
+	<tbody>
+	<tr><td><strong>Cycle 1</strong></td><td>&#8722;20&#176;C / Ambient</td><td><span class="check-pass"></span> Clear</td><td>75.32</td><td>0.851</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td><strong>Cycle 2</strong></td><td>&#8722;20&#176;C / Ambient</td><td><span class="check-pass"></span> Clear</td><td>75.44</td><td>0.852</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td><strong>Cycle 3</strong></td><td>&#8722;20&#176;C / Ambient</td><td><span class="check-pass"></span> Clear</td><td>75.28</td><td>0.850</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td><strong>Cycle 4</strong></td><td>&#8722;20&#176;C / Ambient</td><td><span class="check-pass"></span> Clear</td><td>75.17</td><td>0.856</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	</tbody></table>
+	<p style="font-size:7pt;color:var(--medium-gray);font-style:italic;">All freeze-thaw cycle results within specification (alcohol 75 &#177; 3%; specific gravity 0.845–0.875). No phase separation, turbidity, precipitation or packaging failure observed across all 4 cycles.</p>
+
+	<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">STABILITY CONCLUSION</div><div class="conclusion-text">After 9 months of evaluation at 5&#176;C, ambient (23–25&#176;C) and 40&#176;C, and after 4 freeze-thaw cycles at &#8722;20&#176;C, all tested parameters remain within specification. No variation in colour, odour, appearance, alcohol content or specific gravity was observed under any test condition. Vacuum leak testing at 400 mmHg for 2 minutes confirmed no leakage at all time points. The product demonstrates excellent physicochemical stability. A shelf life of 36 months from the month of production is approved. PAO is set at 24 months.</div></div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 7</span><span>Confidential</span></div>
+	</div>
+
+<!-- PAGE 8: SECTION 4 — MICROBIOLOGICAL QUALITY -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>4. Microbiological Quality</h1>
+		<div class="info-grid" style="grid-template-columns:195px 1fr;">
+		<div class="info-label">Product Name</div><div class="info-value">H&amp;M Silk Stone Eau De Parfum 50 ml</div>
+		<div class="info-label">Ethanol Content</div><div class="info-value">75.00% w/w (Alcohol Denat.) — confirmed 75.22% in CoA</div>
+		<div class="info-label">Preservation Mechanism</div><div class="info-value">Self-preserving — high alcohol content (&gt;20% w/w ethanol)</div>
+		<div class="info-label">Challenge Test Required</div><div class="info-value"><span class="badge badge-na">Not Required</span></div>
+		<div class="info-label">Testing Standard</div><div class="info-value">EU Regulation (EC) No 1223/2009, Annex I; ISO 11930 (preservative efficacy — not required); SCCS guidance on self-preserving formulations</div>
+		</div>
+		<div class="method-box"><div class="method-box-title">Self-Preserving Justification</div>This product contains 75.00% w/w Alcohol Denat. (denatured ethanol), confirmed analytically at 75.32% in the Certificate of Analysis. Products containing ethanol at concentrations of 20% w/w or above are considered inherently self-preserving and are not susceptible to microbial growth or contamination under normal storage and use conditions. A microbiological challenge test (preservative efficacy test to ISO 11930) is therefore not required. This is consistent with SCCS guidance and established regulatory practice for high-ethanol cosmetic formulations.</div>
+		<h2>Certificate of Analysis — Quality Parameters</h2>
+		<table><thead><tr><th style="width:38%;">Analysis</th><th style="width:28%;">Specification</th><th style="width:18%;">Result</th><th style="width:16%;">Conformity</th></tr></thead>
+		<tbody>
+		<tr><td>Colour</td><td>Colourless</td><td>Colourless</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Appearance</td><td>Clear, free from turbidity and suspended matter</td><td>Clear</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Fragrance</td><td>Characteristic</td><td>Characteristic</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Alcohol Content</td><td>75 &#177; 3% v/v</td><td>75.32%</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Specific Gravity at 25&#176;C</td><td>0.845–0.875 g/mL</td><td>0.851 g/mL</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Vacuum Leak Test (400 mmHg / 2 min)</td><td>No leakage</td><td>No leakage</td><td><span class="check-pass"></span></td></tr>
+		</tbody></table>
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">MICROBIOLOGICAL CONCLUSION</div><div class="conclusion-text">H&amp;M Silk Stone Eau De Parfum 50 ml is self-preserving by virtue of its high ethanol content (75.00% w/w Alcohol Denat., confirmed at 75.22%). The product is not susceptible to microbial contamination or growth. Microbiological challenge testing per ISO 11930 is not required. All physical quality parameters confirmed by the Certificate of Analysis meet specification. The product complies with the microbiological quality requirements of EU Regulation (EC) No 1223/2009.</div></div>
+		<div class="comments-box"><div class="comments-label">Comments</div>The product is dispensed from a sealed glass bottle via a crimped pump and actuator spray nozzle. The pump delivery system minimises post-manufacture contamination risk during consumer use. The very high ethanol concentration (75%) provides a robust antimicrobial barrier. No preservative additives are required or present in the formulation.</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 8</span><span>Confidential</span></div>
+	</div>
+
+
+    <!-- PAGE 9: IMPURITIES BULLET NOTES -->
+    <div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>5. Impurities, Traces, Packaging Material Information</h1>
+		<h2>Impurities and Trace Substances</h2>
+		<p>According to the material suppliers, the raw materials used in this formulation do not contain any traces of impurities or prohibited substances above regulatory limits as defined in Regulation (EC) No 1223/2009. Individual Safety Data Sheets and Technical Data Sheets confirm compliance with applicable limits for heavy metals, nitrosamines and other impurities of concern.</p>
+		<div class="method-box"><div class="method-box-title">Impurity Assessment Notes</div><ul>
+		<li><strong>Heavy metals:</strong> No heavy metal contamination expected based on ingredient nature and supplier declarations. The formulation contains no mineral-derived ingredients known to carry heavy metal impurity risk. Ethanol SDS confirms heavy metal compliance.</li>
+		<li><strong>Nitrosamines:</strong> No nitrosamine-forming ingredients present in the formula. No secondary amines or nitrogen-containing preservatives used.</li>
+		<li><strong>1,4-Dioxane:</strong> Not applicable — no ethoxylated ingredients present in the formulation.</li>
+		<li><strong>CMR substances:</strong> No ingredients classified as carcinogenic, mutagenic or reprotoxic (Category 1A or 1B) under Regulation (EC) No 1272/2008 are used in this product at prohibited levels. Coumarin (CAS 91-64-5) is a restricted substance under Annex III of Regulation (EC) No 1223/2009; it is present as a declared fragrance allergen at 0.243% w/w, within IFRA 51st Amendment limits for Eau de Parfum.</li>
+		<li><strong>Nanomaterials:</strong> No nanomaterial ingredients are present. All ingredients are in conventional (non-nano) particle sizes. Compliant with Commission Regulation (EU) 2024/858.</li>
+		<li><strong>Restricted substances:</strong> All ingredients comply with Annexes II, III and V of Regulation (EC) No 1223/2009 as amended.</li>
+		<li><strong>Denatured ethanol impurities:</strong> The ethanol is denatured with TBA (tert-butanol) and Denatonium Benzoate per applicable standards. No known impurities beyond the denaturant system are present. MATERIAL SAFETY DATA SHEET ENA.pdf confirms compliance.</li>
+		</ul></div>
+		<h2>Packaging Material Information</h2>
+		<div class="info-grid" style="grid-template-columns:175px 1fr;">
+		<div class="info-label">Primary Container</div><div class="info-value">50 ml glass bottle</div>
+		<div class="info-label">Container Material</div><div class="info-value">Glass (chemically inert; type I or type III soda-lime glass)</div>
+		<div class="info-label">Closure / Dispenser</div><div class="info-value">Crimped pump dispenser with actuator spray nozzle</div>
+		<div class="info-label">Pack Size</div><div class="info-value">50 ml nominal</div>
+		<div class="info-label">Propellant</div><div class="info-value">None — non-pressurised pump spray</div>
+		<div class="info-label">Vacuum Leak Test</div><div class="info-value">400 mmHg / 2 minutes — No leakage (PASS)</div>
+		<div class="info-label">Known Packaging Impurities</div><div class="info-value">None</div>
+		</div>
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">PACKAGING COMPATIBILITY ASSESSMENT</div><div class="conclusion-text">The glass bottle is an established and appropriate packaging format for alcohol-based fine fragrance products. Glass is chemically inert to ethanol and fragrance ingredients, presenting no risk of migration, leaching or product interaction. Stability data over 9 months across all temperature conditions (including freeze-thaw cycling) demonstrates no evidence of packaging interaction, leakage or degradation. Vacuum leak testing at 400 mmHg / 2 minutes confirms seal integrity. The packaging is deemed fully compatible with the product formulation.</div></div>
+		<br></br><br></br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 9</span><span>Confidential</span></div>
+	</div>
+
+<!-- PAGE 10: SECTION 6 — NORMAL USE -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>6. Normal and Reasonably Foreseeable Use</h1>
+		<p>H&amp;M Silk Stone Eau De Parfum 50 ml is a fine fragrance spray intended for application to adult pulse points (neck, wrists, d&eacute;collet&eacute;). The product is designed to deliver a long-lasting floral-powdery fragrance as a leave-on formulation dispensed from a non-pressurised glass bottle with pump spray.</p>
+		<div class="info-grid" style="grid-template-columns:185px 1fr;">
+		<div class="info-label">Areas of Application</div><div class="info-value">Pulse points — neck, wrists, d&eacute;collet&eacute;; intact adult skin</div>
+		<div class="info-label">Product Category</div><div class="info-value">Eau de Parfum / Fine Fragrance</div>
+		<div class="info-label">Product Type</div><div class="info-value">Leave-on (pump spray — does not require rinsing)</div>
+		<div class="info-label">Target Group</div><div class="info-value">Adults (18 years and over)</div>
+		<div class="info-label">Duration &amp; Frequency</div><div class="info-value">Daily use; ~0.24 g/day (240 mg/day)</div>
+		<div class="info-label">Application Distance</div><div class="info-value">~15 cm from skin surface</div>
+		<div class="info-label">Amount per Use</div><div class="info-value">~240 mg/day (SCCS default for fine fragrance / Eau de Parfum)</div>
+		</div>
+		<div class="method-box"><div class="method-box-title">Application Instructions (as labelled)</div>Spray onto pulse points (neck, wrists, d&eacute;collet&eacute;) from a distance of approximately 15 cm. Allow to dry. Do not spray directly onto face. Avoid contact with eyes. For external use only. Keep away from heat, hot surfaces, sparks and open flames.</div>
+		<div class="warning-box"><div class="warning-box-title" style="color:#FF9800;">Precautionary Statements (Labelled)</div><ul>
+		<li>Flammable liquid and vapour (H225) — keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking.</li>
+		<li>Keep container tightly closed when not in use.</li>
+		<li>Avoid contact with eyes; in case of contact, rinse immediately with water.</li>
+		<li>Do not use on broken, damaged or irritated skin.</li>
+		<li>For external use only.</li>
+		<li>Keep out of reach of children.</li>
+		<li>For adult use only (18 years and over).</li>
+		<li>Fragrance-sensitive individuals should review the INCI ingredient list prior to use. Contains 4 declared fragrance allergens per Commission Regulation (EU) 2023/1545.</li>
+		</ul></div>
+		<h2>Reasonably Foreseeable Misuse</h2>
+		<p>Reasonably foreseeable misuse scenarios include: application to the face or broken skin; use by children; inhalation of spray mist at close range; ingestion; use near open flames. The risk from each scenario is addressed through product labelling, childproof packaging (crimped pump) and the conditions of safe use detailed in Part B. No such misuse would render the product unsafe when the conditions of safe use are disregarded, beyond the known risks common to high-alcohol fine fragrances.</p>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 10</span><span>Confidential</span></div>
+	</div>
+
+<!-- PAGE 11: SECTION 7 — EXPOSURE ASSESSMENT -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>7. Exposure to the Cosmetic Product</h1>
+		<p>Exposure assessment follows the SCCS Notes of Guidance for the Testing of Cosmetic Ingredients and their Safety Evaluation (11th revision, 2021, SCCS/1628/21). Default values for <strong>fine fragrance / Eau de Parfum (leave-on)</strong> are applied to calculate the Systemic Exposure Dose (SED) for each ingredient.</p>
+		<table><thead><tr><th>Exposure Parameter</th><th>Value</th></tr></thead>
+		<tbody>
+		<tr><td>Areas of Application</td><td>Pulse points — neck, wrists, d&eacute;collet&eacute;</td></tr>
+		<tr><td>Product Category</td><td>Fine Fragrance / Eau de Parfum</td></tr>
+		<tr><td>Product Type</td><td>Leave-on (pump spray)</td></tr>
+		<tr><td>Duration and Frequency</td><td>Daily; 1 application per day</td></tr>
+		<tr><td>Retention Factor (RF)</td><td>1.0 (leave-on product)</td></tr>
+		<tr><td>Estimated Amount of Product Applied per Day</td><td>240 mg/day (0.24 g/day — SCCS 2021 default for fine fragrance)</td></tr>
+		<tr><td>Target Group</td><td>Adults</td></tr>
+		<tr><td>Body Weight (BW)</td><td>60 kg (conservative SCCS default)</td></tr>
+		<tr class="row-highlight"><td><strong>Calculated Total Product SED</strong></td><td><strong>(240 mg &#215; 1.0) / 60 kg = 4.0 mg product / kg bw / day</strong></td></tr>
+		</tbody></table>
+		<div class="method-box"><div class="method-box-title">Calculation Formula</div>
+		<p>SED (mg/kg bw/day) = (Amount applied [mg/day] &#215; Ingredient concentration [fraction] &#215; Retention Factor) / Body Weight [kg]</p>
+		<p><strong>Total Product SED:</strong><br>= (240 mg &#215; 1.0) / 60 kg = <strong>4.0 mg product / kg bw / day</strong></p>
+		<p><strong>Per-Ingredient SED:</strong><br>SED<sub>ingredient</sub> = 4.0 &#215; (concentration fraction) = 4.0 &#215; (% / 100)</p>
+		<p><strong>Example — Alcohol Denat. (75.00%):</strong><br>SED = 4.0 &#215; 0.7500 = 3.0000 mg/kg bw/day</p>
+		<p><strong>Example — Vanillin (0.0505%):</strong><br>SED = 4.0 &#215; 0.000505 = 0.00202 mg/kg bw/day</p>
+		</div>
+		<div class="method-box"><div class="method-box-title">Notes on Exposure Assessment</div>
+		<p>The total product SED of 4.0 mg/kg bw/day reflects dermal absorption of all non-volatile ingredients. Ethanol, as the primary solvent (75%), rapidly evaporates from the skin surface; however, a conservative dermal absorption factor of 100% is applied consistent with SCCS guidance for ethanol in cosmetics, yielding SED = 3.0 mg/kg bw/day. The fragrance mixture (20.00%) is assessed at the full formulated concentration per IFRA methodology. Aqua (5.00%) is not separately assessed — water presents no systemic toxicological concern.</p>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 11</span><span>Confidential</span></div>
+	</div>
+	
+	<!-- PAGE 12: SECTION 8 — MoS TABLE (Part 1) -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>8. Exposure to the Substances</h1>
+		<p>The Systemic Exposure Dose (SED) for each ingredient was calculated using: SED = (240 mg &#215; concentration fraction &#215; 1.0) / 60 kg. The Margin of Safety (MoS) = NOAEL / SED. A minimum MoS of 100 is required for safety. All values calculated at maximum formulated concentration. The fragrance allergens below are assessed at their concentration in the finished product (at 20.00% w/w fragrance loading).</p>
+		<table class="mos-table"><colgroup><col style="width:27%;"><col style="width:8%;"><col style="width:13%;"><col style="width:13%;"><col style="width:10%;"><col style="width:29%;"></colgroup>
+		<thead><tr><th>INCI Name / Substance</th><th>Conc. (%)</th><th>SED (mg/kg/d)</th><th>NOAEL (mg/kg/d)</th><th>MoS</th><th>Source / Notes</th></tr></thead>
+		<tbody>
+		<tr><td><strong>ALCOHOL DENAT.</strong></td><td>75.00</td><td>3.0000</td><td>2600</td><td><span class="mos-safe">867</span></td><td>SCCS (2012); EFSA — SAFE &#10003;</td></tr>
+		<tr><td><strong>PARFUM</strong> (Nuage Blanc RW)</td><td>20.00</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>IFRA 51st Amendment compliant — SAFE &#10003;</td></tr>
+		<tr><td><strong>AQUA</strong></td><td>5.00</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>Not assessed — SAFE &#10003;</td></tr>
+		<tr><td>VANILLIN</td><td>0.0505</td><td>0.002020</td><td>150</td><td><span class="mos-safe">74,257</span></td><td>JECFA / RIFM monograph — SAFE &#10003;</td></tr>
+		<tr><td>CITRAL</td><td>0.0301</td><td>0.001204</td><td>500</td><td><span class="mos-safe">415,282</span></td><td>SCCS/1666/24 — SAFE &#10003;</td></tr>
+		<tr><td>GERANIOL</td><td>0.0101</td><td>0.000404</td><td>500</td><td><span class="mos-safe">1,237,624</span></td><td>RIFM monograph — SAFE &#10003;</td></tr>
+		<tr><td>CITRONELLOL</td><td>0.0100</td><td>0.000400</td><td>500</td><td><span class="mos-safe">1,250,000</span></td><td>RIFM monograph — SAFE &#10003;</td></tr>
+		</tbody></table>
+
+		<div class="conclusion-box" style="margin-top:20px;"><div class="conclusion-title" style="color:#2E7D32;">EXPOSURE CONCLUSION</div><div class="conclusion-text">The exposure assessment for H&amp;M Silk Stone Eau De Parfum confirms that all ingredients and declared fragrance allergens possess a Margin of Safety (MoS) significantly greater than the benchmark value of 100. The systemic exposure to the fragrance mixture is managed via strict adherence to the IFRA 51st Amendment standards for Category 4 products. No ingredients in this formulation present a systemic toxicological risk under the defined conditions of use.</div></div>
+
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 12</span><span>Confidential</span></div>
+	</div>
+	
+
+    <!-- PAGE 13-14: TOXICOLOGICAL PROFILES (Expanded) -->
+    <div class="page">
+        <div class="page-header"><div class="page-header-logo">CPSR</div></div>
+        <h1>9. Toxicological Profile</h1>
+			<h2>ALCOHOL DENAT.</h2>
+			<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS Number:</strong> 64-17-5 | <strong>EC Number:</strong> 200-578-6 | <strong>Function:</strong> Solvent / Self-preserving | <strong>Concentration:</strong> 75.00% w/w</p>
+			<p class="tox-meta"><strong>NOAEL:</strong> 2600 mg/kg bw/day | <strong>SED:</strong> 3.0000 mg/kg bw/day | <strong>MoS:</strong> <span class="mos-inline">867</span></p>
+			<p class="tox-assessment">Ethanol (Alcohol Denat.) is a thoroughly characterized solvent with an extensive history of safe use in fine fragrances. It is denatured with tert-butanol (TBA) and denatonium benzoate to render it unfit for consumption. The NOAEL for systemic toxicity is 2600 mg/kg bw/day based on SCCS (2012) evaluations. At 75.00% w/w in a fine fragrance with a daily exposure of 240 mg, the SED is 3.0000 mg/kg bw/day, yielding a MoS of 867—well above the 100 threshold. It is not classified as a skin sensitizer, though mild transient defatting of the skin may occur with repeated use. A flash point of ~13°C necessitates a Flammable Liquid Category 2 (H225) classification.</p>
+			</div>
+		<hr class="ingredient-divider">
+
+		<h2>PARFUM (Nuage Blanc RW — P02R790)</h2>
+			<div class="ingredient-profile">
+			<p class="tox-meta"><strong>Trade Name:</strong> Nuage Blanc RW &nbsp;|&nbsp; <strong>Supplier Code:</strong> P02R790 &nbsp;|&nbsp; <strong>Function:</strong> Masking / Fragrance &nbsp;|&nbsp; <strong>Concentration:</strong> 20.00% w/w</p>
+			<p class="tox-meta"><strong>IFRA Certificate:</strong> IFRACERTIFICATE_P02R790_NUAGE_BLANC_RW_20260107 (51st Amendment) &nbsp;|&nbsp; <strong>MoS:</strong> <span class="mos-inline">N/A — IFRA Compliant</span></p>
+			<p class="tox-assessment">The fragrance mixture Nuage Blanc RW (P02R790) is assessed at the formulated concentration of 20.00% w/w in Eau de Parfum. The IFRA 51st Amendment Certificate confirms compliance with all IFRA category limits at the stated usage level[cite: 25, 41]. The allergen declaration identifies the presence and concentration of fragrance allergens (Vanillin, Citral, Geraniol, and Citronellol) above the 0.001% leave-on threshold. All declared allergens are separately profiled. The fragrance mixture is assessed as safe at the formulated level, subject to IFRA compliance and allergen labelling requirements[cite: 25, 33]. No prohibited or CMR fragrance ingredients have been identified in the allergen declaration or IFRA certificate at concerning concentrations[cite: 25, 26].</p>
+			</div>
+		<hr class="ingredient-divider">
+
+		<h2>AQUA (Purified Water)</h2>
+			<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS Number:</strong> 7732-18-5 &nbsp;|&nbsp; <strong>EC Number:</strong> 231-791-2 &nbsp;|&nbsp; <strong>Function:</strong> Carrier / Solvent &nbsp;|&nbsp; <strong>Concentration:</strong> 5.00% w/w</p>
+			<p class="tox-meta"><strong>Assessment:</strong> <span class="mos-inline">Not assessed — intrinsically safe</span></p>
+			<p class="tox-assessment">Purified Water (Aqua, CAS 7732-18-5) is a universally accepted cosmetic ingredient with no toxicological concerns at any concentration in topically applied products[cite: 25, 33]. It functions as a carrier in this formulation at 5.00% w/w. No NOAEL assessment or MoS calculation is required[cite: 25, 33]. Water presents no dermal, systemic or mutagenic risk and requires no further toxicological evaluation[cite: 25, 33].</p>
+			</div>
+		<hr class="ingredient-divider">
+
+		
+		<h2>VANILLIN</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 121-33-5 | <strong>NOAEL:</strong> 150 mg/kg bw/day (SCCS) &nbsp;|&nbsp; <strong>% in product:</strong> 0.0505% &nbsp;|&nbsp; <strong>SED:</strong> 0.00202 mg/kg/d &nbsp;|&nbsp; <strong>MoS:</strong> <span class="mos-inline">74,257</span></p>
+			<p class="tox-assessment">Vanillin is a widely used fragrance and flavor component with a well-established safety profile. Based on its concentration of 0.0505% in this formulation, the systemic exposure is negligible. A NOAEL of 150 mg/kg/d is utilized for safety margin calculation. Vanillin is not classified as a potent sensitizer, and the calculated Margin of Safety (74,257) is well above the required threshold of 100, confirming its safety for use in this leave-on cosmetic product.</p>
+		</div>
+		<hr class="ingredient-divider">	
+			
+			<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 13</span><span>Confidential</span></div>
+	</div>
+
+    <div class="page">
+        <div class="page-header"><div class="page-header-logo">CPSR</div></div>
+		<h1>9. Toxicological Profile <span style="font-size:8pt;font-weight:400;color:var(--medium-gray);">(continued — Fragrance Allergens)</span></h1>
+
+        <h2>CITRAL</h2>
+			<div class="ingredient-profile">
+            <p class="tox-meta"><strong>CAS:</strong> 5392-40-5 | <strong>NOAEL:</strong> 100 mg/kg bw/day (SCCS/1666/24) &nbsp;|&nbsp; <strong>% in product:</strong> 0.0301% &nbsp;|&nbsp; <strong>SED:</strong> 0.0012048 mg/kg/d &nbsp;|&nbsp; <strong>MoS:</strong> <span class="mos-inline">414,994</span></p>
+            <p class="tox-assessment">Citral is recently reaffirmed as safe in the 2024 SCCS opinion. While a known sensitizer, its systemic toxicity is low. NOAEL of 100 mg/kg/d is established based on 90-day oral studies. Dermal sensitization is managed via mandatory label declaration and IFRA compliance. MoS: 414,994.</p>
+        </div>
+		<hr class="ingredient-divider">
+		
+		<h2>GERANIOL</h2>
+			<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 106-24-1 &nbsp;|&nbsp; <strong>% in product:</strong> 0.0101% &nbsp;|&nbsp; <strong>SED:</strong> 0.0004032 mg/kg/d &nbsp;|&nbsp; <strong>MoS:</strong> <span class="mos-inline">1,240,079</span></p>
+			<p class="tox-assessment">Geraniol is a naturally occurring monoterpene alcohol present in rose and geranium oils. NOAEL: 500 mg/kg bw/day (RIFM; rat oral). At 0.101% in the product, the MoS of 1,240,079 demonstrates an exceptional safety margin. Geraniol is not a CMR substance. It is classified as a fragrance allergen under EU 2023/1545 and is declared on the product label accordingly.</p>
+			</div>
+		<hr class="ingredient-divider">
+		
+		<h2>CITRONELLOL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 7540-51-4 | <strong>NOAEL:</strong> 500 mg/kg bw/day (RIFM) &nbsp;|&nbsp; <strong>% in product:</strong> 0.0100% &nbsp;|&nbsp; <strong>SED:</strong> 0.00040 mg/kg/d &nbsp;|&nbsp; <strong>MoS:</strong> <span class="mos-inline">1,250,000</span></p>
+			<p class="tox-assessment">Citronellol is a naturally occurring monoterpenoid alcohol widely used for its floral, rose-like scent. It has a well-established safety profile with a high NOAEL of 500 mg/kg/day established through repeat-dose studies. At a concentration of 0.0100% in this formulation, the systemic exposure is extremely low. The resulting Margin of Safety of 1,250,000 is far above the safety threshold of 100, confirming that Citronellol is safe for use in this leave-on fragrance product.</p>
+		</div>
+		<hr class="ingredient-divider">
+		
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">TOXICOLOGICAL CONCLUSION</div><div class="conclusion-text">All ingredients in H&amp;M Silk Stone Eau De Parfum 50 ml have been assessed for systemic exposure (SED) and the resulting Margin of Safety (MoS). All calculated MoS values, including those for fragrance allergens (Vanillin, Citral, Geraniol, and Citronellol), significantly exceed the safety threshold of 100. The fragrance mixture Nuage Blanc RW (P02R790) is IFRA 51st Amendment compliant at the 20.00% w/w usage level. No CMR, prohibited, or restricted substances are present at unsafe concentrations. The product is considered toxicologically safe for adults under the intended conditions of use, subject to the safety labelling and instructions stated in Part B.</div></div>
+
+		<h2>Basis for Assessment</h2>
+		<div class="method-box"><div class="method-box-title">References for Toxicological Assessment</div><p>Toxicological assessment is based on ingredient-level data from: SCCS Notes of Guidance 12th revision (2023), SCCS/1647/22; SCCS/1666/24 (Citral); SCCS 2012 (Ethanol); RIFM Fragrance Ingredient Safety Monographs (Vanillin, Citral, Geraniol, Citronellol); JECFA evaluations (Vanillin); EFSA Panel on Food Contact Materials (Ethanol); Supplier SDS documentation (Alcohol Denat., Nuage Blanc RW fragrance mixture); IFRA 51st Amendment Certificate IFRACERTIFICATE_P02R790_NUAGE_BLANC_RW_20260107. No product-level toxicological study has been conducted; this approach is consistent with established regulatory practice for standard cosmetic ingredients where safety is demonstrated via the toxicological profile of individual constituents.</p></div>
+		
+        <br></br><br></br>
+        <div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 14</span><span>Confidential</span></div>	
+    </div>
+	
+	
+	<!-- PAGE 15: SECTION 10 — UNDESIRABLE EFFECTS -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>10. Undesirable Effects</h1>
+		<p>Based on the ingredient toxicological profiles and the calculated Margins of Safety, the following potential undesirable effects have been identified for this product. All effects are considered unlikely under normal conditions of use when the product is used as directed by adults.</p>
+		<table><thead><tr><th>Effect Type</th><th>Likelihood</th><th>Affected Population</th><th>Notes</th></tr></thead>
+		<tbody>
+		<tr><td>Skin irritation (mild/transient)</td><td>Very low</td><td>General population</td><td>High ethanol content (75.00%) may cause transient defatting; not significant at frequency of use for fine fragrance</td></tr>
+		<tr><td>Skin sensitisation / allergic contact dermatitis</td><td>Possible in sensitised individuals</td><td>Fragrance-sensitive individuals</td><td>4 declared fragrance allergens per EU 2023/1545; Vanillin, Citral, Geraniol, and Citronellol are the identified sensitisation candidates</td></tr>
+		<tr><td>Eye irritation</td><td>Possible if direct contact occurs</td><td>All</td><td>Avoid direct contact with eyes — stated on label; ethanol and fragrance can cause temporary irritation</td></tr>
+		<tr><td>Inhalation effects</td><td>Very low under normal use</td><td>All (particularly asthmatic individuals)</td><td>Pump spray mist; use in ventilated area recommended; no propellant involved</td></tr>
+		<tr><td>Phototoxicity</td><td>Negligible</td><td>All</td><td>No phototoxic essential oils or chemicals identified at concentrations exceeding safety thresholds in the Nuage Blanc RW mixture</td></tr>
+		<tr><td>Flammability hazard</td><td>Present — requires safe handling</td><td>All</td><td>H225 — Flammable Liquid Cat. 2 (flash point ~13°C); GHS/CLP labelling applied; not a toxicological concern under normal use</td></tr>
+		<tr><td>Ingestion toxicity</td><td>Very low (not intended use)</td><td>Children (misuse)</td><td>Product not intended for children; childproof crimped pump; high ethanol content toxic if ingested in volume</td></tr>
+		</tbody></table>
+
+		<h2>Serious Undesirable Effects</h2>
+		<p>No serious undesirable effects (SUSEs) have been reported for this product to date. No adverse event data has been received by the Responsible Person. The product has not been associated with any systemic toxicity, carcinogenicity, reproductive toxicity or other serious health concerns under normal and reasonably foreseeable conditions of use.</p>
+
+		<h2>Post-Market Surveillance</h2>
+		<p>The Responsible Person (M/S STELLA INDUSSTRIES LIMITED) is required to maintain a post-market surveillance system in accordance with Article 23 of Regulation (EC) No 1223/2009. Any serious undesirable effects (SUSEs) must be reported to the competent authority of the Member State where the effect occurred within the required timeframe. Non-serious undesirable effects must be recorded and made available to competent authorities upon request. A product complaint log and cosmetovigilance system should be maintained for the duration of product marketing and for 10 years thereafter.</p>
+
+		<div class="comments-box"><div class="comments-label">Comments on Sensitisation Risk</div>The 4 declared fragrance allergens (Vanillin, Citral, Geraniol, and Citronellol) reflect the current EU 2023/1545 allergen declaration requirements for the Nuage Blanc RW fragrance mixture. Compared to other products in the range, Silk Stone presents a lower allergen complexity. However, fragrance-sensitive individuals are still advised to review the full INCI ingredient list prior to use. All declared allergens are identified on the product label. As the Margins of Safety (MoS) for all constituents exceed 100, the risk of inducing sensitisation in the non-sensitised population is considered low.</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 15</span><span>Confidential</span></div>
+	</div>
+	
+	<!-- PAGE 16: SECTION 11 — PRODUCT INFORMATION -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>11. Product Information</h1>
+		<div class="info-grid" style="grid-template-columns:175px 1fr;">
+		<div class="info-label">Product Name</div><div class="info-value">H&amp;M Silk Stone Eau De Parfum 50 ml</div>
+		<div class="info-label">CPSR Reference</div><div class="info-value">CPSR-HM-SILKSTONEEDP50-2026-001</div>
+		<div class="info-label">Formula Code</div><div class="info-value">SIL/MFEDP/SS/001-00 (dated 14.01.2026)</div>
+		<div class="info-label">Assessment Date</div><div class="info-value">02.03.2026</div>
+		<div class="info-label">Shelf Life</div><div class="info-value">36 months from date of manufacture</div>
+		<div class="info-label">PAO</div><div class="info-value">24 months (24M)</div>
+		<div class="info-label">Storage Conditions</div><div class="info-value">Store in a cool, dry place below 25°C. Protect from direct sunlight. Keep container tightly closed.</div>
+		<div class="info-label">Safety Conclusion</div><div class="info-value"><span class="badge badge-pass">SAFE</span></div>
+		</div>
+		<h2>Supporting Documentation</h2>
+		<table class="docs-table"><colgroup><col style="width:20%;"><col style="width:35%;"><col style="width:11%;"><col style="width:34%;"></colgroup>
+		<thead><tr><th>Category</th><th>Document</th><th>Status</th><th>Notes</th></tr></thead>
+		<tbody>
+		<tr><td>Stability Testing Report</td><td>H&amp;M Silk Stone Eau De Parfum 50 ml.pdf</td><td><span class="badge badge-safe">Available</span></td><td>9-month stability study at 5°C / ambient / 40°C + 4 freeze-thaw cycles; all parameters PASS. Spec: FG/Spec-SIL/QC/STS/FG/1838. Signed: Shivkanti Bakshi, QC Manager.</td></tr>
+		<tr><td>Fragrance Allergen Data</td><td>H&amp;M EDP NEW RANGE 50 ml with alller.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Allergen breakdown for Nuage Blanc RW (P02R790) at 20.00% w/w usage. Confirms 4 allergens (Vanillin, Citral, Geraniol, Citronellol) above 0.001% leave-on threshold.</td></tr>
+		<tr><td>IFRA Certificate</td><td>IFRACERTIFICATE_P02R790_NUAGE_BLANC_RW_20260107.pdf</td><td><span class="badge badge-safe">Available</span></td><td>IFRA 51st Amendment certificate for Nuage Blanc RW (P02R790); confirms compliance at 20.00% w/w in Category 4 (Eau de Parfum).</td></tr>
+		<tr><td>INCI Composition Certificate</td><td>H&amp;M EDP NEW RANGE 50 ml with allergen.pdf</td><td><span class="badge badge-safe">Available</span></td><td>INCI ingredient composition certificate for the H&amp;M EDP 50ml range including Silk Stone.</td></tr>
+		<tr><td>Label Artwork</td><td>HMBEAUTY3111 SECONDARY BOX FOR EDP 50ML SILK STONE_1333527_IN.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Secondary packaging label artwork for H&amp;M Silk Stone EDP 50ml. Reference: HMBEAUTY3111, artwork ref 1333527.</td></tr>
+		<tr><td>Fragrance SDS</td><td>P02R790_SDS_GB_EN_20260107_9233008.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Safety Data Sheet for Nuage Blanc RW (P02R790); dated 07.01.2026; per EU REACH Regulation (EU) No 2020/878.</td></tr>
+		<tr><td>Ethanol SDS</td><td>MATERIAL SAFETY DATA SHEET ENA.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Safety Data Sheet for Ethanol (denatured) — covers physical hazards (H225), toxicological profile, and handling.</td></tr>
+		<tr><td>Challenge Test (ISO 11930)</td><td>—</td><td><span class="badge badge-na">Not Required</span></td><td>Product self-preserving (75.00% Alcohol Denat. &gt;20% w/w); microbiological challenge test not required per SCCS/1647/22.</td></tr>
+		<tr><td>GMP Certificate</td><td>—</td><td><span class="badge badge-na">On File</span></td><td>ISO 22716:2007 compliant; GMP documentation held by manufacturer M/S STELLA INDUSSTRIES LIMITED.</td></tr>
+		<tr><td>Toxicological Study</td><td>—</td><td><span class="badge badge-na">Not Available</span></td><td>Assessment based on ingredient-level data from SCCS, RIFM, JECFA, and EFSA; standard regulatory practice per SCCS/1647/22.</td></tr>
+		</tbody></table>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 16</span><span>Confidential</span></div>
+	</div>
+	
+
+    <div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<div class="part-header"><div class="part-label">Part B</div><div class="part-title">Cosmetic Product Safety Assessment</div></div>
+		<h1>1. Assessment Conclusion</h1>
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">ASSESSMENT CONCLUSION — SAFE</div><div class="conclusion-text">Based on the available toxicological data and safety evaluation, H&amp;M Silk Stone Eau De Parfum 50 ml is considered safe for human health when used as intended by adults. All primary ingredients comply with EU Regulation (EC) No 1223/2009. All calculated Margins of Safety (MoS) for the fragrance allergens (Vanillin, Citral, Geraniol, Citronellol) and the solvent system significantly exceed the minimum safety threshold of 100. The fragrance mixture (Nuage Blanc RW, P02R790) is IFRA 51st Amendment compliant at 20.00% w/w in Eau de Parfum. The product is inherently self-preserving due to its high ethanol content (75.00% Alcohol Denat.). Physicochemical stability is confirmed over 9 months at three temperature conditions including freeze-thaw cycling. All 4 declared fragrance allergens exceed the 0.001% leave-on threshold and are declared on the product label per Commission Regulation (EU) 2023/1545.</div></div>
+
+		<h2>Key Findings Summary</h2>
+		<table><thead><tr><th>Assessment Area</th><th>Finding</th><th>Status</th></tr></thead>
+		<tbody>
+		<tr><td>Ingredient Compliance</td><td>All primary ingredients comply with EU Regulation (EC) No 1223/2009</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Margin of Safety — Alcohol Denat.</td><td>MoS 867 (NOAEL 2600; SED 3.0000 mg/kg/d)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+		<tr><td>Margin of Safety — Fragrance Allergens</td><td>All MoS values exceed 100 (range: 74,257 to 1,250,000)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+		<tr><td>IFRA Compliance</td><td>Nuage Blanc RW certified compliant (51st Amendment, Jan 2026)</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+		<tr><td>Allergen Labelling</td><td>4 allergens declared per EU 2023/1545</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+		<tr><td>Stability</td><td>Confirmed over 9 months (3 conditions + 4 freeze-thaw cycles)</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Microbiological Quality</td><td>Self-preserving (75.00% ethanol); challenge test not required</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Flammability Classification</td><td>Correctly classified and labelled: H225 (Flammable Liquid Cat. 2)</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+		<tr><td>Nanomaterials</td><td>No nanomaterials present — compliant with Regulation (EU) 2024/858</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		</tbody></table>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 17</span><span>Confidential</span></div>
+	</div>
+
+		<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>2. Labelled Warnings and Instructions for Use</h1>
+		<h2>Conditions of Safe Use</h2>
+		<div class="method-box"><div class="method-box-title">Conditions of Safe Use (as assessed)</div><ol>
+		<li>For adult use only (18 years and over).</li>
+		<li>Do not use on broken, damaged or irritated skin.</li>
+		<li>Avoid contact with eyes; in case of contact, rinse immediately with water.</li>
+		<li>Keep away from heat, hot surfaces, sparks, open flames and other ignition sources — No smoking.</li>
+		<li>Keep container tightly closed when not in use.</li>
+		<li>For external use only.</li>
+		<li>Keep out of reach of children.</li>
+		<li>Fragrance-sensitive individuals should review the INCI ingredient list prior to use. This product contains 4 declared fragrance allergens per Commission Regulation (EU) 2023/1545.</li>
+		<li>Post-market surveillance should be maintained per Article 23 of Regulation (EC) No 1223/2009.</li>
+		<li>Labels must include all required EU cosmetics regulation elements including INCI ingredient list with asterisk-marked allergens, volume declaration, and appropriate warnings.</li>
+		<li>This CPSR is valid for the formula as described (SIL/MFEDP/SS/001-00). Any modification to formula, packaging or intended use requires re-evaluation.</li>
+		</ol></div>
+
+		<h2>Required Hazard Statements (GHS / CLP)</h2>
+		<div class="warning-box"><div class="warning-box-title" style="color:#FF9800;">Hazard Statements — Regulation (EC) No 1272/2008 (CLP)</div>
+		<p><span class="hcode">H225</span> — Highly flammable liquid and vapour. (Flammable Liquid, Category 2)</p>
+		</div>
+		<div class="method-box"><div class="method-box-title">Precautionary Statements (as labelled)</div>
+		<p><span class="pcode">P210</span> — Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking.</p>
+		<p><span class="pcode">P233</span> — Keep container tightly closed.</p>
+		<p><span class="pcode">P403+P235</span> — Store in a well-ventilated place. Keep cool.</p>
+		<p>Avoid contact with eyes.</p>
+		<p>Keep out of reach of children.</p>
+		<p>For adult use only.</p>
+		</div>
+
+		<h2>INCI Ingredient List</h2>
+		<div class="inci-box"><p><strong>Ingredients:</strong> Alcohol Denat., Parfum, Aqua, Vanillin*, Citral*, Geraniol*, Citronellol*</p>
+		<p class="inci-footnote">* The presence of these 4 fragrance allergens must be indicated in the list of ingredients when their concentration exceeds 0.001% in leave-on products, in accordance with Commission Regulation (EU) 2023/1545 and Regulation (EC) No 1223/2009 Article 19.</p>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 18</span><span>Confidential</span></div>
+	</div>
+
+		<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>3. Reasoning</h1>
+		<h2>Basis for Safety Conclusion</h2>
+		<p>The safety assessment of H&amp;M Silk Stone Eau De Parfum 50 ml has been performed in accordance with Regulation (EC) No 1223/2009 and the SCCS Notes of Guidance (12th revision, 2023, SCCS/1647/22). The reasoning supports the conclusion that this product is safe for human health when used as intended by adults.</p>
+
+		<p><strong>Formulation:</strong> The product is an alcohol-based fine fragrance. All primary ingredients (Alcohol Denat. 75.00%, Parfum/Nuage Blanc RW 20.00%, Aqua 5.00%) are established cosmetic ingredients. The formulation does not contain any ingredients prohibited under Annex II of Regulation (EC) No 1223/2009. The allergen concentrations are well within safety limits.</p>
+
+		<p><strong>Fragrance safety:</strong> The fragrance mixture Nuage Blanc RW (P02R790) is IFRA 51st Amendment compliant at 20.00% w/w, confirmed by certificate IFRACERTIFICATE_P02R790_NUAGE_BLANC_RW_20260107. Unlike other variants in the range, no ingredients were identified with an MoS below 100 using conservative safety defaults.</p>
+
+		<p><strong>Allergen declaration:</strong> The 4 declared fragrance allergens (Vanillin, Citral, Geraniol, Citronellol) exceed the 0.001% leave-on threshold. Document "H&M EDP NEW RANGE 50 ml with alller.pdf" confirms their concentrations. All 4 allergens yield MoS values significantly higher than 100, indicating a high margin of safety for systemic exposure.</p>
+
+		<p><strong>Stability and microbiological quality:</strong> The product demonstrates physicochemical stability over 9 months of testing at 5°C, ambient and 40°C. Four freeze-thaw cycles confirm robustness. The high ethanol content (75.00% w/w) renders the product inherently self-preserving; microbiological challenge testing per ISO 11930 is not required per SCCS guidelines for low-risk products.</p>
+
+		<p><strong>Flammability:</strong> The product is classified as Flammable Liquid Category 2 (H225) due to its flash point of ~13°C. This is a physical hazard addressed through appropriate handling instructions and label warnings, not a toxicological risk under intended use.</p>
+
+		<h2>References</h2>
+		<ul class="references-list">
+		<li>Regulation (EC) No 1223/2009 of the European Parliament and of the Council on cosmetic products</li>
+		<li>Commission Regulation (EU) 2023/1545 — Fragrance allergen labelling update</li>
+		<li>SCCS Notes of Guidance, 12th revision (2023), SCCS/1647/22</li>
+		<li>SCCS/1666/24 — Opinion on Citral</li>
+		<li>IFRA Code of Practice, 51st Amendment</li>
+		<li>Regulation (EC) No 1272/2008 — CLP Regulation</li>
+		<li>RIFM Fragrance Ingredient Safety Monographs (Vanillin, Citral, Geraniol, Citronellol)</li>
+		</ul>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 19</span><span>Confidential</span></div>
+	</div>
+
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Silk Stone Eau De Parfum 50 ml</div></div>
+		<h1>4. Assessor Credentials</h1>
+		<h2>Safety Assessor</h2>
+		<div class="info-grid" style="grid-template-columns:165px 1fr;">
+		<div class="info-label">Name</div><div class="info-value">Cassandra Margaret Maddocks</div>
+		<div class="info-label">Qualifications</div><div class="info-value">BSc Chemistry &amp; Biochemistry — Swinburne University of Technology; 10+ Years experience in cosmetic formulation and regulatory safety assessment</div>
+		<div class="info-label">Organisation</div><div class="info-value">MySwissLab+ | SBR Group Sàrl</div>
+		<div class="info-label">Address</div><div class="info-value">1B Route de l'Industrie, 1072 Forel, Switzerland</div>
+		<div class="info-label">Assessment Date</div><div class="info-value">02.03.2026</div>
+		</div>
+
+		<div class="method-box"><div class="method-box-title">Assessor Qualification Statement</div><p>The safety assessor holds a degree in a scientific discipline relevant to the assessment of cosmetic product safety (Chemistry and Biochemistry), supplemented by specialist training in laboratory technology and over 10 years of practical experience in cosmetic formulation and regulatory safety assessment. These qualifications meet the requirements of Article 10(2) of Regulation (EC) No 1223/2009, which stipulates that the safety assessor must hold a degree or other official evidence of formal qualifications awarded on completion of a university course of theoretical and practical study in pharmacy, toxicology, medicine, dermatology or an analogous discipline. Chemistry and Biochemistry constitutes an analogous discipline as confirmed by established EU regulatory practice and SCCS guidance.</p></div>
+
+		<div class="signature-grid">
+			<div class="signature-item"><div class="signature-label">Safety Assessor Signature:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="border-bottom:1px solid #424242;padding-bottom:2px;display:inline-block;min-width:80px;">02.03.2026</span></div></div>
+			<div class="signature-item"><div class="signature-label">Responsible Person Acknowledgement:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="display:inline-block;width:100px;border-bottom:1px solid #424242;"></span></div></div>
+		</div>
+
+		<h2>Document Control</h2>
+		<div class="doc-control-grid">
+		<div class="info-label">Document Reference</div><div class="info-value">CPSR-HM-SILKSTONEEDP50-2026-001</div>
+		<div class="info-label">Version</div><div class="info-value">1.0</div>
+		<div class="info-label">Issue Date</div><div class="info-value">02.03.2026</div>
+		<div class="info-label">Formula Reference</div><div class="info-value">SIL/MFEDP/SS/001-00 (dated 14.01.2026)</div>
+		<div class="info-label">Prepared by</div><div class="info-value">MySwissLab+ | SBR Group Sàrl on behalf of M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Regulatory Basis</div><div class="info-value">Regulation (EC) No 1223/2009, Annex I — Cosmetic Product Safety Report requirements</div>
+		<div class="info-label">PIF Retention</div><div class="info-value">This CPSR must be kept available for 10 years after the last batch of the product is placed on the market, in accordance with Article 11 of Regulation (EC) No 1223/2009.</div>		
+		</div>
+		<p class="disclaimer">This Cosmetic Product Safety Report has been prepared on the basis of information supplied by the Responsible Person and is valid only for the product and formula described herein (formula code SIL/MFEDP/SS/001-00, dated 14.01.2026). Any change to the product formula, packaging, intended use, manufacturing process or other relevant parameters shall require re-evaluation of this safety assessment. MySwissLab+ | SBR Group Sàrl accepts no liability for incomplete or inaccurate information supplied by the client. This document is confidential and may be shared only with authorised personnel and competent regulatory authorities. The product bears CPSR reference CPSR-HM-SILKSTONEEDP50-2026-001.</p>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HM-SILKSTONEEDP50-2026-001</span><span>Page 20</span><span>Confidential</span></div>
+	</div>
+
+</div>
+</body>
+</html>

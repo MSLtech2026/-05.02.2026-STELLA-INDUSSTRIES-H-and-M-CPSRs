@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSR — H&M Fearless Optimist EDP 100ml — CPSR-HM-FEARLESSOPTIMIST100-2026-001</title>
+    <style>
+		@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+		:root{
+			--primary-blue:#43B296; --primary-dark:#2E8B72; --primary-light:#5CC4A8;
+			--black:#212121; --dark-gray:#424242; --medium-gray:#757575;
+			--light-gray:#F5F5F5; --border-gray:#E0E0E0; --white:#FFFFFF;
+			--pass-green:#2E7D32; --pass-green-bg:#E8F5E9;
+			--warning-amber:#FF9800; --warning-amber-bg:#FFF3E0;
+			--fail-red:#C62828; --fail-red-bg:#FFEBEE;
+			--check-green:#2E7D32; --check-bg:#E8F5E9;
+		}
+		*{margin:0;padding:0;box-sizing:border-box;}
+		body{font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:7.5pt;line-height:1.6;color:var(--dark-gray);background:var(--white);}
+		.document{max-width:210mm;margin:0 auto;background:var(--white);}
+		@page{size:A4;margin:0;}
+		.page{padding:20mm 20mm 28mm 20mm;width:210mm;min-height:297mm;position:relative;page-break-after:always;box-sizing:border-box;background:white;}
+		.page-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:2px solid var(--primary-blue);margin-bottom:18px;}
+		.page-header-logo{font-size:12pt;font-weight:300;color:var(--primary-blue);letter-spacing:1.5px;}
+		.page-header-title{font-size:7.5pt;color:var(--medium-gray);}
+		.page-footer{position:absolute;bottom:15mm;left:20mm;right:20mm;display:flex;justify-content:space-between;align-items:center;padding-top:7px;border-top:1px solid var(--border-gray);font-size:6.8pt;color:var(--medium-gray);}
+		h1{font-size:11.2pt;font-weight:600;color:var(--primary-blue);margin-bottom:14px;padding-bottom:7px;border-bottom:2px solid var(--primary-blue);}
+		h2{font-size:9.8pt;font-weight:600;color:var(--dark-gray);margin:16px 0 8px 0;}
+		h3{font-size:9pt;font-weight:600;color:var(--primary-blue);margin:12px 0 6px 0;}
+		h4{font-size:8.5pt;font-weight:600;color:var(--dark-gray);margin:10px 0 5px 0;}
+		p{margin-bottom:7px;text-align:justify;font-size:7.5pt;line-height:1.6;}
+		.part-header{background:var(--primary-blue);color:var(--white);padding:11px 16px;margin:16px 0 14px 0;}
+		.part-label{font-size:7.5pt;text-transform:uppercase;letter-spacing:2px;opacity:.85;margin-bottom:3px;}
+		.part-title{font-size:13pt;font-weight:600;}
+		.info-grid{display:grid;grid-template-columns:160px 1fr;gap:0;margin:10px 0;font-size:7.5pt;}
+		.info-label{font-weight:400;color:var(--dark-gray);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;}
+		.info-value{font-weight:600;color:var(--black);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;line-height:1.4;}
+		table{width:100%;border-collapse:collapse;margin:10px 0 14px 0;font-size:7.5pt;}
+		th{background:var(--light-gray);color:var(--dark-gray);font-weight:600;text-align:left;padding:6px 9px;border:1px solid var(--border-gray);font-size:7.5pt;}
+		td{padding:5px 9px;border:1px solid var(--border-gray);vertical-align:middle;font-size:7.5pt;}
+		tr:nth-child(even){background:var(--light-gray);}
+		.stability-table th,.stability-table td{text-align:left;}
+		.stability-table td:first-child,.stability-table th:first-child,.stability-table td:nth-child(2),.stability-table th:nth-child(2){text-align:left;}
+		.check-pass{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:var(--check-green);color:var(--white);border-radius:2px;font-size:11px;}
+		.check-pass::before{content:"\2713";}
+		.badge{display:inline-block;padding:2px 8px;font-size:5pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;border-radius:2px;}
+		.badge-pass{background:var(--pass-green);color:var(--white);}
+		.badge-safe{background:var(--pass-green-bg);color:var(--pass-green);}
+		.badge-compliant{background:var(--check-bg);color:var(--check-green);}
+		.badge-na{background:var(--light-gray);color:var(--medium-gray);}
+		.badge-warning{background:var(--warning-amber-bg);color:var(--warning-amber);border:1px solid var(--warning-amber);}
+		.method-box{background:var(--light-gray);padding:10px 14px;margin:10px 0;border-left:3px solid var(--primary-blue);font-size:7.5pt;line-height:1.55;}
+		.method-box-title{font-weight:600;color:var(--dark-gray);margin-bottom:5px;font-size:7.5pt;}
+		.method-box ul,.method-box ol{margin:4px 0 0 14px;}
+		.method-box li{margin-bottom:2px;}
+		.method-box p{font-size:7.5pt;margin-bottom:4px;line-height:1.5;}
+		.conclusion-box{background:var(--pass-green-bg);border:1px solid var(--pass-green);padding:12px 16px;margin:12px 0;}
+		.conclusion-title{font-size:7.5pt;font-weight:600;color:var(--pass-green);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
+		.conclusion-text{font-size:7.5pt;color:var(--dark-gray);font-weight:600;line-height:1.5;}
+		.warning-box{background:var(--warning-amber-bg);border-left:3px solid var(--warning-amber);padding:10px 14px;margin:10px 0;font-size:7.5pt;}
+		.warning-box-title{font-weight:600;color:var(--warning-amber);margin-bottom:5px;font-size:7.5pt;}
+		.warning-box ul{margin:4px 0 0 14px;}
+		.warning-box li{margin-bottom:2px;}
+		.warning-box p{font-size:7.5pt;margin-bottom:3px;line-height:1.5;}
+		.comments-box{background:var(--light-gray);padding:10px 14px;margin:10px 0;font-size:7.5pt;color:var(--dark-gray);line-height:1.55;}
+		.comments-label{font-weight:600;margin-bottom:4px;font-size:7.5pt;}
+		.mos-safe{color:var(--pass-green);font-weight:700;}
+		.mos-na{color:var(--medium-gray);}
+		.mos-na-cell{color:var(--medium-gray);font-style:italic;font-size:6.5pt;}
+		.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px;}
+		.signature-item{padding:11px;background:var(--light-gray);}
+		.signature-label{font-size:7.5pt;color:var(--medium-gray);margin-bottom:8px;}
+		.signature-line{border-bottom:1px solid var(--dark-gray);margin-bottom:8px;min-height:52px;}
+		.signature-date{font-size:7.5pt;color:var(--dark-gray);margin-top:6px;}
+		.hcode,.pcode{font-weight:700;font-family:"Courier New",Courier,monospace;font-size:7pt;color:var(--dark-gray);margin-right:3px;}
+		.inci-box{background:var(--light-gray);padding:12px 16px;margin:10px 0;border-left:3px solid var(--primary-blue);font-size:7.5pt;line-height:1.65;word-break:break-word;}
+		.inci-box p{font-size:7.5pt;margin-bottom:5px;line-height:1.6;}
+		.inci-footnote{font-size:6.8pt;color:var(--medium-gray);font-style:italic;line-height:1.5;margin-top:6px;}
+		.row-highlight td{background:var(--pass-green-bg) !important;font-weight:600;color:var(--pass-green);}
+		.references-list{margin:6px 0 0 14px;font-size:7.1pt;line-height:1.55;color:var(--dark-gray);}
+		.references-list li{margin-bottom:3px;}
+		.disclaimer{font-size:6.5pt;color:var(--medium-gray);line-height:1.5;margin-top:14px;text-align:justify;}
+		.doc-control-grid{display:grid;grid-template-columns:165px 1fr;gap:0;margin:10px 0;font-size:7.5pt;}
+		.doc-control-grid .info-label{font-weight:400;color:var(--dark-gray);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;}
+		.doc-control-grid .info-value{font-weight:600;color:var(--black);padding:5px 0;border-bottom:1px solid var(--border-gray);font-size:7.5pt;line-height:1.4;}
+		.toc{margin:14px 0;}
+		.toc-title{font-size:13pt;font-weight:600;color:var(--primary-blue);margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid var(--primary-blue);}
+		.toc-part{font-weight:700;color:var(--primary-blue);padding:10px 0 4px 0;font-size:7.5pt;text-transform:uppercase;letter-spacing:1.2px;}
+		.toc-section{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px dotted var(--border-gray);font-size:7.5pt;}
+		.toc-number{color:var(--primary-blue);font-weight:600;width:22px;flex-shrink:0;}
+		.toc-text{flex:1;color:var(--dark-gray);padding-left:4px;}
+		.toc-page{color:var(--medium-gray);font-weight:600;padding-left:10px;}
+		.ingredient-profile{border-left:2px solid var(--border-gray);padding-left:12px;margin-bottom:10px;}
+		.tox-meta{font-size:7pt;color:var(--medium-gray);margin-bottom:3px;line-height:1.4;}
+		.tox-meta strong{color:var(--dark-gray);font-weight:600;}
+		.tox-assessment{font-size:7.5pt;color:var(--dark-gray);margin-bottom:3px;line-height:1.55;text-align:justify;}
+		.mos-inline{display:inline-block;background:var(--pass-green-bg);color:var(--pass-green);font-size:7pt;font-weight:700;padding:1px 6px;border-radius:2px;margin-left:4px;}
+		.ingredient-divider{border:none;border-top:1px dotted var(--border-gray);margin:8px 0;}
+		.cover-page{min-height:297mm;display:flex;flex-direction:column;page-break-after:always;overflow:hidden;}
+		.cover-header{background:var(--primary-blue);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+		.cover-logo{font-size:34px;font-weight:300;color:var(--white);letter-spacing:2px;}
+		.cover-date{color:rgba(255,255,255,.85);font-size:9pt;}
+		.cover-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:45px 40px 35px 40px;background:var(--white);}
+		.cover-document-type{font-size:8.2pt;font-weight:600;color:var(--primary-blue);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px;}
+		.cover-title{font-size:27pt;font-weight:300;color:var(--black);line-height:1.25;margin-bottom:10px;}
+		.cover-subtitle{font-size:10.5pt;font-weight:400;color:var(--medium-gray);margin-bottom:30px;}
+		.cover-product-name{font-size:16.5pt;font-weight:600;color:var(--primary-blue);padding:16px 0;border-top:2px solid var(--border-gray);border-bottom:2px solid var(--border-gray);margin:22px 0;line-height:1.3;}
+		.cover-meta{display:grid;grid-template-columns:130px 1fr 130px 1fr;gap:0 18px;margin-top:22px;}
+		.cover-meta-label{font-size:7.5pt;text-transform:uppercase;letter-spacing:.8px;color:var(--medium-gray);padding:6px 0 2px 0;border-top:1px solid var(--border-gray);}
+		.cover-meta-value{font-size:9pt;font-weight:600;color:var(--dark-gray);padding:6px 0 2px 0;border-top:1px solid var(--border-gray);}
+		.cover-footer{background:var(--light-gray);padding:18px 40px;border-top:1px solid var(--border-gray);flex-shrink:0;}
+		.cover-confidential{display:inline-block;background:var(--warning-amber);color:var(--white);padding:3px 10px;font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px;}
+		.cover-footer-text{font-size:7.5pt;color:var(--medium-gray);line-height:1.55;}
+		.mos-table{font-size:7pt;table-layout:fixed;}
+		.mos-table th{font-size:7pt;padding:5px 7px;}
+		.mos-table td{font-size:7pt;padding:4px 7px;}
+		.stability-table th{font-size:7pt;padding:5px 6px;}
+		.stability-table td{font-size:7pt;padding:4px 5px;}
+		.docs-table{font-size:7.5pt;table-layout:fixed;}
+		.docs-table th{padding:6px 9px;}
+		.docs-table td{padding:5px 9px;vertical-align:top;word-wrap:break-word;overflow-wrap:break-word;line-height:1.45;}
+		@media print{
+			.document{max-width:none;}
+			body{font-size:7.5pt;}
+			.page{page-break-after:always;min-height:auto;}
+			thead{display:table-header-group;}
+			h1,h2,h3,h4{page-break-after:avoid;}
+			.info-grid,.method-box,.conclusion-box,.warning-box,.comments-box{page-break-inside:avoid;}
+			.ingredient-profile{page-break-inside:avoid;}
+			.mos-table{page-break-inside:auto;}
+			.mos-table tr{page-break-inside:avoid;}
+		}
+	</style>
+</head>
+<body>
+<div class="document">
+
+<!-- PAGE 1: COVER -->
+<div class="cover-page">
+    <div class="cover-header"><div class="cover-logo"><b>MySwissLab+</b></div><div class="cover-date">02.03.2026</div></div>
+    <div class="cover-body">
+        <div class="cover-document-type">R E G U L A T O R Y &nbsp; D O C U M E N T</div>
+        <div class="cover-title">Cosmetic Product<br>Safety Report</div>
+        <div class="cover-subtitle">In accordance with Regulation (EC) No 1223/2009 — Annex I</div>
+        <div class="cover-product-name">H&amp;M Fearless Optimist Eau De Parfum 100 ml<br><span style="font-size:10.5pt;font-weight:400;color:var(--medium-gray);">H&amp;M Beauty | Fine Fragrance Spray — Leave-on</span></div>
+        <div class="cover-meta">
+            <div class="cover-meta-label">BRAND / PRODUCT</div><div class="cover-meta-value">H&amp;M Beauty — Fearless Optimist Eau de Parfum</div>
+            <div class="cover-meta-label">PRODUCT CATEGORY</div><div class="cover-meta-value">Fine Fragrance (Eau de Parfum)</div>
+            <div class="cover-meta-label">RESPONSIBLE PERSON</div><div class="cover-meta-value">M/S STELLA INDUSSTRIES LIMITED</div>
+            <div class="cover-meta-label">DOCUMENT REFERENCE</div><div class="cover-meta-value">CPSR-HM-FEARLESSOPTIMIST100-2026-001</div>
+            <div class="cover-meta-label">MANUFACTURER</div><div class="cover-meta-value">M/S STELLA INDUSSTRIES LIMITED</div>
+            <div class="cover-meta-label">REPORT DATE</div><div class="cover-meta-value">02.03.2026</div>
+        </div>
+    </div>
+    <div class="cover-footer">
+        <div class="cover-confidential">CONFIDENTIAL</div>
+        <div class="cover-footer-text">This document contains confidential information intended for regulatory compliance purposes. This CPSR must be kept available for 10 years after the last batch is placed on the market.</div>
+    </div>
+</div>
+
+<!-- PAGE 2: TOC -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<div class="toc"><div class="toc-title">Contents</div>
+	<div class="toc-part">Part A — Safety Information</div>
+	<div class="toc-section"><span class="toc-number">1.</span><span class="toc-text">Quantitative and Qualitative Composition</span><span class="toc-page">3</span></div>
+	<div class="toc-section"><span class="toc-number">2.</span><span class="toc-text">Physical and Chemical Characteristics</span><span class="toc-page">5</span></div>
+	<div class="toc-section"><span class="toc-number">3.</span><span class="toc-text">Stability of the Cosmetic Product</span><span class="toc-page">6</span></div>
+	<div class="toc-section"><span class="toc-number">4.</span><span class="toc-text">Microbiological Quality</span><span class="toc-page">8</span></div>
+	<div class="toc-section"><span class="toc-number">5.</span><span class="toc-text">Impurities, Traces, Packaging Material Information</span><span class="toc-page">9</span></div>
+	<div class="toc-section"><span class="toc-number">6.</span><span class="toc-text">Normal and Reasonably Foreseeable Use</span><span class="toc-page">10</span></div>
+	<div class="toc-section"><span class="toc-number">7.</span><span class="toc-text">Exposure to the Cosmetic Product</span><span class="toc-page">11</span></div>
+	<div class="toc-section"><span class="toc-number">8.</span><span class="toc-text">Exposure to the Substances</span><span class="toc-page">12</span></div>
+	<div class="toc-section"><span class="toc-number">9.</span><span class="toc-text">Toxicological Profile</span><span class="toc-page">13</span></div>
+	<div class="toc-section"><span class="toc-number">10.</span><span class="toc-text">Undesirable Effects</span><span class="toc-page">15</span></div>
+	<div class="toc-section"><span class="toc-number">11.</span><span class="toc-text">Product Information</span><span class="toc-page">16</span></div>
+	<div class="toc-part" style="margin-top:11px;">Part B — Cosmetic Product Safety Assessment</div>
+	<div class="toc-section"><span class="toc-number">1.</span><span class="toc-text">Assessment Conclusion</span><span class="toc-page">17</span></div>
+	<div class="toc-section"><span class="toc-number">2.</span><span class="toc-text">Labelled Warnings and Instructions for Use</span><span class="toc-page">18</span></div>
+	<div class="toc-section"><span class="toc-number">3.</span><span class="toc-text">Reasoning</span><span class="toc-page">19</span></div>
+	<div class="toc-section"><span class="toc-number">4.</span><span class="toc-text">Assessor Credentials</span><span class="toc-page">20</span></div>
+	</div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 2</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 3: SECTION 1 — PRODUCT IDENTIFICATION -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<div class="part-header"><div class="part-label">Part A</div><div class="part-title">Safety Information</div></div>
+	<h1>1. Quantitative and Qualitative Composition</h1>
+	<h2>Product Identification</h2>
+	<div class="info-grid">
+	<div class="info-label">Product Name</div><div class="info-value">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div>
+	<div class="info-label">Brand</div><div class="info-value">H&amp;M Beauty</div>
+	<div class="info-label">Formula Code</div><div class="info-value">SIL/MFEDP/FO/002-00</div>
+	<div class="info-label">CPSR Reference</div><div class="info-value">CPSR-HM-FEARLESSOPTIMIST100-2026-001</div>
+	<div class="info-label">Pack Size</div><div class="info-value">100 ml</div>
+	<div class="info-label">Product Category</div><div class="info-value">Eau de Parfum / Fine Fragrance</div>
+	<div class="info-label">Product Type</div><div class="info-value">Fine fragrance spray, leave-on, non-pressurised</div>
+	<div class="info-label">Areas of Application</div><div class="info-value">Skin (body — neck, wrists, décolleté, pulse points)</div>
+	<div class="info-label">Target Group</div><div class="info-value">Adults (18 years and over)</div>
+	<div class="info-label">Assessment Date</div><div class="info-value">02.03.2026</div>
+	</div>
+	<h2>Responsible Person</h2>
+	<div class="info-grid">
+	<div class="info-label">Company Name</div><div class="info-value">M/S STELLA INDUSSTRIES LIMITED</div>
+	<div class="info-label">Contact Person</div><div class="info-value">MS SHIVKANTI BAKSHI, QC Manager</div>
+	<div class="info-label">Address</div><div class="info-value">OLD KHANDSA ROAD, SECTOR 37, HSIIDC, KHERKI DAULA, GURUGRAM (HARYANA), 122004, INDIA</div>
+	<div class="info-label">Email</div><div class="info-value">shivkanti.bakshi@stella-indusstries.com</div>
+	<div class="info-label">Phone</div><div class="info-value">+91 9868252724</div>
+	</div>
+	<h2>Manufacturer</h2>
+	<div class="info-grid">
+	<div class="info-label">Company Name</div><div class="info-value">M/S STELLA INDUSSTRIES LIMITED</div>
+	<div class="info-label">Address</div><div class="info-value">OLD KHANDSA ROAD, SECTOR 37, HSIIDC, KHERKI DAULA, GURUGRAM (HARYANA), 122004, INDIA</div>
+	<div class="info-label">GMP Standard</div><div class="info-value">ISO 22716:2007 Good Manufacturing Practices (documentation held on file)</div>
+	</div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 3</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 4: FORMULA & ALLERGENS -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h2>Qualitative and Quantitative Formula</h2>
+	<table>
+		<thead><tr><th style="width:35%;">INCI Name</th><th style="width:25%;">Function</th><th style="width:20%;">CAS No.</th><th style="width:20%;">% w/w</th></tr></thead>
+		<tbody>
+			<tr><td>ALCOHOL DENAT.</td><td>Solvent / Self-preserving</td><td>64-17-5</td><td>75.0000</td></tr>
+			<tr><td>PARFUM (SOL DO BRASIL MOD 1 — P09K567)</td><td>Fragrance</td><td>—</td><td>15.4586</td></tr>
+			<tr><td>AQUA</td><td>Carrier / Solvent</td><td>7732-18-5</td><td>4.9700</td></tr>
+			<tr><td>CI 19140</td><td>Colorant</td><td>1934-21-0</td><td>0.0200</td></tr>
+			<tr><td>CI 17200</td><td>Colorant</td><td>3567-66-6</td><td>0.0100</td></tr>
+			<tr style="background:var(--light-gray); font-weight:700;"><td>Total</td><td></td><td></td><td>100.0000</td></tr>
+		</tbody>
+	</table>
+	<h3>Declared Fragrance Allergens (≥ 0.001% threshold)</h3>
+	<p>Consistent with Commission Regulation (EU) 2023/1545, the following allergens are identified for mandatory labelling. Calculated based on 15.4586% fragrance load of Sol do Brasil mod 1 (P09K567):</p>
+	<table>
+		<thead><tr><th>INCI Name (Allergen)</th><th>CAS Number</th><th>% in Product</th><th>Declare</th></tr></thead>
+		<tbody>
+			<tr><td>VANILLIN</td><td>121-33-5</td><td>0.5053</td><td><span class="badge badge-pass">YES</span></td></tr>
+			<tr><td>BENZYL SALICYLATE</td><td>118-58-1</td><td>0.2975</td><td><span class="badge badge-pass">YES</span></td></tr>
+			<tr><td>HYDROXYCITRONELLAL</td><td>107-75-5</td><td>0.1531</td><td><span class="badge badge-pass">YES</span></td></tr>
+			<tr><td>COUMARIN</td><td>91-64-5</td><td>0.1503</td><td><span class="badge badge-pass">YES</span></td></tr>
+			<tr><td>LINALOOL</td><td>78-70-6</td><td>0.0048</td><td><span class="badge badge-pass">YES</span></td></tr>
+		</tbody>
+	</table>
+	<div class="method-box"><strong>IFRA Compliance Statement:</strong> All ingredients in H&amp;M Fearless Optimist Eau de Parfum (100 ml) comply with Regulation (EC) No 1223/2009. The fragrance mixture 'Sol do Brasil mod 1' at 15.4586% w/w is accompanied by an IFRA 51st Amendment Certificate for P09K567, confirming compliance at the stated usage level in Category 4 (Fine Fragrance). All 5 identified fragrance allergens exceeding the 0.001% leave-on threshold are required to be declared on the product label per Commission Regulation (EU) 2023/1545. No prohibited, restricted, or CMR substances are present at concentrations exceeding regulatory safety limits.</div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 4</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 5: PHYSICAL/CHEMICAL -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>2. Physical and Chemical Characteristics</h1>
+	<p>Physical and chemical characteristics of the finished product as determined by the manufacturer and confirmed via the stability testing report and Safety Data Sheets (SDS).</p>
+	<div class="info-grid" style="grid-template-columns:185px 1fr;">
+	<div class="info-label">Appearance</div><div class="info-value">Clear, light yellow perfumed liquid; free from turbidity and suspended matter</div>
+	<div class="info-label">Colour</div><div class="info-value">Light yellow</div>
+	<div class="info-label">Aroma / Fragrance</div><div class="info-value">Warm gourmand-floral fine fragrance — Sol do Brasil mod 1 (P09K567). Top: Pistachio, Sea Salt, Piña Colada; Mid: Heliotrope; Base: Salted Caramel, Sandalwood</div>
+	<div class="info-label">Physical Form</div><div class="info-value">Liquid (non-pressurised spray)</div>
+	<div class="info-label">pH</div><div class="info-value">~5.5–6.5 (aqueous-alcoholic phase)</div>
+	<div class="info-label">Density at 25°C</div><div class="info-value">0.851 g/mL (specification: 0.845–0.875 g/mL — PASS)</div>
+	<div class="info-label">Alcohol Content</div><div class="info-value">75.17% (specification: 75 ± 3% — PASS)</div>
+	<div class="info-label">Flash Point</div><div class="info-value">~13°C (Flammable liquid — ethanol 75% w/w)</div>
+	<div class="info-label">Flammability Classification</div><div class="info-value">Flammable Liquid, Category 2 (H225) per Regulation (EC) No 1272/2008 (CLP)</div>
+	<div class="info-label">Net Content</div><div class="info-value">100 ml</div>
+	<div class="info-label">Container</div><div class="info-value">100 ml glass bottle with pump dispenser and actuator</div>
+	</div>
+	<div class="method-box"><div class="method-box-title">Method</div>Physical and chemical properties were determined using the following methods:<ul>
+		<li>Appearance &amp; Colour: Visual inspection against white and black backgrounds</li>
+		<li>Odour / Fragrance: Olfactory evaluation — gourmand-tropical top (Pistachio, Sea Salt, Piña Colada), heliotrope floral heart, and warm Salted Caramel–Sandalwood base</li>
+		<li>pH: Measured for aqueous-alcoholic phase</li>
+		<li>Density at 25°C: Specific gravity measurement (result: 0.851 g/mL — PASS; spec: 0.845–0.875)</li>
+		<li>Alcohol Content: Stability testing confirmation (result: 75.17% — PASS; spec: 75 ± 3%)</li>
+		<li>Flash Point: Estimated based on 75% ethanol content (~13°C)</li>
+		<li>Flammability Classification: Per Regulation (EC) No 1272/2008 (CLP) criteria — Flammable Liquid Cat. 2</li>
+		</ul></div>
+	<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">CONCLUSION</div><div class="conclusion-text">All physical and chemical characteristics meet the product specification. Density at 25°C is confirmed at 0.851 g/mL (specification 0.845–0.875 g/mL — PASS). Alcohol content is confirmed at 75.17% (specification 75 ± 3% — PASS). Flash point of approximately 13°C confirms Flammable Liquid Category 2 (H225) classification. Formula SIL/MFEDP/FO/002-00 is confirmed as the governing formulation for the 100 ml pack format.</div></div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 5</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 6: STABILITY — Full Table -->
+<div class="page">
+<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>3. Stability of the Cosmetic Product</h1>
+	<div class="info-grid" style="grid-template-columns:175px 1fr;">
+	<div class="info-label">Shelf Life</div><div class="info-value">36 months from date of manufacture</div>
+	<div class="info-label">PAO</div><div class="info-value">24M (24 months after opening)</div>
+	<div class="info-label">Storage Conditions</div><div class="info-value">Store below 25°C in a cool, dry place. Avoid direct sunlight and heat sources. Keep away from flames.</div>
+	<div class="info-label">Study Duration</div><div class="info-value">9 months (Accelerated stability study)</div>
+	<div class="info-label">Test Conditions</div><div class="info-value">Ambient (23–25°C) | 40°C; plus Freeze-Thaw (4 cycles at −20°C / ambient)</div>
+	<div class="info-label">Parameters Tested</div><div class="info-value">Packaging integrity, appearance, fragrance, colour, alcohol content (75 ± 3%), vacuum leak (400 mmHg / 2 min), specific gravity</div>
+	<div class="info-label">Signed By</div><div class="info-value">Shivkanti Bakshi, QC Manager, M/S STELLA INDUSSTRIES LIMITED</div>
+	<div class="info-label">Overall Result</div><div class="info-value"><span class="badge badge-pass">PASS — All parameters at all time points</span></div>
+	</div>
+	<h2>Stability Test Results — 9-Month Study</h2>
+	<table class="stability-table"><thead><tr><th style="width:15%;">Condition</th><th style="width:18%;">Parameter</th><th style="width:14%;">Specification</th><th>Initial</th><th>3 Mo.</th><th>6 Mo.</th><th>9 Mo.</th><th>Result</th></tr></thead>
+	<tbody>
+	<tr><td rowspan="7"><strong>Ambient</strong><br><small>23–25°C</small></td><td>Packaging</td><td>Intact</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Appearance</td><td>Light Yellow</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Fragrance</td><td>Characteristic</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Colour</td><td>Light Yellow</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Alcohol %</td><td>75 ± 3%</td><td>75.17</td><td>75.17</td><td>75.17</td><td>75.17</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Vacuum Leak</td><td>No leakage</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Sp. Gravity</td><td>0.845–0.875</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td rowspan="7"><strong>High Temp.</strong><br><small>40°C</small></td><td>Packaging</td><td>Intact</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Appearance</td><td>Light Yellow</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Fragrance</td><td>Characteristic</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Colour</td><td>Light Yellow</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Alcohol %</td><td>75 ± 3%</td><td>75.17</td><td>75.17</td><td>75.17</td><td>75.17</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Vacuum Leak</td><td>No leakage</td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Sp. Gravity</td><td>0.845–0.875</td><td>0.851</td><td>0.851</td><td>0.851</td><td>0.851</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	</tbody></table>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 6</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 7: STABILITY — Freeze-Thaw + Conclusion -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>3. Stability of the Cosmetic Product <span style="font-size:8pt;font-weight:400;color:var(--medium-gray);">(continued — Freeze-Thaw)</span></h1>
+	<h2>Freeze-Thaw Cycling Results</h2>
+	<p>Freeze-thaw stability was confirmed over 4 cycles at −20°C (frozen) / ambient (thawed). Each cycle consisted of alternating temperature exposure to assess the formulation's resistance to extreme thermal variation. All parameters were assessed after each complete cycle.</p>
+	<table class="stability-table"><colgroup><col style="width:12%;"><col style="width:16%;"><col style="width:20%;"><col style="width:11%;"><col style="width:11%;"><col style="width:13%;"><col style="width:17%;"></colgroup>
+	<thead><tr><th>Cycle</th><th>Condition</th><th>Appearance</th><th>Alcohol %</th><th>Sp. Gravity</th><th>Fragrance</th><th>Result</th></tr></thead>
+	<tbody>
+	<tr><td><strong>Cycle 1</strong></td><td>−20°C / Ambient</td><td><span class="check-pass"></span> Clear, Light Yellow perfumed liquid free from sedimentation in glass bottle crimped with pump &amp; actuator</td><td>75.17</td><td>0.851</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td><strong>Cycle 2</strong></td><td>−20°C / Ambient</td><td><span class="check-pass"></span> Clear, Light Yellow perfumed liquid free from sedimentation in glass bottle crimped with pump &amp; actuator</td><td>75.20</td><td>0.852</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td><strong>Cycle 3</strong></td><td>−20°C / Ambient</td><td><span class="check-pass"></span> Clear, Light Yellow perfumed liquid free from sedimentation in glass bottle crimped with pump &amp; actuator</td><td>75.23</td><td>0.851</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td><strong>Cycle 4</strong></td><td>−20°C / Ambient</td><td><span class="check-pass"></span> Clear, Light Yellow perfumed liquid free from sedimentation in glass bottle crimped with pump &amp; actuator</td><td>75.19</td><td>0.853</td><td><span class="check-pass"></span></td><td><span class="badge badge-pass">PASS</span></td></tr>
+	</tbody></table>
+	<p style="font-size:7pt;color:var(--medium-gray);font-style:italic;">All freeze-thaw cycle results within specification (alcohol content 75 ± 3%; specific gravity 0.845–0.875). No phase separation, turbidity, precipitation, or packaging failure observed across all 4 cycles.</p>
+	<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">STABILITY CONCLUSION</div><div class="conclusion-text">After 9 months of evaluation at ambient (23–25°C) and 40°C, and after 4 freeze-thaw cycles at −20°C, all tested parameters remain within specification. No variation in colour, aroma, appearance, alcohol content (confirmed at 75.17%), or specific gravity (0.851) was observed under any test condition. Vacuum leak testing at 400 mmHg for 2 minutes confirmed no leakage at all time points. The product demonstrates excellent physicochemical stability. A shelf life of 36 months from the date of manufacture is approved. PAO is set at 24 months.</div></div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 7</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 8: MICROBIOLOGICAL QUALITY -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>4. Microbiological Quality</h1>
+	<div class="info-grid" style="grid-template-columns:195px 1fr;">
+	<div class="info-label">Product Name</div><div class="info-value">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div>
+	<div class="info-label">Ethanol Content</div><div class="info-value">75.00% w/w (Alcohol Denat.) — confirmed 75.17% in stability testing</div>
+	<div class="info-label">Preservation Mechanism</div><div class="info-value">Self-preserving — high alcohol content (≥20% w/w ethanol)</div>
+	<div class="info-label">Challenge Test Required</div><div class="info-value"><span class="badge badge-na">Not Required</span></div>
+	<div class="info-label">Testing Standard</div><div class="info-value">EU Regulation (EC) No 1223/2009, Annex I; ISO 11930 (preservative efficacy — not required); SCCS guidance on self-preserving formulations</div>
+	</div>
+	<div class="method-box"><div class="method-box-title">Self-Preserving Justification</div>This product contains 75.00% w/w Alcohol Denat. (denatured ethanol), confirmed analytically at 75.17% during stability testing. Products containing ethanol at concentrations of 20% w/w or above are considered inherently self-preserving and are not susceptible to microbial growth or contamination under normal storage and use conditions. A microbiological challenge test (preservative efficacy test to ISO 11930) is therefore not required. This is consistent with SCCS guidance and established regulatory practice for high-ethanol cosmetic formulations.</div>
+	<h2>Quality Control Parameters — Stability Summary</h2>
+	<table><thead><tr><th style="width:38%;">Analysis</th><th style="width:28%;">Specification</th><th style="width:18%;">Result</th><th style="width:16%;">Conformity</th></tr></thead>
+	<tbody>
+	<tr><td>Colour</td><td>Light yellow</td><td>Light yellow</td><td><span class="check-pass"></span></td></tr>
+	<tr><td>Appearance</td><td>Clear, free from turbidity and suspended matter</td><td>Clear</td><td><span class="check-pass"></span></td></tr>
+	<tr><td>Fragrance</td><td>Characteristic</td><td>Characteristic</td><td><span class="check-pass"></span></td></tr>
+	<tr><td>Alcohol Content</td><td>75 ± 3% w/w</td><td>75.17%</td><td><span class="check-pass"></span></td></tr>
+	<tr><td>Specific Gravity at 25°C</td><td>0.845–0.875 g/mL</td><td>0.851 g/mL</td><td><span class="check-pass"></span></td></tr>
+	<tr><td>Vacuum Leak Test (400 mmHg / 2 min)</td><td>No leakage</td><td>No leakage</td><td><span class="check-pass"></span></td></tr>
+	</tbody></table>
+	<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">MICROBIOLOGICAL CONCLUSION</div><div class="conclusion-text">H&amp;M Fearless Optimist Eau De Parfum 100 ml is self-preserving by virtue of its high ethanol content (75.00% w/w Alcohol Denat., confirmed at 75.17%). The product is not susceptible to microbial contamination or growth. Microbiological challenge testing per ISO 11930 is not required. All physical quality parameters confirmed by the stability testing report meet specification. The product complies with the microbiological quality requirements of EU Regulation (EC) No 1223/2009.</div></div>
+	<div class="comments-box"><div class="comments-label">Comments</div>The product is dispensed from a sealed glass bottle via a crimped pump and actuator spray nozzle. The pump delivery system minimises post-manufacture contamination risk during consumer use. The very high ethanol concentration (75%) provides a robust antimicrobial barrier. No preservative additives are required or present in the formulation.</div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 8</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 9: IMPURITIES & PACKAGING -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>5. Impurities, Traces, Packaging Material Information</h1>
+	<h2>Impurities and Trace Substances</h2>
+	<p>According to the material suppliers, the raw materials used in this formulation do not contain any traces of impurities or prohibited substances above regulatory limits as defined in Regulation (EC) No 1223/2009. Individual Safety Data Sheets (SDS) and Technical Data Sheets confirm compliance with applicable limits for heavy metals, nitrosamines, and other impurities of concern.</p>
+	<div class="method-box"><div class="method-box-title">Impurity Assessment Notes</div><ul>
+	<li><strong>Heavy metals:</strong> No heavy metal contamination is expected based on the nature of the ingredients and supplier declarations. Raw material suppliers confirm compliance with regulatory limits in their technical documentation.</li>
+	<li><strong>Nitrosamines:</strong> No nitrosamine-forming ingredients are present in the formula. No secondary amines or nitrogen-containing preservatives are used.</li>
+	<li><strong>1,4-Dioxane:</strong> Not applicable — no ethoxylated ingredients are present in the formulation.</li>
+	<li><strong>CMR substances:</strong> No ingredients classified as carcinogenic, mutagenic, or reprotoxic (Category 1A or 1B) under Regulation (EC) No 1272/2008 are used in this product at prohibited levels. All identified fragrance allergens (Vanillin, Benzyl Salicylate, Hydroxycitronellal, Coumarin, Linalool) are within regulatory and IFRA 51st Amendment Category 4 limits at their formulated concentrations.</li>
+	<li><strong>Nanomaterials:</strong> No nanomaterial ingredients are present. All ingredients are in conventional (non-nano) particle sizes. Compliant with Commission Regulation (EU) 2024/858.</li>
+	<li><strong>Restricted substances:</strong> All ingredients comply with Annexes II, III, and V of Regulation (EC) No 1223/2009 as amended. Coumarin (CAS 91-64-5) is listed in Annex III with restrictions; its concentration of 0.1503% in the finished product has been assessed and confirmed safe (MoS = 1,666).</li>
+	<li><strong>Denatured ethanol impurities:</strong> The ethanol is denatured with TBA (tert-butanol) and Denatonium Benzoate. No known impurities beyond the denaturant system are present, as confirmed by the Ethanol SDS.</li>
+	</ul></div>
+	<h2>Packaging Material Information</h2>
+	<div class="info-grid" style="grid-template-columns:175px 1fr;">
+	<div class="info-label">Primary Container</div><div class="info-value">100 ml glass bottle</div>
+	<div class="info-label">Container Material</div><div class="info-value">Glass (chemically inert; consistent with fine fragrance industry standards)</div>
+	<div class="info-label">Closure / Dispenser</div><div class="info-value">Crimped pump with actuator spray nozzle</div>
+	<div class="info-label">Pack Size</div><div class="info-value">100 ml nominal</div>
+	<div class="info-label">Propellant</div><div class="info-value">None — non-pressurised pump spray</div>
+	<div class="info-label">Vacuum Leak Test</div><div class="info-value">400 mmHg / 2 minutes — No leakage confirmed (PASS)</div>
+	<div class="info-label">Known Packaging Impurities</div><div class="info-value">None</div>
+	</div>
+	<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">PACKAGING COMPATIBILITY ASSESSMENT</div><div class="conclusion-text">The 100 ml glass bottle is an established and appropriate packaging format for alcohol-based fine fragrance products. Glass is chemically inert with respect to the alcohol-based EDP formulation, presenting no risk of migration or leaching. Stability data over 9 months across two temperature conditions (ambient and 40°C), including freeze-thaw cycling, demonstrates no evidence of packaging interaction, leakage, or degradation. Vacuum leak testing at 400 mmHg / 2 minutes confirms seal integrity. The packaging is deemed fully compatible with the product formulation.</div></div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 9</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 10: NORMAL USE -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>6. Normal and Reasonably Foreseeable Use</h1>
+	<p>H&amp;M Fearless Optimist Eau De Parfum 100 ml is a fine fragrance spray intended for adult use. The product is a leave-on, non-pressurised fine fragrance designed to deliver a long-lasting warm gourmand-floral fragrance. It is dispensed from a 100 ml glass bottle with a pump mechanism and actuator.</p>
+	<div class="info-grid" style="grid-template-columns:185px 1fr;">
+	<div class="info-label">Areas of Application</div><div class="info-value">Skin (body — neck, wrists, décolleté, pulse points)</div>
+	<div class="info-label">Product Category</div><div class="info-value">Fine-fragrance (Eau de Parfum)</div>
+	<div class="info-label">Product Type</div><div class="info-value">Leave-on (non-pressurised spray)</div>
+	<div class="info-label">Target Group</div><div class="info-value">Adults (18 years and over)</div>
+	<div class="info-label">Duration &amp; Frequency</div><div class="info-value">Daily use</div>
+	<div class="info-label">Application Distance</div><div class="info-value">1 foot (approximately 30 cm)</div>
+	<div class="info-label">Amount per Use</div><div class="info-value">~0.24 g per day (SCCS/1628/21 default for fine fragrance spray)</div>
+	</div>
+	<div class="method-box"><div class="method-box-title">Application Instructions (as labelled)</div>Spray the perfume towards your pulse points from 1 foot distance. For best result spray on wrist, neckline, back of your neck, under elbow. Avoid contact with eyes. Keep away from fire and flame. For external use only. Keep out of reach of children.</div>
+	<div class="warning-box"><div class="warning-box-title" style="color:#FF9800;">Precautionary Statements (Labelled)</div><ul>
+	<li>FOR EXTERNAL USE ONLY.</li>
+	<li>AVOID DIRECT CONTACT WITH EYES.</li>
+	<li>FLAMMABLE, KEEP AWAY FROM HEAT AND FIRE.</li>
+	<li>HARMFUL IF TAKEN INTERNALLY.</li>
+	<li>Keep container tightly closed.</li>
+	<li>Keep out of reach of children.</li>
+	<li>For adult use only (18 years and over).</li>
+	<li>Fragrance-sensitive individuals should review the INCI ingredient list prior to use. Contains 5 declared fragrance allergens per Commission Regulation (EU) 2023/1545.</li>
+	</ul></div>
+	<h2>Reasonably Foreseeable Misuse</h2>
+	<p>Reasonably foreseeable misuse scenarios include: application to eyes or broken/irritated skin; ingestion (harmful if taken internally); use by children; and use near open flames or heat sources due to high ethanol content (75.00% w/w). These risks are mitigated through explicit label warnings, the use of a crimped pump dispenser which prevents easy access to the bulk liquid, and the inclusion of denaturants (TBA and Denatonium Benzoate) in the ethanol to discourage ingestion. The product is considered safe when used according to instructions; any misuse beyond these parameters is addressed by standard regulatory warnings for flammable fine fragrances.</p>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 10</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 11: EXPOSURE ASSESSMENT -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>7. Exposure to the Cosmetic Product</h1>
+	<p>Exposure assessment follows the SCCS Notes of Guidance for the Testing of Cosmetic Ingredients and their Safety Evaluation (11th revision, 2021, SCCS/1628/21). Default values for <strong>fine fragrance / Eau de Parfum (leave-on)</strong> are applied to calculate the Systemic Exposure Dose (SED) for each ingredient.</p>
+	<table><thead><tr><th>Exposure Parameter</th><th>Value</th></tr></thead>
+	<tbody>
+	<tr><td>Areas of Application</td><td>Skin (body — neck, wrists, décolleté, pulse points)</td></tr>
+	<tr><td>Product Category</td><td>fine-fragrance</td></tr>
+	<tr><td>Product Type</td><td>Leave-on (non-pressurised spray)</td></tr>
+	<tr><td>Duration and Frequency</td><td>Daily; 1 application per day</td></tr>
+	<tr><td>Retention Factor (RF)</td><td>1.0 (leave-on product)</td></tr>
+	<tr><td>Estimated Amount of Product Applied per Day</td><td>240 mg/day (0.24 g/day — SCCS 2021 default for fine fragrance)</td></tr>
+	<tr><td>Target Group</td><td>Adults</td></tr>
+	<tr><td>Body Weight (BW)</td><td>60 kg (conservative SCCS default)</td></tr>
+	<tr class="row-highlight"><td><strong>Calculated Total Product SED</strong></td><td><strong>(240 mg &#215; 1.0) / 60 kg = 4.0 mg product / kg bw / day</strong></td></tr>
+	</tbody></table>
+	<div class="method-box"><div class="method-box-title">Calculation Formula &amp; Focus Ingredients</div>
+	<p>SED (mg/kg bw/day) = (Amount applied [mg/day] &#215; Ingredient concentration [fraction] &#215; Retention Factor) / Body Weight [kg]</p>
+	<p><strong>Total Product SED:</strong><br>= (240 mg &#215; 1.0) / 60 kg = <strong>4.0 mg product / kg bw / day</strong></p>
+	<p style="margin-top:8px;"><strong>Example — Alcohol Denat. (75.00%):</strong><br>
+	SED = 4.0 &#215; 0.7500 = <strong>3.0000 mg/kg bw/day</strong></p>
+	<p><strong>Example — Vanillin (0.5053%):</strong><br>
+	SED = 4.0 &#215; 0.005053 = <strong>0.020212 mg/kg bw/day</strong></p>
+	<p><strong>Example — Coumarin (0.1503%):</strong><br>
+	SED = 4.0 &#215; 0.001503 = <strong>0.006012 mg/kg bw/day</strong></p>
+	</div>
+	<div class="method-box"><div class="method-box-title">Notes on Exposure Assessment</div>
+	<p>The total product SED of 4.0 mg/kg bw/day reflects dermal absorption of all non-volatile ingredients. Ethanol, as the primary solvent (75.00%), rapidly evaporates from the skin surface; however, a conservative dermal absorption factor of 100% is applied consistent with SCCS guidance for ethanol in cosmetics, yielding SED = 3.0 mg/kg bw/day.</p>
+	<p style="margin-top:5px;">The fragrance mixture (15.4586%) is assessed at the full formulated concentration per IFRA methodology. Purified water (4.97%) is not separately assessed — water presents no systemic toxicological concern. Trace colorants (CI 19140 and CI 17200) are present at &lt;1% and are EU-approved per Regulation (EC) No 1223/2009 Annex IV.</p>
+	</div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 11</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 12: MoS TABLE -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>8. Exposure to the Substances</h1>
+	<p>The Systemic Exposure Dose (SED) for each ingredient was calculated using: SED = (240 mg × concentration fraction × 1.0) / 60 kg. The Margin of Safety (MoS) = NOAEL / SED. A minimum MoS of 100 is required for safety. All values calculated at maximum formulated concentration.</p>
+	<table class="mos-table"><colgroup><col style="width:28%;"><col style="width:8%;"><col style="width:13%;"><col style="width:13%;"><col style="width:10%;"><col style="width:28%;"></colgroup>
+	<thead><tr><th>INCI Name / Substance</th><th>Conc. (%)</th><th>SED (mg/kg/d)</th><th>NOAEL (mg/kg/d)</th><th>MoS</th><th>Source / Notes</th></tr></thead>
+	<tbody>
+	<tr><td><strong>ALCOHOL DENAT.</strong></td><td>75.00</td><td>3.0000</td><td>2600</td><td><span class="mos-safe">867</span></td><td>SCCS (2012); EFSA — SAFE</td></tr>
+	<tr><td><strong>PARFUM</strong> (SOL DO BRASIL MOD 1 — P09K567)</td><td>15.4586</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>IFRA 51st Amendment compliant — SAFE</td></tr>
+	<tr><td><strong>AQUA</strong></td><td>4.97</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>Not assessed — SAFE</td></tr>
+	<tr><td><strong>CI 19140</strong> (Yellow 5)</td><td>0.02</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>EU Annex IV approved colorant — SAFE</td></tr>
+	<tr><td><strong>CI 17200</strong> (Red 33)</td><td>0.01</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>EU Annex IV approved colorant — SAFE</td></tr>
+	<tr><td>VANILLIN</td><td>0.5053</td><td>0.020212</td><td>150</td><td><span class="mos-safe">7,425</span></td><td>RIFM monograph; JECFA — SAFE</td></tr>
+	<tr><td>BENZYL SALICYLATE</td><td>0.2975</td><td>0.011900</td><td>500</td><td><span class="mos-safe">42,016</span></td><td>RIFM monograph; CIR — SAFE</td></tr>
+	<tr><td>HYDROXYCITRONELLAL</td><td>0.1531</td><td>0.006124</td><td>30</td><td><span class="mos-safe">4,918</span></td><td>RIFM monograph; CIR — SAFE</td></tr>
+	<tr><td>COUMARIN</td><td>0.1503</td><td>0.006012</td><td>10</td><td><span class="mos-safe">1,666</span></td><td>SCCS/1405/11; EFSA — SAFE</td></tr>
+	<tr><td>LINALOOL</td><td>0.0048</td><td>0.000192</td><td>500</td><td><span class="mos-safe">2,604,167</span></td><td>RIFM monograph — SAFE</td></tr>
+	</tbody></table>
+	<div class="conclusion-box" style="margin-top:14px;"><div class="conclusion-title" style="color:#2E7D32;">EXPOSURE CONCLUSION</div><div class="conclusion-text">The exposure assessment for H&amp;M Fearless Optimist Eau De Parfum 100 ml confirms that all ingredients and 5 declared fragrance allergens possess a Margin of Safety (MoS) significantly exceeding the benchmark value of 100. The lowest calculated MoS is for Coumarin at 1,666 — well above the required threshold. The product is considered safe for human health when used as intended by adults.</div></div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 12</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 13: TOXICOLOGICAL PROFILES — Base Ingredients -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>9. Toxicological Profile</h1>
+	<h2>ALCOHOL DENAT.</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS Number:</strong> 64-17-5 | <strong>EC Number:</strong> 200-578-6 | <strong>Function:</strong> Solvent / Self-preserving | <strong>Concentration:</strong> 75.00% w/w</p>
+	<p class="tox-meta"><strong>NOAEL:</strong> 2600 mg/kg bw/day | <strong>SED:</strong> 3.0000 mg/kg bw/day | <strong>MoS:</strong> <span class="mos-inline">867</span></p>
+	<p class="tox-assessment">Ethanol (Alcohol Denat.) is a thoroughly characterised solvent with an extensive history of safe use in fine fragrances. It is denatured with tert-butanol (TBA) and denatonium benzoate to render it unfit for consumption. The NOAEL for systemic toxicity is 2600 mg/kg bw/day based on SCCS (2012) evaluations. At 75.00% w/w in a fine fragrance with a daily exposure of 240 mg, the SED is 3.0000 mg/kg bw/day, yielding a MoS of 867 — well above the 100 threshold. A flash point of ~13°C necessitates a Flammable Liquid Category 2 (H225) classification.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>PARFUM (SOL DO BRASIL MOD 1 — P09K567)</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>Trade Name:</strong> Sol do Brasil mod 1 (P09K567) &nbsp;|&nbsp; <strong>Function:</strong> Fragrance &nbsp;|&nbsp; <strong>Concentration:</strong> 15.4586% w/w</p>
+	<p class="tox-meta"><strong>IFRA Certificate:</strong> IFRA 51st Amendment Certificate on file for P09K567 &nbsp;|&nbsp; <strong>MoS:</strong> <span class="mos-inline">N/A — IFRA Compliant</span></p>
+	<p class="tox-assessment">The fragrance mixture 'Sol do Brasil mod 1' is assessed at the formulated concentration of 15.4586% w/w in Eau de Parfum. The IFRA 51st Amendment Certificate confirms compliance with all IFRA Category 4 (Fine Fragrance) limits at the stated usage level. The allergen declaration identifies 5 fragrance allergens above the 0.001% leave-on threshold. All declared allergens are separately profiled for safety. The fragrance mixture is assessed as safe at the formulated level, subject to IFRA compliance and mandatory allergen labelling per Commission Regulation (EU) 2023/1545. Fragrance profile: top notes of Pistachio, Sea Salt, Piña Colada; heart note of Heliotrope; base notes of Salted Caramel and Sandalwood.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>AQUA (Purified Water)</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS Number:</strong> 7732-18-5 &nbsp;|&nbsp; <strong>EC Number:</strong> 231-791-2 &nbsp;|&nbsp; <strong>Function:</strong> Carrier / Solvent &nbsp;|&nbsp; <strong>Concentration:</strong> 4.97% w/w</p>
+	<p class="tox-meta"><strong>Assessment:</strong> <span class="mos-inline">Not assessed — intrinsically safe</span></p>
+	<p class="tox-assessment">Purified Water (Aqua, CAS 7732-18-5) is a universally accepted cosmetic ingredient with no toxicological concerns at any concentration in topically applied products. It functions as an aqueous phase carrier in this formulation at 4.97% w/w. No NOAEL assessment or MoS calculation is required.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>CI 19140 (Yellow 5 / Tartrazine)</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS Number:</strong> 1934-21-0 &nbsp;|&nbsp; <strong>EC Number:</strong> 217-699-5 &nbsp;|&nbsp; <strong>Function:</strong> Colorant &nbsp;|&nbsp; <strong>Concentration:</strong> 0.02% w/w</p>
+	<p class="tox-meta"><strong>Assessment:</strong> <span class="mos-inline">EU Annex IV approved — SAFE</span></p>
+	<p class="tox-assessment">CI 19140 (Tartrazine / Yellow 5) is an EU-approved cosmetic colorant listed in Commission Regulation (EC) No 1223/2009 Annex IV. It provides the product's characteristic light yellow colour. At 0.02% w/w, the concentration is well within permitted cosmetic use levels. No individual SED/MoS assessment is required.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>CI 17200 (D&amp;C Red No. 33 / Acid Red 33)</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS Number:</strong> 3567-66-6 &nbsp;|&nbsp; <strong>EC Number:</strong> 222-656-9 &nbsp;|&nbsp; <strong>Function:</strong> Colorant &nbsp;|&nbsp; <strong>Concentration:</strong> 0.01% w/w</p>
+	<p class="tox-meta"><strong>Assessment:</strong> <span class="mos-inline">EU Annex IV approved — SAFE</span></p>
+	<p class="tox-assessment">CI 17200 (Acid Red 33) is an EU-approved cosmetic colorant listed in Commission Regulation (EC) No 1223/2009 Annex IV. Used in combination with CI 19140 to achieve the product's light yellow colour. At 0.01% w/w, the concentration is trace and well within permitted levels. No individual SED/MoS assessment is required.</p>
+	</div>
+	<hr class="ingredient-divider">
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 13</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 14: TOXICOLOGICAL PROFILES — Allergens -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>9. Toxicological Profile: Fragrance Allergens</h1>
+
+	<h2>VANILLIN</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS:</strong> 121-33-5 | <strong>NOAEL:</strong> 150 mg/kg/d (RIFM; JECFA) | <strong>Conc:</strong> 0.5053% | <strong>SED:</strong> 0.020212 | <strong>MoS:</strong> <span class="mos-inline">7,425</span></p>
+	<p class="tox-assessment">Vanillin is a widely-used fragrance compound and the primary allergen in this formulation by concentration. Assessed via RIFM monograph and JECFA evaluation with a NOAEL of 150 mg/kg bw/day. At 0.5053% in the finished product, the SED is 0.020212 mg/kg bw/day, yielding a MoS of 7,425 — well above the 100 threshold. Sensitisation risk managed via mandatory label declaration per EU 2023/1545.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>BENZYL SALICYLATE</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS:</strong> 118-58-1 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM; CIR) | <strong>Conc:</strong> 0.2975% | <strong>SED:</strong> 0.011900 | <strong>MoS:</strong> <span class="mos-inline">42,016</span></p>
+	<p class="tox-assessment">Benzyl salicylate is a floral fragrance ester with a well-established safety profile. Assessed via RIFM monograph and CIR Expert Panel evaluations (conservative NOAEL for aromatic esters: 500 mg/kg bw/day). The MoS of 42,016 significantly exceeds the required threshold. Not classified as a CMR substance. Declared as a fragrance allergen per EU 2023/1545.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>HYDROXYCITRONELLAL</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS:</strong> 107-75-5 | <strong>NOAEL:</strong> 30 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.1531% | <strong>SED:</strong> 0.006124 | <strong>MoS:</strong> <span class="mos-inline">4,918</span></p>
+	<p class="tox-assessment">Hydroxycitronellal is a lily-of-the-valley fragrance ingredient. Assessed via RIFM monograph with a conservative NOAEL of 30 mg/kg bw/day applied for this evaluation. At 0.1531% in the finished product, the SED is 0.006124 mg/kg bw/day, yielding a MoS of 4,918 — well above the 100 threshold. Sensitisation potential managed via mandatory declaration per EU 2023/1545.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>COUMARIN</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS:</strong> 91-64-5 | <strong>NOAEL:</strong> 10 mg/kg/d (SCCS/1405/11; EFSA) | <strong>Conc:</strong> 0.1503% | <strong>SED:</strong> 0.006012 | <strong>MoS:</strong> <span class="mos-inline">1,666</span></p>
+	<p class="tox-assessment">Coumarin is a restricted fragrance ingredient listed in Annex III of Regulation (EC) No 1223/2009. It is assessed using the conservative NOAEL of 10 mg/kg bw/day from SCCS/1405/11 and EFSA evaluations. At 0.1503% in the finished product, the SED is 0.006012 mg/kg bw/day, yielding a MoS of 1,666 — exceeding the required threshold of 100 — SAFE. Declared as a fragrance allergen per EU 2023/1545.</p>
+	</div>
+	<hr class="ingredient-divider">
+
+	<h2>LINALOOL</h2>
+	<div class="ingredient-profile">
+	<p class="tox-meta"><strong>CAS:</strong> 78-70-6 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.0048% | <strong>SED:</strong> 0.000192 | <strong>MoS:</strong> <span class="mos-inline">2,604,167</span></p>
+	<p class="tox-assessment">Linalool is a naturally occurring terpene alcohol with an exceptionally high margin of safety at this trace concentration. Present at 0.0048% — just above the 0.001% declaration threshold per EU 2023/1545. Assessed via RIFM monograph (13-week rat study, NOAEL 500 mg/kg bw/day). The MoS of over 2.6 million presents no systemic risk whatsoever. Declared as a fragrance allergen per EU 2023/1545.</p>
+	</div>
+	<hr class="ingredient-divider">
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 14</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 15: UNDESIRABLE EFFECTS -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>10. Undesirable Effects</h1>
+	<p>Based on the ingredient toxicological profiles and the calculated Margins of Safety, the following potential undesirable effects have been identified for this product. All effects are considered unlikely under normal conditions of use when the product is used as directed by adults.</p>
+	<table><thead><tr><th>Effect Type</th><th>Likelihood</th><th>Affected Population</th><th>Notes</th></tr></thead>
+	<tbody>
+	<tr><td>Skin irritation (mild/transient)</td><td>Very low</td><td>General population</td><td>High ethanol content (75.00% w/w) may cause transient defatting; not significant at frequency of use for fine fragrance.</td></tr>
+	<tr><td>Skin sensitisation / allergic contact dermatitis</td><td>Possible in sensitised individuals</td><td>Fragrance-sensitive individuals</td><td>5 declared fragrance allergens per EU 2023/1545: Vanillin, Benzyl Salicylate, Hydroxycitronellal, Coumarin, Linalool. All declared on product label.</td></tr>
+	<tr><td>Eye irritation</td><td>Possible if direct contact occurs</td><td>All</td><td>Avoid direct contact with eyes — stated on label; ethanol and fragrance can cause temporary irritation.</td></tr>
+	<tr><td>Inhalation effects</td><td>Very low under normal use</td><td>All (particularly asthmatic individuals)</td><td>Pump spray mist; use in ventilated area recommended; no propellant involved.</td></tr>
+	<tr><td>Phototoxicity</td><td>Negligible</td><td>All</td><td>No phototoxic essential oils or chemicals identified at concentrations exceeding safety thresholds in the Sol do Brasil mod 1 (P09K567) mixture.</td></tr>
+	<tr><td>Flammability hazard</td><td>Present — requires safe handling</td><td>All</td><td>H225 — Flammable Liquid Cat. 2 (flash point ~13°C); GHS/CLP labelling applied; not a toxicological concern under normal use.</td></tr>
+	<tr><td>Ingestion toxicity</td><td>Very low (not intended use)</td><td>Children (misuse)</td><td>Product not intended for children; childproof crimped pump; high ethanol content toxic if ingested in volume.</td></tr>
+	</tbody></table>
+	<h2>Serious Undesirable Effects</h2>
+	<p>No serious undesirable effects (SUSEs) have been reported for this product to date. No adverse event data has been received by the Responsible Person. The product has not been associated with any systemic toxicity, carcinogenicity, reproductive toxicity or other serious health concerns under normal and reasonably foreseeable conditions of use.</p>
+	<h2>Post-Market Surveillance</h2>
+	<p>The Responsible Person (M/S STELLA INDUSSTRIES LIMITED) is required to maintain a post-market surveillance system in accordance with Article 23 of Regulation (EC) No 1223/2009. Any serious undesirable effects (SUSEs) must be reported to the competent authority of the Member State where the effect occurred within the required timeframe. Non-serious undesirable effects must be recorded and made available to competent authorities upon request.</p>
+	<div class="comments-box"><div class="comments-label">Comments on Sensitisation Risk</div>The 5 declared fragrance allergens reflect the current EU 2023/1545 allergen declaration requirements for the Sol do Brasil mod 1 (P09K567) fragrance mixture. Fragrance-sensitive individuals are advised to review the full INCI ingredient list prior to use. All declared allergens are identified on the product label. As the Margins of Safety (MoS) for all constituents exceed 100, the risk of inducing sensitisation in the non-sensitised population is considered low.</div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 15</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 16: SECTION 11 — PRODUCT INFORMATION / DOCUMENTS -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>11. Product Information</h1>
+	<div class="info-grid" style="grid-template-columns:175px 1fr;">
+	<div class="info-label">Product Name</div><div class="info-value">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div>
+	<div class="info-label">CPSR Reference</div><div class="info-value">CPSR-HM-FEARLESSOPTIMIST100-2026-001</div>
+	<div class="info-label">Formula Code</div><div class="info-value">SIL/MFEDP/FO/002-00</div>
+	<div class="info-label">Assessment Date</div><div class="info-value">02.03.2026</div>
+	<div class="info-label">Shelf Life</div><div class="info-value">36 months from date of manufacture</div>
+	<div class="info-label">PAO</div><div class="info-value">24 months (24M)</div>
+	<div class="info-label">Storage Conditions</div><div class="info-value">Store below 25°C in a cool, dry place. Avoid direct sunlight and heat sources. Keep away from flames.</div>
+	<div class="info-label">Safety Conclusion</div><div class="info-value"><span class="badge badge-pass">SAFE</span></div>
+	</div>
+	<h2>Supporting Documentation</h2>
+	<table class="docs-table"><colgroup><col style="width:20%;"><col style="width:36%;"><col style="width:11%;"><col style="width:33%;"></colgroup>
+	<thead><tr><th>Category</th><th>Document</th><th>Status</th><th>Notes</th></tr></thead>
+	<tbody>
+	<tr><td>Stability Testing Report</td><td>H&amp;M Fearless Optimist Eau De Parfum 100 ml.pdf</td><td><span class="badge badge-safe">Available</span></td><td>9-month study (Ambient, 40°C) plus 4 freeze-thaw cycles (−20°C); all parameters PASS. Density 0.851 g/mL; Alcohol 75.17%.</td></tr>
+	<tr><td>IFRA Certificate</td><td>IFRA 51st Amendment Certificate — P09K567 Sol do Brasil mod 1</td><td><span class="badge badge-safe">Available</span></td><td>IFRA 51st Amendment certificate for Sol do Brasil mod 1; confirms compliance at 15.4586% w/w in Category 4 (Fine Fragrance).</td></tr>
+	<tr><td>INCI Composition Certificate</td><td>INCI Composition Certificate — SIL/MFEDP/FO/002-00 (14.01.2026)</td><td><span class="badge badge-safe">Available</span></td><td>Full formula breakdown. 5 base ingredients + 5 declared fragrance allergens. Issued by Stella Indusstries Limited.</td></tr>
+	<tr><td>Label Artwork</td><td>H&amp;M Fearless Optimist 100 ml — Secondary Box Label Artwork</td><td><span class="badge badge-safe">Available</span></td><td>Final label artwork confirming INCI list, volume declaration, allergen declarations (*) per EU 2023/1545, and H225 warning.</td></tr>
+	<tr><td>Fragrance SDS</td><td>SDS for P09K567 Sol do Brasil mod 1</td><td><span class="badge badge-safe">Available</span></td><td>Safety Data Sheet for Sol do Brasil mod 1 (P09K567) per EU REACH Regulation No 2020/878.</td></tr>
+	<tr><td>Ethanol SDS</td><td>MATERIAL SAFETY DATA SHEET ENA.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Safety Data Sheet for Ethanol (denatured) — covers physical hazards (H225) and toxicological profile.</td></tr>
+	<tr><td>EU 80-Allergen Cert.</td><td>—</td><td><span class="badge badge-na">Not Provided</span></td><td>Allergen data sourced from INCI Composition Certificate (SIL/MFEDP/FO/002-00). All 5 allergens above 0.001% threshold are confirmed therein.</td></tr>
+	<tr><td>Challenge Test (ISO 11930)</td><td>—</td><td><span class="badge badge-na">Not Required</span></td><td>Product is self-preserving (75.00% Ethanol); testing not required per SCCS/1628/21.</td></tr>
+	<tr><td>GMP Certificate</td><td>—</td><td><span class="badge badge-na">On File</span></td><td>ISO 22716:2007 compliant; GMP documentation held by manufacturer M/S STELLA INDUSSTRIES LIMITED (Permit No: L-42-A).</td></tr>
+	<tr><td>Toxicological Study</td><td>—</td><td><span class="badge badge-na">Not Available</span></td><td>Assessment based on ingredient-level data from SCCS, RIFM, JECFA, and EFSA; standard regulatory practice.</td></tr>
+	</tbody></table>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 16</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 17: PART B — ASSESSMENT CONCLUSION -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<div class="part-header"><div class="part-label">Part B</div><div class="part-title">Cosmetic Product Safety Assessment</div></div>
+	<h1>1. Assessment Conclusion</h1>
+	<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">ASSESSMENT CONCLUSION — SAFE</div><div class="conclusion-text">Based on the available toxicological data and safety evaluation, H&amp;M Fearless Optimist Eau De Parfum 100 ml is considered safe for human health when used as intended by adults. All five primary formula components comply with EU Regulation (EC) No 1223/2009. All calculated Margins of Safety (MoS) exceed the minimum threshold of 100 for all assessed substances. The lowest MoS is for Coumarin at 1,666 (NOAEL 10 mg/kg bw/day; SCCS/1405/11) — well above the safety threshold. The fragrance mixture (Sol do Brasil mod 1, P09K567) is IFRA 51st Amendment compliant at 15.4586% w/w in Eau de Parfum (Category 4). The product is inherently self-preserving due to its high ethanol content (75.00% Alcohol Denat.). Physicochemical stability is confirmed over 9 months at accelerated conditions including freeze-thaw cycling. All 5 declared fragrance allergens exceed the 0.001% leave-on threshold and are declared on the product label per Commission Regulation (EU) 2023/1545.</div></div>
+	<h2>Key Findings Summary</h2>
+	<table><thead><tr><th>Assessment Area</th><th>Finding</th><th>Status</th></tr></thead>
+	<tbody>
+	<tr><td>Ingredient Compliance</td><td>All primary ingredients comply with EU Regulation (EC) No 1223/2009</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Margin of Safety — Alcohol Denat.</td><td>MoS 867 (NOAEL 2600; SED 3.0000 mg/kg/d)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+	<tr><td>Margin of Safety — Vanillin</td><td>MoS 7,425 (NOAEL 150 mg/kg/d; SED 0.020212 mg/kg/d)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+	<tr><td>Margin of Safety — Benzyl Salicylate</td><td>MoS 42,016 (NOAEL 500 mg/kg/d; SED 0.011900 mg/kg/d)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+	<tr><td>Margin of Safety — Hydroxycitronellal</td><td>MoS 4,918 (NOAEL 30 mg/kg/d; SED 0.006124 mg/kg/d)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+	<tr><td>Margin of Safety — Coumarin</td><td>MoS 1,666 (NOAEL 10 mg/kg/d; SED 0.006012 mg/kg/d) — above threshold</td><td><span class="badge badge-safe">Safe</span></td></tr>
+	<tr><td>Margin of Safety — Linalool</td><td>MoS &gt;2,600,000 (NOAEL 500 mg/kg/d; SED 0.000192 mg/kg/d)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+	<tr><td>IFRA Compliance</td><td>Sol do Brasil mod 1 (P09K567) certified compliant (51st Amendment)</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+	<tr><td>Allergen Labelling</td><td>5 allergens declared per EU 2023/1545</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+	<tr><td>Stability</td><td>Confirmed over 9 months (2 conditions + 4 freeze-thaw cycles)</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Microbiological Quality</td><td>Self-preserving (75.00% ethanol); challenge test not required</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	<tr><td>Flammability Classification</td><td>Correctly classified and labelled: H225 (Flammable Liquid Cat. 2)</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+	<tr><td>Nanomaterials</td><td>No nanomaterials present — compliant with Regulation (EU) 2024/858</td><td><span class="badge badge-pass">PASS</span></td></tr>
+	</tbody></table>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 17</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 18: PART B — LABELLED WARNINGS + INCI -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>2. Labelled Warnings and Instructions for Use</h1>
+	<h2>Conditions of Safe Use</h2>
+	<div class="method-box"><div class="method-box-title">Conditions of Safe Use (as assessed)</div><ol>
+	<li>For adult use only (18 years and over).</li>
+	<li>Do not use on broken, damaged or irritated skin.</li>
+	<li>Avoid contact with eyes; in case of contact, rinse immediately with water.</li>
+	<li>Keep away from heat, hot surfaces, sparks, open flames and other ignition sources — No smoking.</li>
+	<li>Keep container tightly closed when not in use.</li>
+	<li>For external use only.</li>
+	<li>Keep out of reach of children.</li>
+	<li>Fragrance-sensitive individuals should review the INCI ingredient list prior to use. This product contains 5 declared fragrance allergens per Commission Regulation (EU) 2023/1545: Benzyl Salicylate, Coumarin, Hydroxycitronellal, Linalool, Vanillin.</li>
+	<li>Post-market surveillance should be maintained per Article 23 of Regulation (EC) No 1223/2009. Any serious undesirable effects must be reported to the competent authority.</li>
+	<li>Labels must include all required EU cosmetics regulation elements including INCI ingredient list with asterisk-marked allergens, volume declaration (100 ml), and H225 flammability warning.</li>
+	<li>This CPSR is valid for the formula as described (SIL/MFEDP/FO/002-00). Any modification to formula, packaging or intended use requires re-evaluation.</li>
+	</ol></div>
+
+	<h2>Required Hazard Statements (GHS / CLP)</h2>
+	<div class="warning-box"><div class="warning-box-title" style="color:#FF9800;">Hazard Statements — Regulation (EC) No 1272/2008 (CLP)</div>
+	<p><span class="hcode">H225</span> — Highly flammable liquid and vapour. (Flammable Liquid, Category 2)</p>
+	</div>
+	<div class="method-box"><div class="method-box-title">Precautionary Statements (as labelled)</div>
+	<p><span class="pcode">P210</span> — Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking.</p>
+	<p><span class="pcode">P233</span> — Keep container tightly closed.</p>
+	<p>Avoid contact with eyes.</p>
+	<p>Keep out of reach of children.</p>
+	<p>For external use only.</p>
+	<p>Harmful if taken internally.</p>
+	</div>
+
+	<h2>INCI Ingredient List</h2>
+	<div class="inci-box"><p><strong>Ingredients:</strong> Alcohol Denat., Parfum, Aqua, CI 19140, CI 17200, Benzyl Salicylate*, Coumarin*, Hydroxycitronellal*, Linalool*, Vanillin*</p>
+	<p class="inci-footnote">* The presence of these 5 fragrance allergens must be indicated in the list of ingredients when their concentration exceeds 0.001% in leave-on products, in accordance with Commission Regulation (EU) 2023/1545 and Regulation (EC) No 1223/2009 Article 19.</p>
+	</div>
+
+	<div class="signature-grid">
+		<div class="signature-item"><div class="signature-label">Safety Assessor Signature:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="border-bottom:1px solid #424242;padding-bottom:2px;display:inline-block;min-width:80px;">02.03.2026</span></div></div>
+		<div class="signature-item"><div class="signature-label">Responsible Person Acknowledgement:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="display:inline-block;width:100px;border-bottom:1px solid #424242;"></span></div></div>
+	</div>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 18</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 19: PART B — REASONING -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>3. Reasoning</h1>
+	<h2>Basis for Safety Conclusion</h2>
+	<p>The safety assessment of H&amp;M Fearless Optimist Eau De Parfum 100 ml has been performed in accordance with Regulation (EC) No 1223/2009 and the SCCS Notes of Guidance (11th revision, 2021, SCCS/1628/21). The reasoning supports the conclusion that this product is safe for human health when used as intended by adults.</p>
+
+	<p><strong>Formulation:</strong> The product is an alcohol-based fine fragrance. All primary ingredients (Alcohol Denat. 75.00%, Parfum/Sol do Brasil mod 1 15.4586%, Aqua 4.97%, and trace colorants CI 19140 and CI 17200) are established cosmetic ingredients. The formulation does not contain any ingredients prohibited under Annex II of Regulation (EC) No 1223/2009. Coumarin, listed in Annex III, is present at 0.1503% and has been assessed with a MoS of 1,666 — confirming safety. All allergen concentrations are within safety limits.</p>
+
+	<p><strong>Fragrance safety:</strong> The fragrance mixture Sol do Brasil mod 1 (P09K567) is IFRA 51st Amendment compliant at 15.4586% w/w, as confirmed by the IFRA 51st Amendment Certificate on file. No ingredients were identified with a Margin of Safety (MoS) below 100 using conservative safety defaults.</p>
+
+	<p><strong>Allergen declaration:</strong> Five declared fragrance allergens exceed the 0.001% leave-on threshold per Commission Regulation (EU) 2023/1545: Vanillin (0.5053%), Benzyl Salicylate (0.2975%), Hydroxycitronellal (0.1531%), Coumarin (0.1503%), and Linalool (0.0048%). Their identity and concentrations are confirmed via the INCI Composition Certificate (SIL/MFEDP/FO/002-00, dated 14.01.2026). All MoS values for these allergens significantly exceed the required threshold of 100 — confirming a high margin of safety for systemic exposure under intended conditions of use.</p>
+
+	<p><strong>Stability and microbiological quality:</strong> The product demonstrates physicochemical stability over 9 months of testing at ambient (23–25°C) and 40°C. Four freeze-thaw cycles (−20°C / ambient) further confirm the robustness of the 100 ml format. The high ethanol content (75.00% w/w) renders the product inherently self-preserving; microbiological challenge testing per ISO 11930 is not required per SCCS guidelines for products containing ≥20% ethanol.</p>
+
+	<p><strong>Flammability:</strong> The product is classified as Flammable Liquid Category 2 (H225) due to its flash point of ~13°C. This is a physical hazard addressed through appropriate handling instructions and label warnings, not a toxicological risk under intended use.</p>
+
+	<h2>References</h2>
+	<ul class="references-list">
+	<li>Regulation (EC) No 1223/2009 of the European Parliament and of the Council on cosmetic products</li>
+	<li>Commission Regulation (EU) 2023/1545 — Fragrance allergen labelling (80 allergens)</li>
+	<li>Commission Regulation (EU) 2024/858 — Nanomaterial restrictions</li>
+	<li>SCCS Notes of Guidance for the Testing of Cosmetic Ingredients and their Safety Evaluation, 11th revision (2021), SCCS/1628/21</li>
+	<li>SCCS (2012) Opinion on Ethanol; SCCS/1405/11 on Coumarin</li>
+	<li>IFRA Code of Practice, 51st Amendment (June 2023)</li>
+	<li>Regulation (EC) No 1272/2008 — CLP Regulation (Classification, Labelling and Packaging)</li>
+	<li>RIFM Fragrance Ingredient Safety Database — Vanillin, Benzyl Salicylate, Hydroxycitronellal, Linalool, Coumarin</li>
+	<li>JECFA Monographs — Vanillin, Coumarin; CIR Expert Panel — Benzyl Salicylate, Hydroxycitronellal</li>
+	</ul>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 19</span><span>Confidential</span></div>
+</div>
+
+<!-- PAGE 20: PART B — ASSESSOR CREDENTIALS -->
+<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&amp;M Fearless Optimist Eau De Parfum 100 ml</div></div>
+	<h1>4. Assessor Credentials</h1>
+	<h2>Safety Assessor</h2>
+	<div class="info-grid" style="grid-template-columns:165px 1fr;">
+	<div class="info-label">Name</div><div class="info-value">Cassandra Margaret Maddocks</div>
+	<div class="info-label">Qualifications</div><div class="info-value">BSc. Chemistry &amp; Biochemistry — Swinburne University of Technology; Diploma of Laboratory Technology — Swinburne University of Technology; 10+ Years experience formulating and evaluating cosmetic products</div>
+	<div class="info-label">Organisation</div><div class="info-value">MySwissLab+ | SBR Group Sàrl</div>
+	<div class="info-label">Address</div><div class="info-value">1B Route de l'Industrie, 1072 Forel, Switzerland</div>
+	<div class="info-label">Assessment Date</div><div class="info-value">02.03.2026</div>
+	</div>
+
+	<div class="method-box"><div class="method-box-title">Assessor Qualification Statement</div><p>The safety assessor holds a degree in a scientific discipline relevant to the assessment of cosmetic product safety (Chemistry and Biochemistry), supplemented by specialist training in laboratory technology and over 10 years of practical experience in cosmetic formulation and regulatory safety assessment. These qualifications meet the requirements of Article 10(2) of Regulation (EC) No 1223/2009, which stipulates that the safety assessor must hold a degree or other official evidence of formal qualifications awarded on completion of a university course of theoretical and practical study in pharmacy, toxicology, medicine, dermatology or an analogous discipline. Chemistry and Biochemistry constitutes an analogous discipline as confirmed by established EU regulatory practice and SCCS guidance.</p></div>
+
+	<div class="signature-grid">
+		<div class="signature-item"><div class="signature-label">Safety Assessor Signature:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="border-bottom:1px solid #424242;padding-bottom:2px;display:inline-block;min-width:80px;">02.03.2026</span></div></div>
+		<div class="signature-item"><div class="signature-label">Responsible Person Acknowledgement:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="display:inline-block;width:100px;border-bottom:1px solid #424242;"></span></div></div>
+	</div>
+
+	<h2>Document Control</h2>
+	<div class="doc-control-grid">
+	<div class="info-label">Document Reference</div><div class="info-value">CPSR-HM-FEARLESSOPTIMIST100-2026-001</div>
+	<div class="info-label">Version</div><div class="info-value">1.0</div>
+	<div class="info-label">Issue Date</div><div class="info-value">02.03.2026</div>
+	<div class="info-label">Formula Reference</div><div class="info-value">SIL/MFEDP/FO/002-00 (dated 14.01.2026)</div>
+	<div class="info-label">Prepared by</div><div class="info-value">MySwissLab+ | SBR Group Sàrl on behalf of M/S STELLA INDUSSTRIES LIMITED</div>
+	<div class="info-label">Regulatory Basis</div><div class="info-value">Regulation (EC) No 1223/2009, Annex I — Cosmetic Product Safety Report requirements</div>
+	<div class="info-label">PIF Retention</div><div class="info-value">This CPSR must be kept available for 10 years after the last batch of the product is placed on the market, in accordance with Article 11 of Regulation (EC) No 1223/2009.</div>
+	</div>
+	<p class="disclaimer">This Cosmetic Product Safety Report has been prepared on the basis of information supplied by the Responsible Person and is valid only for the product and formula described herein (formula code SIL/MFEDP/FO/002-00, dated 14.01.2026). Any change to the product formula, packaging, intended use, manufacturing process or other relevant parameters shall require re-evaluation of this safety assessment. MySwissLab+ | SBR Group Sàrl accepts no liability for incomplete or inaccurate information supplied by the client. This document is confidential and may be shared only with authorised personnel and competent regulatory authorities. The product bears CPSR reference CPSR-HM-FEARLESSOPTIMIST100-2026-001.</p>
+	<br><br>
+	<div class="page-footer"><span>CPSR-HM-FEARLESSOPTIMIST100-2026-001</span><span>Page 20</span><span>Confidential</span></div>
+</div>
+
+</div>
+</body>
+</html>
