@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSR — H&M Modern Minimalist EDP 100ml — CPSR-HMBEAUTY-MODERNMINIMALISTEDP50-2026-001</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-blue: #43B296;
+            --primary-dark: #2E8B72;
+            --primary-light: #5CC4A8;
+            --black: #212121;
+            --dark-gray: #424242;
+            --medium-gray: #757575;
+            --light-gray: #F5F5F5;
+            --border-gray: #E0E0E0;
+            --white: #FFFFFF;
+            --pass-green: #2E7D32;
+            --pass-green-bg: #E8F5E9;
+            --warning-amber: #FF9800;
+            --warning-amber-bg: #FFF3E0;
+            --fail-red: #C62828;
+            --fail-red-bg: #FFEBEE;
+            --check-green: #2E7D32;
+            --check-bg: #E8F5E9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 10px;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+
+        .document { max-width: 210mm; margin: 0 auto; background: var(--white); }
+
+        /* ── COVER PAGE ── */
+        .cover-page {
+            min-height: 297mm;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+        .cover-header {
+            background: var(--primary-blue);
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cover-logo { font-size: 32px; font-weight: 300; color: var(--white); letter-spacing: 1px; }
+        .cover-date { color: rgba(255,255,255,0.8); font-size: 12px; }
+        .cover-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 40px;
+            background: var(--white);
+        }
+        .cover-document-type {
+            font-size: 11px; font-weight: 600; color: var(--primary-blue);
+            text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;
+        }
+        .cover-title { font-size: 36px; font-weight: 300; color: var(--black); line-height: 1.3; margin-bottom: 10px; }
+        .cover-subtitle { font-size: 13px; font-weight: 400; color: var(--medium-gray); margin-bottom: 40px; }
+        .cover-product-name {
+            font-size: 22px; font-weight: 600; color: var(--primary-blue);
+            padding: 20px 0; border-top: 2px solid var(--border-gray);
+            border-bottom: 2px solid var(--border-gray); margin: 30px 0;
+        }
+        .cover-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
+        .cover-meta-item { padding: 12px 0; border-left: 3px solid var(--primary-blue); padding-left: 15px; }
+        .cover-meta-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--medium-gray); margin-bottom: 4px; }
+        .cover-meta-value { font-size: 12px; font-weight: 600; color: var(--dark-gray); }
+        .cover-footer { background: var(--light-gray); padding: 25px 40px; border-top: 1px solid var(--border-gray); }
+        .cover-confidential {
+            display: inline-block; background: var(--warning-amber); color: var(--white);
+            padding: 4px 12px; font-size: 10px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+        }
+        .cover-footer-text { font-size: 10px; color: var(--medium-gray); line-height: 1.6; }
+		
+		.back-cover-footer { background: var(--light-gray); padding: 25px 40px; border-top: 1px solid var(--border-gray); text-align: center; align-items: center;}
+        .back-cover-confidential {
+            text-align: center; align-items: center; display: inline-block; background: var(--warning-amber); color: var(--white);
+            padding: 4px 12px; font-size: 10px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+        }
+        .cover-footer-text { text-align: center; align-items: center; font-size: 10px; color: var(--medium-gray); line-height: 1.6; }
+
+        /* ── PAGE ── */
+        @page { size: A4; margin: 0; }
+
+        .page {
+            padding: 20mm 20mm 30mm 20mm;
+            width: 210mm;
+            min-height: 297mm;
+            position: relative;
+            page-break-after: always;
+            box-sizing: border-box;
+            background: white;
+        }
+        .page-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding-bottom: 12px; border-bottom: 2px solid var(--primary-blue); margin-bottom: 20px;
+        }
+        .page-header-logo { font-size: 16px; font-weight: 300; color: var(--primary-blue); letter-spacing: 1px; }
+        .page-header-title { font-size: 10px; color: var(--medium-gray); }
+        .page-footer {
+            position: absolute; bottom: 12mm; left: 20mm; right: 20mm;
+            display: flex; justify-content: space-between; align-items: center;
+            padding-top: 8px; border-top: 1px solid var(--border-gray);
+            font-size: 9px; color: var(--medium-gray);
+        }
+
+        /* ── TYPOGRAPHY ── */
+        h1 {
+            font-size: 15px; font-weight: 600; color: var(--primary-blue);
+            margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-blue);
+        }
+        h2 { font-size: 13px; font-weight: 600; color: var(--dark-gray); margin: 20px 0 10px 0; }
+        h3 { font-size: 12px; font-weight: 600; color: var(--primary-blue); margin: 15px 0 7px 0; }
+        h4 { font-size: 11px; font-weight: 600; color: var(--dark-gray); margin: 10px 0 5px 0; }
+        p { margin-bottom: 8px; text-align: justify; font-size: 10px; }
+
+        /* ── INFO GRID ── */
+        .info-grid { display: grid; grid-template-columns: 160px 1fr; gap: 0; margin: 12px 0; font-size: 10px; }
+        .info-label { font-weight: 400; color: var(--dark-gray); padding: 7px 0; border-bottom: 1px solid var(--border-gray); }
+        .info-value { font-weight: 600; color: var(--black); padding: 7px 0; border-bottom: 1px solid var(--border-gray); }
+
+        /* ── TABLES ── */
+        table { width: 100%; border-collapse: collapse; margin: 12px 0 16px 0; font-size: 9px; }
+        th {
+            background: var(--light-gray); color: var(--dark-gray); font-weight: 600;
+            text-align: left; padding: 6px 8px; border: 1px solid var(--border-gray); font-size: 8px;
+        }
+        td { padding: 5px 8px; border: 1px solid var(--border-gray); vertical-align: middle; font-size: 8px; }
+        tr:nth-child(even) { background: var(--light-gray); }
+
+        .stability-table th, .stability-table td { text-align: center; }
+        .stability-table td:first-child, .stability-table th:first-child { text-align: center; }
+        .stability-table td:nth-child(2) { text-align: center; }
+
+        /* ── CONFORMITY MARKS ── */
+        .check-pass {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 15px; height: 15px; background: var(--check-green); color: var(--white);
+            border-radius: 3px; font-size: 10px;
+        }
+        .check-pass::before { content: "\2713"; }
+
+        /* ── BADGES ── */
+        .badge { display: inline-block; padding: 3px 10px; font-size: 7px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 3px; }
+        .badge-pass { background: var(--pass-green); color: var(--white); }
+        .badge-safe { background: var(--pass-green-bg); color: var(--pass-green); }
+        .badge-na { background: var(--light-gray); color: var(--medium-gray); }
+        .badge-compliant { background: var(--check-bg); color: var(--check-green); }
+        .badge-warning { background: var(--warning-amber-bg); color: var(--warning-amber); }
+
+        /* ── INFO BOXES ── */
+        .method-box { background: var(--light-gray); padding: 12px 16px; margin: 12px 0; border-left: 3px solid var(--primary-blue); font-size: 10px; }
+        .method-box-title { font-weight: 600; color: var(--dark-gray); margin-bottom: 6px; font-size: 10px; }
+        .conclusion-box { background: var(--pass-green-bg); border: 1px solid var(--pass-green); padding: 16px 20px; margin: 16px 0; }
+        .conclusion-title { font-size: 10px; font-weight: 600; color: var(--pass-green); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .conclusion-text { font-size: 10px; color: var(--dark-gray); font-weight: 600; }
+        .warning-box { background: var(--warning-amber-bg); border-left: 3px solid var(--warning-amber); padding: 12px 16px; margin: 12px 0; }
+        .warning-box-title { font-weight: 600; color: var(--warning-amber); margin-bottom: 5px; font-size: 10px; }
+        .comments-box { background: var(--light-gray); padding: 12px 16px; margin: 12px 0; font-size: 10px; color: var(--dark-gray); }
+        .comments-label { font-weight: 600; margin-bottom: 5px; font-size: 10px; }
+
+        /* ── PART HEADER ── */
+        .part-header { background: var(--primary-blue); color: var(--white); padding: 12px 16px; margin: 20px 0 16px 0; }
+        .part-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 3px; }
+        .part-title { font-size: 15px; font-weight: 600; }
+
+        /* ── TOC ── */
+        .toc { margin: 16px 0; }
+        .toc-title { font-size: 15px; font-weight: 600; color: var(--primary-blue); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--primary-blue); }
+        .toc-part { font-weight: 600; color: var(--primary-blue); padding: 10px 0 4px 0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .toc-section { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px dotted var(--border-gray); font-size: 10px; }
+        .toc-number { color: var(--primary-blue); font-weight: 600; width: 25px; }
+        .toc-text { flex: 1; color: var(--dark-gray); }
+        .toc-page { color: var(--medium-gray); font-weight: 600; }
+
+        /* ── SIGNATURE ── */
+        .signature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 25px; }
+        .signature-item { padding: 12px; background: var(--light-gray); }
+        .signature-label { font-size: 10px; color: var(--medium-gray); margin-bottom: 8px; }
+        .signature-line { border-bottom: 1px solid var(--dark-gray); margin-bottom: 8px; min-height: 60px; }
+        .signature-date { font-size: 10px; color: var(--dark-gray); margin-top: 8px; }
+
+        /* ── MOS TABLE ── */
+        .mos-safe { color: var(--pass-green); font-weight: 600; }
+        .mos-review { color: var(--warning-amber); font-weight: 600; }
+        .mos-na { color: var(--medium-gray); }
+
+        /* ── PRINT ── */
+        @media print {
+            .document { max-width: none; }
+            body { font-size: 10px; }
+            h1 { font-size: 15px; }
+            h2 { font-size: 13px; }
+            h3 { font-size: 12px; }
+            h4 { font-size: 11px; }
+            .info-grid, .method-box, .conclusion-box, .warning-box,
+            .comments-box, .signature-block, table, tr, p, h1, h2, h3, h4 {
+                page-break-inside: avoid;
+            }
+            h1, h2, h3, h4 { page-break-after: avoid; }
+            thead { display: table-header-group; }
+        }
+    </style>
+</head>
+<body>
+<div class="document">
+
+<div class="cover-page">
+    <div class="cover-header"><div class="cover-logo"><b>MySwissLab+</b></div><div class="cover-date">04.03.2026</div></div>
+    <div class="cover-body">
+        <div class="cover-document-type">R E G U L A T O R Y &nbsp; D O C U M E N T</div>
+        <div class="cover-title">Cosmetic Product<br>Safety Report</div>
+        <div class="cover-subtitle">In accordance with Regulation (EC) No 1223/2009 — Annex I</div>
+        <div class="cover-product-name">H&M Modern Minimalist Eau De Parfum 100 ml<br><span style="font-size:10.5pt;font-weight:400;color:var(--medium-gray);">H&M Beauty | Fine Fragrance Spray — Leave-on</span></div>
+        <div class="cover-meta">
+            <div class="cover-meta-label">BRAND / PRODUCT</div><div class="cover-meta-value">H&M Beauty — Modern Minimalist Eau de Parfum</div>
+            <div class="cover-meta-label">PRODUCT CATEGORY</div><div class="cover-meta-value">Fine Fragrance (Eau de Parfum)</div>
+            <div class="cover-meta-label">RESPONSIBLE PERSON</div><div class="cover-meta-value">M/S STELLA INDUSSTRIES LIMITED</div>
+            <div class="cover-meta-label">DOCUMENT REFERENCE</div><div class="cover-meta-value">CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</div>
+            <div class="cover-meta-label">MANUFACTURER</div><div class="cover-meta-value">M/S STELLA INDUSSTRIES LIMITED</div>
+            <div class="cover-meta-label">REPORT DATE</div><div class="cover-meta-value">04.03.2026</div>
+        </div>
+    </div>
+    <div class="cover-footer">
+        <div class="cover-confidential">CONFIDENTIAL</div>
+        <div class="cover-footer-text">This document contains confidential information intended for regulatory compliance purposes. This CPSR must be kept available for 10 years after the last batch is placed on the market.</div>
+    </div>
+</div>
+
+    <!-- PAGE 2: TOC -->
+	
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<div class="toc"><div class="toc-title">Contents</div>
+		<div class="toc-part">Part A — Safety Information</div>
+		<div class="toc-section"><span class="toc-number">1.</span><span class="toc-text">Quantitative and Qualitative Composition</span><span class="toc-page">3</span></div>
+		<div class="toc-section"><span class="toc-number">2.</span><span class="toc-text">Physical and Chemical Characteristics</span><span class="toc-page">5</span></div>
+		<div class="toc-section"><span class="toc-number">3.</span><span class="toc-text">Stability of the Cosmetic Product</span><span class="toc-page">6</span></div>
+		<div class="toc-section"><span class="toc-number">4.</span><span class="toc-text">Microbiological Quality</span><span class="toc-page">8</span></div>
+		<div class="toc-section"><span class="toc-number">5.</span><span class="toc-text">Impurities, Traces, Packaging Material Information</span><span class="toc-page">9</span></div>
+		<div class="toc-section"><span class="toc-number">6.</span><span class="toc-text">Normal and Reasonably Foreseeable Use</span><span class="toc-page">10</span></div>
+		<div class="toc-section"><span class="toc-number">7.</span><span class="toc-text">Exposure to the Cosmetic Product</span><span class="toc-page">11</span></div>
+		<div class="toc-section"><span class="toc-number">8.</span><span class="toc-text">Exposure to the Substances</span><span class="toc-page">12</span></div>
+		<div class="toc-section"><span class="toc-number">9.</span><span class="toc-text">Toxicological Profile</span><span class="toc-page">13</span></div>
+		<div class="toc-section"><span class="toc-number">10.</span><span class="toc-text">Undesirable Effects</span><span class="toc-page">17</span></div>
+		<div class="toc-section"><span class="toc-number">11.</span><span class="toc-text">Product Information</span><span class="toc-page">18</span></div>
+		<div class="toc-part" style="margin-top:11px;">Part B — Cosmetic Product Safety Assessment</div>
+		<div class="toc-section"><span class="toc-number">1.</span><span class="toc-text">Assessment Conclusion</span><span class="toc-page">19</span></div>
+		<div class="toc-section"><span class="toc-number">2.</span><span class="toc-text">Labelled Warnings and Instructions for Use</span><span class="toc-page">20</span></div>
+		<div class="toc-section"><span class="toc-number">3.</span><span class="toc-text">Reasoning</span><span class="toc-page">21</span></div>
+		<div class="toc-section"><span class="toc-number">4.</span><span class="toc-text">Assessor Credentials</span><span class="toc-page">22</span></div>
+		<div class="toc-section"><span class="toc-number"></span><span class="toc-text">Appendix — Supporting Documentation</span><span class="toc-page">23</span></div>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 2</span><span>Confidential</span></div>
+	</div>
+
+    <!-- PAGE 3: SECTION 1 - PRODUCT ID -->
+	
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<div class="part-header"><div class="part-label">Part A</div><div class="part-title">Safety Information</div></div>
+		<h1>1. Quantitative and Qualitative Composition</h1>
+		<h2>Product Identification</h2>
+		<div class="info-grid">
+		<div class="info-label">Product Name</div><div class="info-value">H&M Modern Minimalist Eau De Parfum 100 ml</div>
+		<div class="info-label">Brand</div><div class="info-value">H&amp;M Beauty</div>
+		<div class="info-label">Formula Code</div><div class="info-value">SIL/MFEDP/MM/001-00</div>
+		<div class="info-label">CPSR Reference</div><div class="info-value">CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</div>
+		<div class="info-label">Pack Size</div><div class="info-value">100 ml</div>
+		<div class="info-label">Product Category</div><div class="info-value">Eau de Parfum / Fine Fragrance</div>
+		<div class="info-label">Product Type</div><div class="info-value">Fine fragrance spray, leave-on, non-pressurised</div>
+		<div class="info-label">Areas of Application</div><div class="info-value">Skin (body — neck, wrists, décolleté, pulse points)</div>
+		<div class="info-label">Target Group</div><div class="info-value">Adults (18 years and over)</div>
+		<div class="info-label">Assessment Date</div><div class="info-value">04.03.2026</div>
+		</div>
+		<h2>Responsible Person</h2>
+		<div class="info-grid">
+		<div class="info-label">Company Name</div><div class="info-value">M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Contact Person</div><div class="info-value">MS SHIVKANTI BAKSHI, QC Manager</div>
+		<div class="info-label">Address</div><div class="info-value">OLD KHANDSA ROAD, SECTOR 37, HSIIDC, KHERKI DAULA, GURUGRAM (HARYANA), 122004, INDIA</div>
+		<div class="info-label">Email</div><div class="info-value">shivkanti.bakshi@stella-indusstries.com</div>
+		<div class="info-label">Phone</div><div class="info-value">+91 9868252724</div>
+		</div>
+		<h2>Manufacturer</h2>
+		<div class="info-grid">
+		<div class="info-label">Company Name</div><div class="info-value">M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Address</div><div class="info-value">OLD KHANDSA ROAD, SECTOR 37, HSIIDC, KHERKI DAULA, GURUGRAM (HARYANA), 122004, INDIA</div>
+		<div class="info-label">GMP Standard</div><div class="info-value">ISO 22716:2007 Good Manufacturing Practices (documentation held on file)</div>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 3</span><span>Confidential</span></div>
+	</div>
+	
+    <!-- PAGE 4: FORMULA & ALLERGENS -->
+	
+	<div class="page">
+        <div class="page-header"><div class="page-header-logo">CPSR</div></div>
+        <h2>Qualitative and Quantitative Formula</h2>
+        <table>
+            <thead><tr><th style="width:35%;">INCI Name</th><th style="width:25%;">Function</th><th style="width:20%;">CAS No.</th><th style="width:20%;">% w/w</th></tr></thead>
+            <tbody>
+                <tr><td>ALCOHOL DENAT.</td><td>Solvent / Self-preserving</td><td>64-17-5</td><td>75.0000</td></tr>
+                <tr><td>PARFUM (T SHIRT MOD P01X566)</td><td>Fragrance</td><td>—</td><td>20.0000</td></tr>
+                <tr><td>AQUA</td><td>Carrier / Solvent</td><td>7732-18-5</td><td>4.9700</td></tr>
+                <tr><td>CI 42090</td><td>Colorant</td><td>3844-45-9</td><td>0.0200</td></tr>
+                <tr><td>CI 17200</td><td>Colorant</td><td>3567-66-6</td><td>0.0100</td></tr>
+                <tr style="background:var(--light-gray); font-weight:700;"><td>Total</td><td></td><td></td><td>100.0000</td></tr>
+            </tbody>
+        </table>
+        <h3>Declared Fragrance Allergens (≥ 0.001% threshold)</h3>
+        <p>Consistent with Commission Regulation (EU) 2023/1545, the following allergens are identified for mandatory labeling:</p>
+        <table>
+            <thead><tr><th>INCI Name (Allergen)</th><th>CAS Number</th><th>% in Product</th><th>Declare</th></tr></thead>
+            <tbody>
+                <tr><td>HEXAMETHYLINDANOPYRAN</td><td>1222-05-5</td><td>2.67344</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>TETRAMETHYL ACETYLOCTAHYDRONAPHTHALENES</td><td>54464-57-2</td><td>2.03076</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>LINALOOL</td><td>78-70-6</td><td>0.63088</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>LINALYL ACETATE</td><td>115-95-7</td><td>0.54300</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>HEXYL CINNAMAL</td><td>101-86-0</td><td>0.33778</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>HYDROXYCITRONELLAL</td><td>107-75-5</td><td>0.23348</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>GERANIOL</td><td>106-24-1</td><td>0.17866</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>CITRONELLOL</td><td>7540-51-4</td><td>0.17594</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>BENZYL SALICYLATE</td><td>118-58-1</td><td>0.16290</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>LIMONENE</td><td>5989-27-5</td><td>0.14160</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>CITRUS AURANTIUM PEEL OIL</td><td>8008-57-9</td><td>0.14118</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>ALPHA-ISOMETHYL IONONE</td><td>127-51-5</td><td>0.04814</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>JUNIPERUS VIRGINIANA OIL</td><td>8000-27-9</td><td>0.03438</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>GERANYL ACETATE</td><td>105-87-3</td><td>0.02924</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>EUCALYPTUS GLOBULUS OIL</td><td>8000-48-4</td><td>0.02714</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>POGOSTEMON CABLIN OIL</td><td>8014-09-3</td><td>0.01086</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>COUMARIN</td><td>91-64-5</td><td>0.00904</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>ROSE KETONES</td><td>23696-85-7</td><td>0.00820</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>CITRAL</td><td>5392-40-5</td><td>0.00604</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>TERPINEOL</td><td>8000-41-7</td><td>0.00594</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>PINENE</td><td>7785-70-8</td><td>0.00360</td><td><span class="badge badge-pass">YES</span></td></tr>
+                <tr><td>ISOEUGENOL</td><td>97-54-1</td><td>0.00180</td><td><span class="badge badge-pass">YES</span></td></tr>
+            </tbody>
+        </table>
+        <div class="method-box"><strong>IFRA Compliance Statement:</strong> All ingredients in H&M Modern Minimalist Eau de Parfum (100 ml) comply with Regulation (EC) No 1223/2009. The fragrance mixture 'T Shirt Mod' at 20.00% w/w is accompanied by an IFRA 51st Amendment Certificate (Ref: IFRACERTIFICATEEU_GB_EN_P01X566_TSHIRTMOD_20260107_25688239), confirming compliance at the stated usage level. All 22 identified fragrance allergens exceeding the 0.001% leave-on threshold are required to be declared on the product label per Commission Regulation (EU) 2023/1545. No prohibited, restricted, or CMR substances are present at concentrations exceeding regulatory safety limits.</div>
+        <br><br>
+        <div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 4</span><span>Confidential</span></div>
+    </div>
+	
+
+	<!-- PAGE 5: PHYSICAL/CHEMICAL -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>2. Physical and Chemical Characteristics</h1>
+		<p>Physical and chemical characteristics of the finished product as determined by the manufacturer and confirmed via the stability testing report (FG/Spec-SIL/QC/STS/FG/1841) and Safety Data Sheets (SDS).</p>
+			<div class="info-grid" style="grid-template-columns:185px 1fr;">
+			<div class="info-label">Appearance</div><div class="info-value">Clear, light blue perfumed liquid; free from turbidity and suspended matter</div>
+			<div class="info-label">Colour</div><div class="info-value">Light blue</div>
+			<div class="info-label">Aroma / Fragrance</div><div class="info-value">Fresh woody-floral fine fragrance — T Shirt Mod (P01X566)</div>
+			<div class="info-label">Physical Form</div><div class="info-value">Liquid (non-pressurised spray)</div>
+			<div class="info-label">pH</div><div class="info-value">~5.5–6.5 (aqueous-alcoholic phase)</div>
+			<div class="info-label">Density at 25°C</div><div class="info-value">0.853 g/mL (specification: 0.845–0.875 g/mL — PASS)</div>
+			<div class="info-label">Alcohol Content</div><div class="info-value">75.22% (specification: 75 ± 3% — PASS)</div>
+			<div class="info-label">Flash Point</div><div class="info-value">~13°C (Flammable liquid — ethanol 75% w/w)</div>
+			<div class="info-label">Flammability Classification</div><div class="info-value">Flammable Liquid, Category 2 (H225) per Regulation (EC) No 1272/2008 (CLP)</div>
+			<div class="info-label">Net Content</div><div class="info-value">100 ml</div>
+			<div class="info-label">Container</div><div class="info-value">100 ml glass bottle with pump dispenser and actuator</div>
+			</div>
+		
+		<div class="method-box"><div class="method-box-title">Method</div>Physical and chemical properties were determined using the following methods:<ul>
+			<li>Appearance &amp; Colour: Visual inspection against white and black backgrounds</li>
+			<li>Odour / Fragrance: Olfactory evaluation — clean citrus-eucalyptus top, floral heart, and woody-musky base</li>
+			<li>pH: Measured for aqueous-alcoholic phase</li>
+			<li>Density at 25°C: Specific gravity measurement (result: 0.853 g/mL — PASS; spec: 0.845–0.875)</li>
+			<li>Alcohol Content: Stability testing confirmation (result: 75.22% — PASS; spec: 75 ± 3%)</li>
+			<li>Flash Point: Estimated based on 75% ethanol content (~13°C)</li>
+			<li>Flammability Classification: Per Regulation (EC) No 1272/2008 (CLP) criteria — Flammable Liquid Cat. 2</li>
+			</ul></div>
+			<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">CONCLUSION</div><div class="conclusion-text">All physical and chemical characteristics meet the product specification as confirmed by the stability testing report (Sample No: 251218). Density at 25°C is confirmed at 0.853 g/mL (specification 0.845–0.875 g/mL — PASS). Alcohol content is confirmed at 75.22% (specification 75 ± 3% — PASS). Flash point of approximately 13°C confirms Flammable Liquid Category 2 (H225) classification. The formula (SIL/MFEDP/MM/001-00) is confirmed as identical for the 100 ml format.</div></div>
+			<br><br>
+			<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 5</span><span>Confidential</span></div>
+	</div>
+
+    <!-- PAGE 6: STABILITY (Full Expansion) -->
+	<div class="page">
+	<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>3. Stability of the Cosmetic Product</h1>
+		<div class="info-grid" style="grid-template-columns:175px 1fr;">
+		<div class="info-label">Shelf Life</div><div class="info-value">36 months from date of manufacture</div>
+		<div class="info-label">PAO</div><div class="info-value">24M (24 months after opening)</div>
+		<div class="info-label">Storage Conditions</div><div class="info-value">Store below 25°C in a cool, dry place. Avoid direct sunlight and heat sources. Keep away from flames.</div>
+		<div class="info-label">Study Duration</div><div class="info-value">6 months (accelerated)</div>
+		<div class="info-label">Test Conditions</div><div class="info-value">40&#176;C &#177; 2&#176;C / 75% RH &#177; 5% (accelerated stability chamber)</div>
+		<div class="info-label">Parameters Tested</div><div class="info-value">Packaging integrity, appearance, fragrance, colour, alcohol content (75 ± 3%), vacuum leak (400 mmHg / 2 min), specific gravity</div>
+		<div class="info-label">Specification Reference</div><div class="info-value">FG/Spec-SIL/QC/STS/FG/1841</div>
+		<div class="info-label">Signed By</div><div class="info-value">Shivkanti Bakshi, QC Manager, M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Overall Result</div><div class="info-value"><span class="badge badge-pass">PASS — All parameters at all time points</span></div>
+	</div>
+		<h2>Accelerated Stability Test Results — 6-Month Study (40&#176;C &#177; 2&#176;C / 75% RH &#177; 5%)</h2>
+		<table class="stability-table"><thead><tr><th style="width:18%;">Parameter</th><th style="width:14%;">Specification</th><th style="width:12%;">Initial<br><small>19/06/2025</small></th><th style="width:10%;">1 Mo.<br><small>19/07/2025</small></th><th style="width:10%;">2 Mo.<br><small>19/08/2025</small></th><th style="width:10%;">3 Mo.<br><small>19/09/2025</small></th><th style="width:10%;">6 Mo.<br><small>19/12/2025</small></th><th style="width:8%;">Result</th></tr></thead>
+		<tbody>
+		<tr><td>Appearance</td><td>Clear, colourless perfumed liquid, free from sedimentation</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Colour</td><td>Matches with Standard</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Odour</td><td>Matches with Standard</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="check-pass"></span> Conforms</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Alcohol Content (95% Ethanol)</td><td>75 &#177; 3%</td><td>75.22%</td><td>75.17</td><td>75.24</td><td>75.29</td><td>75.41</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Vacuum Leak Test (400 mmHg / 2 min)</td><td>No leakage</td><td>No Leakage</td><td>No Leakage</td><td>No Leakage</td><td>No Leakage</td><td>No Leakage</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Specific Gravity @ 25&#176;C</td><td>0.845–0.875 g/mL</td><td>0.850</td><td>0.857</td><td>0.852</td><td>0.853</td><td>0.857</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Packaging</td><td>Intact / No leakage</td><td>OK</td><td>OK</td><td>OK</td><td>OK</td><td>OK</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		</tbody></table>
+        <div class="method-box">Note: Stability study was conducted on the 100 ml product format; the formula composition (SIL/MFEDP/MM/001-00) is identical.</div>
+        <br><br>
+        <div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 6</span><span>Confidential</span></div>
+    </div>
+	
+	<!-- PAGE 7: SECTION 3 — STABILITY (Accelerated Study Conclusion) -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>3. Stability of the Cosmetic Product <span style="font-size:8pt;font-weight:400;color:var(--medium-gray);">(continued — Study Details &amp; Conclusion)</span></h1>
+		<h2>Study Metadata</h2>
+		<div class="info-grid" style="grid-template-columns:175px 1fr;">
+		<div class="info-label">Manufacturer</div><div class="info-value">M/S STELLA INDUSSTRIES LIMITED, Old Khandsa Road, Sector-37, HSIIDC, Gurugram, Haryana</div>
+		<div class="info-label">Batch No.</div><div class="info-value">251218</div>
+		<div class="info-label">Manufacturing Date</div><div class="info-value">19/06/2025</div>
+		<div class="info-label">Study Start Date</div><div class="info-value">19/06/2025</div>
+		<div class="info-label">6-Month Time Point</div><div class="info-value">19/12/2025</div>
+		<div class="info-label">Storage Condition</div><div class="info-value">40&#176;C &#177; 2&#176;C / 75% RH &#177; 5% (calibrated stability chamber)</div>
+		<div class="info-label">Study Type</div><div class="info-value">Accelerated Stability Study</div>
+		<div class="info-label">Signed By</div><div class="info-value">Shivkanti Bakshi, Quality Manager, M/S STELLA INDUSSTRIES LIMITED</div>
+		</div>
+		<h2>Accelerated Stability — Parameter Summary</h2>
+		<table><thead><tr><th style="width:30%;">Parameter</th><th style="width:16%;">Specification</th><th style="width:10%;">Initial</th><th style="width:11%;">1 Month</th><th style="width:11%;">2 Months</th><th style="width:11%;">3 Months</th><th style="width:11%;">6 Months</th></tr></thead>
+		<tbody>
+		<tr><td>Appearance</td><td>Conforms to std.</td><td>Conforms</td><td>Conforms</td><td>Conforms</td><td>Conforms</td><td>Conforms</td></tr>
+		<tr><td>Colour</td><td>Matches with Standard</td><td>Conforms</td><td>Conforms</td><td>Conforms</td><td>Conforms</td><td>Conforms</td></tr>
+		<tr><td>Odour</td><td>Matches with Standard</td><td>Conforms</td><td>Conforms</td><td>Conforms</td><td>Conforms</td><td>Conforms</td></tr>
+		<tr><td>Alcohol Content (75 &#177; 3%)</td><td>72–78%</td><td>75.22%</td><td>75.17</td><td>75.24</td><td>75.29</td><td>75.41</td></tr>
+		<tr><td>Vacuum Leak Test (400 mmHg / 2 min)</td><td>No leakage</td><td>No Leakage</td><td>No Leakage</td><td>No Leakage</td><td>No Leakage</td><td>No Leakage</td></tr>
+		<tr><td>Specific Gravity @ 25&#176;C</td><td>0.845–0.875 g/mL</td><td>0.850</td><td>0.857</td><td>0.852</td><td>0.853</td><td>0.857</td></tr>
+		<tr><td>Packaging</td><td>Intact / No leakage</td><td>OK</td><td>OK</td><td>OK</td><td>OK</td><td>OK</td></tr>
+		</tbody></table>
+		<p style="font-size:7pt;color:var(--medium-gray);font-style:italic;">All results at all time points within specification. No phase separation, turbidity, precipitation or packaging failure observed. Alcohol content remains stable within the 75 &#177; 3% specification across the full 6-month accelerated period.</p>
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">STABILITY CONCLUSION</div><div class="conclusion-text">Based on the accelerated stability study conducted at 40&#176;C &#177; 2&#176;C / 75% RH &#177; 5% for 6 months, all tested parameters remain within specification at all time points (Initial, 1, 2, 3 and 6 months). No significant changes in physical or chemical parameters were observed. Vacuum leak testing at 400 mmHg for 2 minutes confirmed no leakage at all time points. The product demonstrates excellent physicochemical stability under accelerated conditions. A tentative shelf life of 36 months from the date of manufacture is approved, subject to confirmation by real-time stability data. PAO is set at 24 months.</div></div>
+	<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 7</span><span>Confidential</span></div>
+	</div>
+
+	<!-- PAGE 8: SECTION 4 — MICROBIOLOGICAL QUALITY -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>4. Microbiological Quality</h1>
+		<div class="info-grid" style="grid-template-columns:195px 1fr;">
+		<div class="info-label">Product Name</div><div class="info-value">H&M Modern Minimalist Eau De Parfum 100 ml</div>
+		<div class="info-label">Ethanol Content</div><div class="info-value">75.00% w/w (Alcohol Denat.) — confirmed 75.22% in stability testing</div>
+		<div class="info-label">Preservation Mechanism</div><div class="info-value">Self-preserving — high alcohol content (≥20% w/w ethanol)</div>
+		<div class="info-label">Challenge Test Required</div><div class="info-value"><span class="badge badge-na">Not Required</span></div>
+		<div class="info-label">Testing Standard</div><div class="info-value">EU Regulation (EC) No 1223/2009, Annex I; ISO 11930 (preservative efficacy — not required); SCCS guidance on self-preserving formulations</div>
+		</div>
+		<div class="method-box"><div class="method-box-title">Self-Preserving Justification</div>This product contains 75.00% w/w Alcohol Denat. (denatured ethanol), confirmed analytically at 75.22% during stability testing. Products containing ethanol at concentrations of 20% w/w or above are considered inherently self-preserving and are not susceptible to microbial growth or contamination under normal storage and use conditions. A microbiological challenge test (preservative efficacy test to ISO 11930) is therefore not required. This is consistent with SCCS guidance and established regulatory practice for high-ethanol cosmetic formulations.</div>
+		<h2>Quality Control Parameters — Stability Summary</h2>
+		<table><thead><tr><th style="width:38%;">Analysis</th><th style="width:28%;">Specification</th><th style="width:18%;">Result</th><th style="width:16%;">Conformity</th></tr></thead>
+		<tbody>
+		<tr><td>Colour</td><td>Light blue</td><td>Light blue</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Appearance</td><td>Clear, free from turbidity and suspended matter</td><td>Clear</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Fragrance</td><td>Characteristic</td><td>Characteristic</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Alcohol Content</td><td>75 ± 3% w/w</td><td>75.22%</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Specific Gravity at 25°C</td><td>0.845–0.875 g/mL</td><td>0.853 g/mL</td><td><span class="check-pass"></span></td></tr>
+		<tr><td>Vacuum Leak Test (400 mmHg / 2 min)</td><td>No leakage</td><td>No leakage</td><td><span class="check-pass"></span></td></tr>
+		</tbody></table>
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">MICROBIOLOGICAL CONCLUSION</div><div class="conclusion-text">H&M Modern Minimalist Eau De Parfum 100 ml is self-preserving by virtue of its high ethanol content (75.00% w/w Alcohol Denat., confirmed at 75.22%). The product is not susceptible to microbial contamination or growth. Microbiological challenge testing per ISO 11930 is not required. All physical quality parameters confirmed by the stability testing report (FG/Spec-SIL/QC/STS/FG/1841) meet specification. The product complies with the microbiological quality requirements of EU Regulation (EC) No 1223/2009.</div></div>
+		<div class="comments-box"><div class="comments-label">Comments</div>The product is dispensed from a sealed glass bottle via a crimped pump and actuator spray nozzle. The pump delivery system minimizes post-manufacture contamination risk during consumer use. The very high ethanol concentration (75%) provides a robust antimicrobial barrier. No preservative additives are required or present in the formulation.</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 8</span><span>Confidential</span></div>
+	</div>
+
+
+    <!-- PAGE 9: IMPURITIES BULLET NOTES -->
+<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>5. Impurities, Traces, Packaging Material Information</h1>
+		<h2>Impurities and Trace Substances</h2>
+		<p>According to the material suppliers, the raw materials used in this formulation do not contain any traces of impurities or prohibited substances above regulatory limits as defined in Regulation (EC) No 1223/2009. Individual Safety Data Sheets (SDS) and Technical Data Sheets confirm compliance with applicable limits for heavy metals, nitrosamines, and other impurities of concern.</p>
+		<div class="method-box"><div class="method-box-title">Impurity Assessment Notes</div><ul>
+		<li><strong>Heavy metals:</strong> No heavy metal contamination is expected based on the nature of the ingredients and supplier declarations. Raw material suppliers confirm compliance with regulatory limits in their technical documentation.</li>
+		<li><strong>Nitrosamines:</strong> No nitrosamine-forming ingredients are present in the formula. No secondary amines or nitrogen-containing preservatives are used.</li>
+		<li><strong>1,4-Dioxane:</strong> Not applicable — no ethoxylated ingredients are present in the formulation.</li>
+		<li><strong>CMR substances:</strong> No ingredients classified as carcinogenic, mutagenic, or reprotoxic (Category 1A or 1B) under Regulation (EC) No 1272/2008 are used in this product at prohibited levels. Isoeugenol (CAS 97-54-1) is present at 0.0018% w/w, well below the regulatory threshold per Commission Regulation (EU) 2024/996 Annex III and IFRA 51st Amendment limits.</li>
+		<li><strong>Nanomaterials:</strong> No nanomaterial ingredients are present. All ingredients are in conventional (non-nano) particle sizes. Compliant with Commission Regulation (EU) 2024/858.</li>
+		<li><strong>Restricted substances:</strong> All ingredients comply with Annexes II, III, and V of Regulation (EC) No 1223/2009 as amended.</li>
+		<li><strong>Denatured ethanol impurities:</strong> The ethanol is denatured with TBA (tert-butanol) and Denatonium Benzoate. No known impurities beyond the denaturant system are present, as confirmed by the Ethanol SDS.</li>
+		</ul></div>
+		<h2>Packaging Material Information</h2>
+		<div class="info-grid" style="grid-template-columns:175px 1fr;">
+		<div class="info-label">Primary Container</div><div class="info-value">100 ml glass bottle</div>
+		<div class="info-label">Container Material</div><div class="info-value">Glass (chemically inert; consistent with fine fragrance industry standards)</div>
+		<div class="info-label">Closure / Dispenser</div><div class="info-value">Crimped pump with actuator spray nozzle</div>
+		<div class="info-label">Pack Size</div><div class="info-value">100 ml nominal</div>
+		<div class="info-label">Propellant</div><div class="info-value">None — non-pressurised pump spray</div>
+		<div class="info-label">Vacuum Leak Test</div><div class="info-value">400 mmHg / 2 minutes — No leakage confirmed (PASS)</div>
+		<div class="info-label">Known Packaging Impurities</div><div class="info-value">None</div>
+		</div>
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">PACKAGING COMPATIBILITY ASSESSMENT</div><div class="conclusion-text">The 100 ml glass bottle is an established and appropriate packaging format for alcohol-based fine fragrance products. Glass is chemically inert with respect to the alcohol-based EDP formulation, presenting no risk of migration or leaching. Stability data over 6 months under accelerated conditions (40°C ± 2°C / 75% RH ± 5%) demonstrates no evidence of packaging interaction, leakage, or degradation. Vacuum leak testing at 400 mmHg / 2 minutes confirms seal integrity. The packaging is deemed fully compatible with the product formulation.</div></div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 9</span><span>Confidential</span></div>
+	</div>
+
+<!-- PAGE 10: SECTION 6 — NORMAL USE -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>6. Normal and Reasonably Foreseeable Use</h1>
+		<p>H&M Modern Minimalist Eau De Parfum 100 ml is a fine fragrance spray intended for adult use. The product is a leave-on, non-pressurised fine fragrance designed to deliver a long-lasting fresh woody-floral fragrance. It is dispensed from a 100 ml glass bottle with a pump mechanism and actuator.</p>
+		<div class="info-grid" style="grid-template-columns:185px 1fr;">
+		<div class="info-label">Areas of Application</div><div class="info-value">Skin (body — neck, wrists, décolleté, pulse points)</div>
+		<div class="info-label">Product Category</div><div class="info-value">Fine-fragrance (Eau de Parfum)</div>
+		<div class="info-label">Product Type</div><div class="info-value">Leave-on (non-pressurised spray)</div>
+		<div class="info-label">Target Group</div><div class="info-value">Adults (18 years and over)</div>
+		<div class="info-label">Duration &amp; Frequency</div><div class="info-value">Daily use</div>
+		<div class="info-label">Application Distance</div><div class="info-value">1 foot (approximately 30 cm)</div>
+		<div class="info-label">Amount per Use</div><div class="info-value">~0.24 g per day (SCCS/1628/21 default for fine fragrance spray)</div>
+		</div>
+		<div class="method-box"><div class="method-box-title">Application Instructions (as labelled)</div>Spray the perfume towards your pulse points from 1 foot distance. For best result spray on wrist, neckline, back of your neck, under elbow. Avoid contact with eyes. Keep away from fire and flame. For external use only. Keep out of reach of children.</div>
+		<div class="warning-box"><div class="warning-box-title" style="color:#FF9800;">Precautionary Statements (Labelled)</div><ul>
+		<li>FOR EXTERNAL USE ONLY.</li>
+		<li>AVOID DIRECT CONTACT WITH EYES.</li>
+		<li>FLAMMABLE, KEEP AWAY FROM HEAT AND FIRE.</li>
+		<li>HARMFUL IF TAKEN INTERNALLY.</li>
+		<li>Keep container tightly closed.</li>
+		<li>Keep out of reach of children.</li>
+		<li>For adult use only (18 years and over).</li>
+		<li>Fragrance-sensitive individuals should review the INCI ingredient list prior to use. Contains 22 declared fragrance allergens per Commission Regulation (EU) 2023/1545.</li>
+		</ul></div>
+		<h2>Reasonably Foreseeable Misuse</h2>
+		<p>Reasonably foreseeable misuse scenarios include: application to eyes or broken/irritated skin; ingestion (harmful if taken internally); use by children; and use near open flames or heat sources due to high ethanol content (75.00% w/w). These risks are mitigated through explicit label warnings, the use of a crimped pump dispenser which prevents easy access to the bulk liquid, and the inclusion of denaturants (TBA and Denatonium Benzoate) in the ethanol to discourage ingestion. The product is considered safe when used according to instructions; any misuse beyond these parameters is addressed by standard regulatory warnings for flammable fine fragrances.</p>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 10</span><span>Confidential</span></div>
+	</div>
+
+	<!-- PAGE 11: SECTION 7 — EXPOSURE ASSESSMENT -->
+<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>7. Exposure to the Cosmetic Product</h1>
+		<p>Exposure assessment follows the SCCS Notes of Guidance for the Testing of Cosmetic Ingredients and their Safety Evaluation (11th revision, 2021, SCCS/1628/21). Default values for <strong>fine fragrance / Eau de Parfum (leave-on)</strong> are applied to calculate the Systemic Exposure Dose (SED) for each ingredient.</p>
+		<table><thead><tr><th>Exposure Parameter</th><th>Value</th></tr></thead>
+		<tbody>
+		<tr><td>Areas of Application</td><td>Skin (body — neck, wrists, décolleté, pulse points)</td></tr>
+		<tr><td>Product Category</td><td>fine-fragrance</td></tr>
+		<tr><td>Product Type</td><td>Leave-on (non-pressurised spray)</td></tr>
+		<tr><td>Duration and Frequency</td><td>Daily; 1 application per day</td></tr>
+		<tr><td>Retention Factor (RF)</td><td>1.0 (leave-on product)</td></tr>
+		<tr><td>Estimated Amount of Product Applied per Day</td><td>240 mg/day (0.24 g/day — SCCS 2021 default for fine fragrance)</td></tr>
+		<tr><td>Target Group</td><td>Adults</td></tr>
+		<tr><td>Body Weight (BW)</td><td>60 kg (conservative SCCS default)</td></tr>
+		<tr class="row-highlight"><td><strong>Calculated Total Product SED</strong></td><td><strong>(240 mg &#215; 1.0) / 60 kg = 4.0 mg product / kg bw / day</strong></td></tr>
+		</tbody></table>
+		<div class="method-box"><div class="method-box-title">Calculation Formula & Focus Ingredients</div>
+		<p>SED (mg/kg bw/day) = (Amount applied [mg/day] &#215; Ingredient concentration [fraction] &#215; Retention Factor) / Body Weight [kg]</p>
+		<p><strong>Total Product SED:</strong><br>= (240 mg &#215; 1.0) / 60 kg = <strong>4.0 mg product / kg bw / day</strong></p>
+		
+		<p style="margin-top:8px;"><strong>Example — HEXAMETHYLINDANOPYRAN (2.67344%):</strong><br>
+		SED = 4.0 &#215; 0.0267344 = <strong>0.10694 mg/kg bw/day</strong></p>
+		
+		<p><strong>Example — Alcohol Denat. (75.00%):</strong><br>
+		SED = 4.0 &#215; 0.7500 = <strong>3.0000 mg/kg bw/day</strong></p>
+		</div>
+
+		<div class="method-box"><div class="method-box-title">Notes on Exposure Assessment</div>
+		<p>The total product SED of 4.0 mg/kg bw/day reflects dermal absorption of all non-volatile ingredients. Ethanol, as the primary solvent (75.00%), rapidly evaporates from the skin surface; however, a conservative dermal absorption factor of 100% is applied consistent with SCCS guidance for ethanol in cosmetics, yielding SED = 3.0 mg/kg bw/day.</p>
+		
+		<p style="background:var(--warning-amber-bg); padding:5px; border-radius:3px; border-left:3px solid var(--warning-amber);">
+			<strong>AHTN / OTNE Focus:</strong> As a significant constituent of the fragrance mixture (T Shirt Mod P01X566), <strong>Tetramethyl acetyloctahydronaphthalenes</strong> is assessed at its full concentration in the finished product (2.03076% w/w). Given its specific toxicological profile (NOAEL 12.5 mg/kg/d), the SED of 0.08123 mg/kg bw/day is a critical value for the Margin of Safety (MoS) calculation in Section 8.
+		</p>
+
+		<p style="margin-top:5px;">The fragrance mixture (20.00%) is assessed at the full formulated concentration per IFRA methodology. Purified water (4.97%) is not separately assessed — water presents no systemic toxicological concern. Trace colorants (CI 42090 and CI 17200) are present at &lt;1% and are EU-approved per Regulation (EC) No 1223/2009 Annex IV.</p>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 11</span><span>Confidential</span></div>
+	</div>
+	
+<!-- PAGE 12: SECTION 8 — MoS TABLE (Part 1) -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>8. Exposure to the Substances</h1>
+		<p>The Systemic Exposure Dose (SED) for each ingredient was calculated using: SED = (240 mg × concentration fraction × 1.0) / 60 kg. The Margin of Safety (MoS) = NOAEL / SED. A minimum MoS of 100 is required for safety. All values calculated at maximum formulated concentration. The fragrance allergens below are assessed at their concentration in the finished product (at 20.00% w/w fragrance loading).</p>
+		<table class="mos-table"><colgroup><col style="width:27%;"><col style="width:8%;"><col style="width:13%;"><col style="width:13%;"><col style="width:10%;"><col style="width:29%;"></colgroup>
+		<thead><tr><th>INCI Name / Substance</th><th>Conc. (%)</th><th>SED (mg/kg/d)</th><th>NOAEL (mg/kg/d)</th><th>MoS</th><th>Source / Notes</th></tr></thead>
+		<tbody>
+		<tr><td><strong>ALCOHOL DENAT.</strong></td><td>75.00</td><td>3.0000</td><td>2600</td><td><span class="mos-safe">867</span></td><td>SCCS (2012); EFSA — SAFE</td></tr>
+		<tr><td><strong>PARFUM</strong> (T SHIRT MOD P01X566)</td><td>20.00</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>IFRA 51st Amendment compliant — SAFE</td></tr>
+		<tr><td><strong>AQUA</strong></td><td>4.97</td><td>—</td><td>—</td><td><span class="mos-na">N/A</span></td><td>Not assessed — SAFE</td></tr>
+		
+		<tr><td><strong>HEXAMETHYLINDANOPYRAN</strong></td><td>2.67344</td><td>0.10694</td><td>40</td><td><span class="mos-safe">374</span></td><td>RIFM monograph; NTP study — SAFE</td></tr>
+		
+		<tr style="background:var(--warning-amber-bg);"><td><strong>TETRAMETHYL ACETYLOCTAHYDRONAPHTHALENES</strong></td><td>2.03076</td><td>0.08123</td><td>12.5</td><td><span class="mos-safe">154</span></td><td>SCCS/1543/14; RIFM — SAFE</td></tr>
+		
+		<tr><td>LINALOOL</td><td>0.63088</td><td>0.025235</td><td>500</td><td><span class="mos-safe">19,814</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>LINALYL ACETATE</td><td>0.54300</td><td>0.02172</td><td>500</td><td><span class="mos-safe">23,022</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>HEXYL CINNAMAL</td><td>0.33778</td><td>0.013511</td><td>200</td><td><span class="mos-safe">14,803</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>HYDROXYCITRONELLAL</td><td>0.23348</td><td>0.0093392</td><td>500</td><td><span class="mos-safe">53,543</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>GERANIOL</td><td>0.17866</td><td>0.007146</td><td>500</td><td><span class="mos-safe">69,971</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>CITRONELLOL</td><td>0.17594</td><td>0.0070376</td><td>500</td><td><span class="mos-safe">71,046</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>BENZYL SALICYLATE</td><td>0.16290</td><td>0.006516</td><td>500</td><td><span class="mos-safe">76,737</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>LIMONENE</td><td>0.14160</td><td>0.005664</td><td>75</td><td><span class="mos-safe">13,235</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>CITRUS AURANTIUM PEEL OIL</td><td>0.14118</td><td>0.0056472</td><td>100</td><td><span class="mos-safe">17,710</span></td><td>RIFM; Citrus Oils — SAFE</td></tr>
+		<tr><td>ALPHA-ISOMETHYL IONONE</td><td>0.04814</td><td>0.0019256</td><td>170</td><td><span class="mos-safe">88,267</span></td><td>SCCS/1585/17 — SAFE</td></tr>
+		<tr><td>JUNIPERUS VIRGINIANA OIL</td><td>0.03438</td><td>0.0013752</td><td>500</td><td><span class="mos-safe">363,636</span></td><td>RIFM; Cedarwood — SAFE</td></tr>
+		<tr><td>GERANYL ACETATE</td><td>0.02924</td><td>0.0011696</td><td>250</td><td><span class="mos-safe">213,675</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>EUCALYPTUS GLOBULUS OIL</td><td>0.02714</td><td>0.0010856</td><td>100</td><td><span class="mos-safe">92,115</span></td><td>RIFM; Eucalyptus — SAFE</td></tr>
+		<tr><td>POGOSTEMON CABLIN OIL</td><td>0.01086</td><td>0.0004344</td><td>500</td><td><span class="mos-safe">1,151,239</span></td><td>RIFM; Patchouli — SAFE</td></tr>
+		<tr><td>COUMARIN</td><td>0.00904</td><td>0.0003616</td><td>25</td><td><span class="mos-safe">69,138</span></td><td>SCCS/1405/11 — SAFE</td></tr>
+		<tr><td>ROSE KETONES</td><td>0.00820</td><td>0.0003280</td><td>100</td><td><span class="mos-safe">304,878</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>CITRAL</td><td>0.00604</td><td>0.0002416</td><td>100</td><td><span class="mos-safe">414,047</span></td><td>SCCS/RIFM — SAFE</td></tr>
+		<tr><td>TERPINEOL</td><td>0.00594</td><td>0.0002376</td><td>500</td><td><span class="mos-safe">2,104,377</span></td><td>CIR; RIFM — SAFE</td></tr>
+		<tr><td>PINENE</td><td>0.00360</td><td>0.0001440</td><td>100</td><td><span class="mos-safe">694,444</span></td><td>RIFM monograph — SAFE</td></tr>
+		<tr><td>ISOEUGENOL</td><td>0.00180</td><td>0.0000720</td><td>37.5</td><td><span class="mos-safe">520,833</span></td><td>SCCS; IFRA Category 4 — SAFE</td></tr>
+		</tbody></table>
+
+		<div class="warning-box"><div class="warning-box-title">Note on OTNE / Tetramethyl Acetyloctahydronaphthalenes (MoS = 154)</div><p>The MoS for OTNE is 154, which is above the default safety threshold of 100. This calculation uses the SCCS/1543/14 NOAEL of 12.5 mg/kg bw/day. The fragrance mixture is certified IFRA 51st Amendment compliant for Category 4 (Fine Fragrance).</p></div>
+
+		<div class="conclusion-box" style="margin-top:20px;"><div class="conclusion-title" style="color:#2E7D32;">EXPOSURE CONCLUSION</div><div class="conclusion-text">The exposure assessment for H&M Modern Minimalist Eau De Parfum 100 ml confirms that all ingredients and 22 declared fragrance allergens possess a Margin of Safety (MoS) exceeding the benchmark value of 100. The product is considered safe for human health when used as intended by adults.</div></div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 12</span><span>Confidential</span></div>
+	</div>
+	
+
+    <!-- PAGE 13-16: TOXICOLOGICAL PROFILES (Expanded) -->
+	<div class="page">
+        <div class="page-header"><div class="page-header-logo">CPSR</div></div>
+        <h1>9. Toxicological Profile</h1>
+			<h2>ALCOHOL DENAT.</h2>
+			<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS Number:</strong> 64-17-5 | <strong>EC Number:</strong> 200-578-6 | <strong>Function:</strong> Solvent / Self-preserving | <strong>Concentration:</strong> 75.00% w/w</p>
+			<p class="tox-meta"><strong>NOAEL:</strong> 2600 mg/kg bw/day | <strong>SED:</strong> 3.0000 mg/kg bw/day | <strong>MoS:</strong> <span class="mos-inline">867</span></p>
+			<p class="tox-assessment">Ethanol (Alcohol Denat.) is a thoroughly characterized solvent with an extensive history of safe use in fine fragrances. It is denatured with tert-butanol (TBA) and denatonium benzoate to render it unfit for consumption. The NOAEL for systemic toxicity is 2600 mg/kg bw/day based on SCCS (2012) evaluations. At 75.00% w/w in a fine fragrance with a daily exposure of 240 mg, the SED is 3.0000 mg/kg bw/day, yielding a MoS of 867—well above the 100 threshold. It is not classified as a skin sensitizer, though mild transient defatting of the skin may occur with repeated use. A flash point of ~13°C necessitates a Flammable Liquid Category 2 (H225) classification.</p>
+			</div>
+		<hr class="ingredient-divider">
+
+		<h2>PARFUM (T SHIRT MOD — P01X566)</h2>
+			<div class="ingredient-profile">
+			<p class="tox-meta"><strong>Trade Name:</strong> T Shirt Mod (P01X566)&nbsp;|&nbsp; <strong>Supplier Code:</strong> P01X566&nbsp;|&nbsp; <strong>Function:</strong> Fragrance &nbsp;|&nbsp; <strong>Concentration:</strong> 20.00% w/w</p>
+			<p class="tox-meta"><strong>IFRA Certificate:</strong> IFRACERTIFICATEEU_GB_EN_P01X566_TSHIRTMOD_20260107_25688239 (51st Amendment) &nbsp;|&nbsp; <strong>MoS:</strong> <span class="mos-inline">N/A — IFRA Compliant</span></p>
+			<p class="tox-assessment">The fragrance mixture 'T Shirt Mod' is assessed at the formulated concentration of 20.00% w/w in Eau de Parfum. The IFRA 51st Amendment Certificate confirms compliance with all IFRA category 4 (Fine Fragrance) limits at the stated usage level. The allergen declaration identifies 22 fragrance allergens above the 0.001% leave-on threshold, including Hexamethylindanopyran (2.67344%) and Linalool (0.63088%). All declared allergens are separately profiled for safety. The fragrance mixture is assessed as safe at the formulated level, subject to IFRA compliance and mandatory allergen labelling per Commission Regulation (EU) 2023/1545. No prohibited or CMR fragrance ingredients have been identified at concerning concentrations.</p>
+			</div>
+		<hr class="ingredient-divider">
+
+		<h2>AQUA (Purified Water)</h2>
+			<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS Number:</strong> 7732-18-5 &nbsp;|&nbsp; <strong>EC Number:</strong> 231-791-2 &nbsp;|&nbsp; <strong>Function:</strong> Carrier / Solvent &nbsp;|&nbsp; <strong>Concentration:</strong> 4.97% w/w</p>
+			<p class="tox-meta"><strong>Assessment:</strong> <span class="mos-inline">Not assessed — intrinsically safe</span></p>
+			<p class="tox-assessment">Purified Water (Aqua, CAS 7732-18-5) is a universally accepted cosmetic ingredient with no toxicological concerns at any concentration in topically applied products. It functions as an aqueous phase carrier in this formulation at 4.97% w/w. No NOAEL assessment or MoS calculation is required. Water presents no dermal, systemic, or mutagenic risk and requires no further toxicological evaluation.</p>
+			</div>
+		<hr class="ingredient-divider">
+			<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 13</span><span>Confidential</span></div>
+	</div>
+		
+		
+<div class="page">
+        <div class="page-header"><div class="page-header-logo">CPSR</div></div>
+        <h1>9. Toxicological Profile: Allergens</h1>
+		
+		<h2>HEXAMETHYLINDANOPYRAN (Galaxolide)</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 1222-05-5 | <strong>NOAEL:</strong> 40 mg/kg/d (RIFM) | <strong>Conc:</strong> 2.67344% | <strong>SED:</strong> 0.10694 | <strong>MoS:</strong> <span class="mos-safe">374</span></p>
+			<p class="tox-assessment">Polycyclic musk. MoS exceeds the 100 threshold. Environmental PBT/vPvB monitoring noted per IFRA 51st Amendment.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>TETRAMETHYL ACETYLOCTAHYDRONAPHTHALENES (OTNE)</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 54464-57-2 | <strong>NOAEL:</strong> 12.5 mg/kg/d (SCCS) | <strong>Conc:</strong> 2.03076% | <strong>SED:</strong> 0.08123 | <strong>MoS:</strong> <span class="mos-safe">154</span></p>
+			<p class="tox-assessment">Fragrance component with a MoS of 154, exceeding the safety threshold of 100. SCCS/1543/14 residual uncertainties for spray products noted.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>LINALOOL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 78-70-6 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.63088% | <strong>SED:</strong> 0.025235 | <strong>MoS:</strong> <span class="mos-safe">19,814</span></p>
+			<p class="tox-assessment">Naturally occurring terpene alcohol. High margin of safety; sensitization managed via mandatory label declaration.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>LINALYL ACETATE</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 115-95-7 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.543% | <strong>SED:</strong> 0.02172 | <strong>MoS:</strong> <span class="mos-safe">23,022</span></p>
+			<p class="tox-assessment">Fragrance allergen frequently found in essential oils. Established low systemic toxicity with a very high MoS.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>HEXYL CINNAMAL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 101-86-0 | <strong>NOAEL:</strong> 200 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.33778% | <strong>SED:</strong> 0.013511 | <strong>MoS:</strong> <span class="mos-safe">14,803</span></p>
+			<p class="tox-assessment">Floral fragrance element. MoS exceeds 100 significantly. Not classified as CMR.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>HYDROXYCITRONELLAL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 107-75-5 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.23348% | <strong>SED:</strong> 0.0093392 | <strong>MoS:</strong> <span class="mos-safe">53,543</span></p>
+			<p class="tox-assessment">Lily-of-the-valley floral heart note. Systemically safe with a significant margin of safety.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>GERANIOL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 106-24-1 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.17866% | <strong>SED:</strong> 0.007146 | <strong>MoS:</strong> <span class="mos-safe">69,971</span></p>
+			<p class="tox-assessment">Rose-scented floral heart note. Highly safe systemic profile; sensitization managed via labeling.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>CITRONELLOL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 7540-51-4 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.17594% | <strong>SED:</strong> 0.0070376 | <strong>MoS:</strong> <span class="mos-safe">71,046</span></p>
+			<p class="tox-assessment">Natural floral fragrance constituent. MoS exceeds 100 significantly. No systemic risk.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 14</span><span>Confidential</span></div>
+	</div>
+
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>9. Toxicological Profile: Allergens (continued)</h1>
+		
+		<h2>BENZYL SALICYLATE</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 118-58-1 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.16290% | <strong>SED:</strong> 0.006516 | <strong>MoS:</strong> <span class="mos-inline">76,737</span></p>
+			<p class="tox-assessment">Floral fragrance element with a conservative NOAEL for aromatic esters. Margin of Safety significantly exceeds the required threshold of 100.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>LIMONENE</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 5989-27-5 | <strong>NOAEL:</strong> 75 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.14160% | <strong>SED:</strong> 0.005664 | <strong>MoS:</strong> <span class="mos-inline">13,235</span></p>
+			<p class="tox-assessment">Common citrus terpene assessed via 2016 RIFM update. Systemically safe; dermal sensitization risk is managed via declaration and prevention of oxidation.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>CITRUS AURANTIUM PEEL OIL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 8008-57-9 | <strong>NOAEL:</strong> 100 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.14118% | <strong>SED:</strong> 0.0056472 | <strong>MoS:</strong> <span class="mos-inline">17,710</span></p>
+			<p class="tox-assessment">Natural essential oil. Assessed using conservative NOAEL for citrus oils; no systemic risk identified at formulated loading.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>ALPHA-ISOMETHYL IONONE</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 127-51-5 | <strong>NOAEL:</strong> 170 mg/kg/d (SCCS) | <strong>Conc:</strong> 0.04814% | <strong>SED:</strong> 0.0019256 | <strong>MoS:</strong> <span class="mos-inline">88,267</span></p>
+			<p class="tox-assessment">Synthetic violet-scented allergen. Safe for use in Category 4 fine fragrances per SCCS/1585/17.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>JUNIPERUS VIRGINIANA OIL (Virginia Cedarwood)</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 8000-27-9 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.03438% | <strong>SED:</strong> 0.0013752 | <strong>MoS:</strong> <span class="mos-inline">363,636</span></p>
+			<p class="tox-assessment">Natural essential oil. High margin of safety based on conservative NOAEL for cedarwood oils.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>GERANYL ACETATE</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 105-87-3 | <strong>NOAEL:</strong> 250 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.02924% | <strong>SED:</strong> 0.0011696 | <strong>MoS:</strong> <span class="mos-inline">213,675</span></p>
+			<p class="tox-assessment">Ester of geraniol with established low systemic toxicity as confirmed by CIR and RIFM evaluations.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>EUCALYPTUS GLOBULUS OIL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 8000-48-4 | <strong>NOAEL:</strong> 100 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.02714% | <strong>SED:</strong> 0.0010856 | <strong>MoS:</strong> <span class="mos-inline">92,115</span></p>
+			<p class="tox-assessment">Natural essential oil. Negligible toxicological risk at this loading with a very high margin of safety.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>POGOSTEMON CABLIN OIL (Patchouli)</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 8014-09-3 | <strong>NOAEL:</strong> 500 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.01086% | <strong>SED:</strong> 0.0004344 | <strong>MoS:</strong> <span class="mos-inline">1,151,239</span></p>
+			<p class="tox-assessment">Woody-earthy essential oil. Proven safety profile with exceptionally high MoS at trace formulated levels.</p>
+		</div>
+		<hr class="ingredient-divider">
+		
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 15</span><span>Confidential</span></div>
+	</div>	
+		
+<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>9. Toxicological Profile: Allergens (continued)</h1>	
+
+		<h2>COUMARIN</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 91-64-5 | <strong>NOAEL:</strong> 25 mg/kg/d (SCCS/1405/11) | <strong>Conc:</strong> 0.00904% | <strong>SED:</strong> 0.0003616 | <strong>MoS:</strong> <span class="mos-inline">69,138</span></p>
+			<p class="tox-assessment">Regulated under Annex III of Regulation (EC) No 1223/2009. Systemic safety confirmed via SCCS and EFSA evaluations with a high Margin of Safety.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>ROSE KETONES</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 23696-85-7 | <strong>NOAEL:</strong> 100 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.00820% | <strong>SED:</strong> 0.000328 | <strong>MoS:</strong> <span class="mos-inline">304,878</span></p>
+			<p class="tox-assessment">Potent fragrance materials managed via strict IFRA 51st Amendment volume restrictions. Systemically safe at the formulated trace loading.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>CITRAL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 5392-40-5 | <strong>NOAEL:</strong> 100 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.00604% | <strong>SED:</strong> 0.0002416 | <strong>MoS:</strong> <span class="mos-inline">414,047</span></p>
+			<p class="tox-assessment">Common citrus-scented allergen. Assessment based on RIFM and SCCS guidance confirms no systemic risk at this concentration.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>TERPINEOL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 8000-41-7 | <strong>NOAEL:</strong> 500 mg/kg/d (CIR) | <strong>Conc:</strong> 0.00594% | <strong>SED:</strong> 0.0002376 | <strong>MoS:</strong> <span class="mos-inline">2,104,377</span></p>
+			<p class="tox-assessment">Naturally occurring floral alcohol. Profiled as toxicologically unremarkable with an exceptionally high safety margin.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>PINENE</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 7785-70-8 | <strong>NOAEL:</strong> 100 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.00360% | <strong>SED:</strong> 0.000144 | <strong>MoS:</strong> <span class="mos-inline">694,444</span></p>
+			<p class="tox-assessment">Resinous terpene element. Safety confirmed based on RIFM monographs and SCCS guidance for fragrance constituents.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<h2>ISOEUGENOL</h2>
+		<div class="ingredient-profile">
+			<p class="tox-meta"><strong>CAS:</strong> 97-54-1 | <strong>NOAEL:</strong> 37.5 mg/kg/d (RIFM) | <strong>Conc:</strong> 0.00180% | <strong>SED:</strong> 0.000072 | <strong>MoS:</strong> <span class="mos-inline">520,833</span></p>
+			<p class="tox-assessment">Restricted substance under SCCS and IFRA standards. Present at 0.0018%, which is well below the IFRA Category 4 limit of 0.0160%.</p>
+		</div>
+		<hr class="ingredient-divider">
+
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 16</span><span>Confidential</span></div>
+	</div>
+	
+	
+	<!-- PAGE 17: SECTION 10 — UNDESIRABLE EFFECTS -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>10. Undesirable Effects</h1>
+		<p>Based on the ingredient toxicological profiles and the calculated Margins of Safety, the following potential undesirable effects have been identified for this product. All effects are considered unlikely under normal conditions of use when the product is used as directed by adults.</p>
+		<table><thead><tr><th>Effect Type</th><th>Likelihood</th><th>Affected Population</th><th>Notes</th></tr></thead>
+		<tbody>
+		<tr><td>Skin irritation (mild/transient)</td><td>Very low</td><td>General population</td><td>High ethanol content (75.00% w/w) may cause transient defatting; not significant at frequency of use for fine fragrance.</td></tr>
+		<tr><td>Skin sensitisation / allergic contact dermatitis</td><td>Possible in sensitised individuals</td><td>Fragrance-sensitive individuals</td><td>22 declared fragrance allergens per EU 2023/1545; Hexamethylindanopyran, Linalool, and Linalyl Acetate are the primary identified sensitisation candidates.</td></tr>
+		<tr><td>Eye irritation</td><td>Possible if direct contact occurs</td><td>All</td><td>Avoid direct contact with eyes — stated on label; ethanol and fragrance can cause temporary irritation.</td></tr>
+		<tr><td>Inhalation effects</td><td>Very low under normal use</td><td>All (particularly asthmatic individuals)</td><td>Pump spray mist; use in ventilated area recommended; no propellant involved.</td></tr>
+		<tr><td>Phototoxicity</td><td>Negligible</td><td>All</td><td>No phototoxic essential oils or chemicals identified at concentrations exceeding safety thresholds in the T Shirt Mod P01X566 mixture.</td></tr>
+		<tr><td>Flammability hazard</td><td>Present — requires safe handling</td><td>All</td><td>H225 — Flammable Liquid Cat. 2 (flash point ~13°C); GHS/CLP labelling applied; not a toxicological concern under normal use.</td></tr>
+		<tr><td>Ingestion toxicity</td><td>Very low (not intended use)</td><td>Children (misuse)</td><td>Product not intended for children; childproof crimped pump; high ethanol content toxic if ingested in volume.</td></tr>
+		</tbody></table>
+
+		<h2>Serious Undesirable Effects</h2>
+		<p>No serious undesirable effects (SUSEs) have been reported for this product to date. No adverse event data has been received by the Responsible Person. The product has not been associated with any systemic toxicity, carcinogenicity, reproductive toxicity or other serious health concerns under normal and reasonably foreseeable conditions of use.</p>
+
+		<h2>Post-Market Surveillance</h2>
+		<p>The Responsible Person (M/S STELLA INDUSSTRIES LIMITED) is required to maintain a post-market surveillance system in accordance with Article 23 of Regulation (EC) No 1223/2009. Any serious undesirable effects (SUSEs) must be reported to the competent authority of the Member State where the effect occurred within the required timeframe. Non-serious undesirable effects must be recorded and made available to competent authorities upon request. A product complaint log and cosmetovigilance system should be maintained for the duration of product marketing and for 10 years thereafter.</p>
+
+		<div class="comments-box"><div class="comments-label">Comments on Sensitisation Risk</div>The 22 declared fragrance allergens reflect the current EU 2023/1545 allergen declaration requirements for the T Shirt Mod P01X566 fragrance mixture. Fragrance-sensitive individuals are still advised to review the full INCI ingredient list prior to use. All declared allergens are identified on the product label. As the Margins of Safety (MoS) for all constituents exceed 100, the risk of inducing sensitisation in the non-sensitised population is considered low.</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 17</span><span>Confidential</span></div>
+	</div>
+	
+	<!-- PAGE 18: SECTION 11 — PRODUCT INFORMATION -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>11. Product Information</h1>
+		<div class="info-grid" style="grid-template-columns:175px 1fr;">
+		<div class="info-label">Product Name</div><div class="info-value">H&M Modern Minimalist Eau De Parfum 100 ml</div>
+		<div class="info-label">CPSR Reference</div><div class="info-value">CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</div>
+		<div class="info-label">Formula Code</div><div class="info-value">SIL/MFEDP/MM/001-00</div>
+		<div class="info-label">Assessment Date</div><div class="info-value">04.03.2026</div>
+		<div class="info-label">Shelf Life</div><div class="info-value">36 months from date of manufacture</div>
+		<div class="info-label">PAO</div><div class="info-value">24 months (24M)</div>
+		<div class="info-label">Storage Conditions</div><div class="info-value">Store below 25°C in a cool, dry place. Avoid direct sunlight and heat sources. Keep away from flames.</div>
+		<div class="info-label">Safety Conclusion</div><div class="info-value"><span class="badge badge-pass">SAFE</span></div>
+		</div>
+		<h2>Supporting Documentation</h2>
+		<table class="docs-table"><colgroup><col style="width:20%;"><col style="width:35%;"><col style="width:11%;"><col style="width:34%;"></colgroup>
+		<thead><tr><th>Category</th><th>Document</th><th>Status</th><th>Notes</th></tr></thead>
+		<tbody>
+		<tr><td>Stability Testing Report</td><td>H&M Modern Minimalist Eau De Parfum 100 ml.pdf</td><td><span class="badge badge-safe">Available</span></td><td>6-month accelerated stability study at 40°C ± 2°C / 75% RH ± 5%; all parameters PASS. Batch: 251218 (MFG 19/06/2025). Spec: FG/Spec-SIL/QC/STS/FG/1841. Signed: Shivkanti Bakshi, Quality Manager.</td></tr>
+		<tr><td>Fragrance Allergen Data</td><td>H&M EDP NEW RANGE 100 ml with alller.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Allergen breakdown for T Shirt Mod (P01X566) at 20.00% w/w usage. Confirms 22 allergens above 0.001% leave-on threshold.</td></tr>
+		<tr><td>IFRA Certificate</td><td>IFRACERTIFICATEEU_GB_EN_P01X566_TSHIRTMOD_20260107_25688239.pdf</td><td><span class="badge badge-safe">Available</span></td><td>IFRA 51st Amendment certificate for T Shirt Mod; confirms compliance at 20.00% w/w in Category 4 (Fine Fragrance).</td></tr>
+		<tr><td>INCI Composition Certificate</td><td>H&M EDP NEW RANGE 100 ml with alller.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Full formula breakdown (SIL/MFEDP/MM/001-00) dated 14.01.2026.</td></tr>
+		<tr><td>Label Artwork</td><td>HMBEAUTY31111 SECONDARY BOX FOR MODERN MINIMALIST 100 ML_1333524_IN.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Secondary packaging label artwork for Modern Minimalist 100 ml. Artwork ref: 1333524.</td></tr>
+		<tr><td>Fragrance SDS</td><td>P01X566_SDS_GB_EN_20260107_9233005.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Safety Data Sheet for T Shirt Mod (P01X566) dated 07.01.2026 per EU REACH 2020/878.</td></tr>
+		<tr><td>Ethanol SDS</td><td>MATERIAL SAFETY DATA SHEET ENA.pdf</td><td><span class="badge badge-safe">Available</span></td><td>Safety Data Sheet for Ethanol (denatured) — covers physical hazards (H225) and toxicological profile.</td></tr>
+		<tr><td>Challenge Test (ISO 11930)</td><td>—</td><td><span class="badge badge-na">Not Required</span></td><td>Product is self-preserving (75.00% Ethanol); testing not required per SCCS/1628/21.</td></tr>
+		<tr><td>GMP Certificate</td><td>—</td><td><span class="badge badge-na">On File</span></td><td>ISO 22716:2007 compliant; GMP documentation held by manufacturer M/S STELLA INDUSSTRIES LIMITED (Permit No: L-42-A).</td></tr>
+		<tr><td>Toxicological Study</td><td>—</td><td><span class="badge badge-na">Not Available</span></td><td>Assessment based on ingredient-level data from SCCS, RIFM, JECFA, and EFSA; standard regulatory practice.</td></tr>
+		</tbody></table>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 18</span><span>Confidential</span></div>
+	</div>
+	
+	<!-- PAGE 19: PART B: SECTION 12 — ASSESSMENT CONCLUSION -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<div class="part-header"><div class="part-label">Part B</div><div class="part-title">Cosmetic Product Safety Assessment</div></div>
+		<h1>1. Assessment Conclusion</h1>
+		<div class="conclusion-box"><div class="conclusion-title" style="color:#2E7D32;">ASSESSMENT CONCLUSION — SAFE</div><div class="conclusion-text">Based on the available toxicological data and safety evaluation, H&M Modern Minimalist Eau De Parfum 100 ml is considered safe for human health when used as intended by adults. All five primary formula components comply with EU Regulation (EC) No 1223/2009. All calculated Margins of Safety (MoS) exceed the minimum threshold of 100 for all assessed substances, including Hexamethylindanopyran (MoS = 374) and Tetramethyl Acetyloctahydronaphthalenes (MoS = 154). The fragrance mixture (T Shirt Mod, P01X566) is IFRA 51st Amendment compliant at 20.00% w/w in Eau de Parfum. The product is inherently self-preserving due to its high ethanol content (75.00% Alcohol Denat.). Physicochemical stability is confirmed over 6 months under accelerated conditions (40°C ± 2°C / 75% RH ± 5%). All 22 declared fragrance allergens exceed the 0.001% leave-on threshold and are declared on the product label per Commission Regulation (EU) 2023/1545.</div></div>
+
+		<h2>Key Findings Summary</h2>
+		<table><thead><tr><th>Assessment Area</th><th>Finding</th><th>Status</th></tr></thead>
+		<tbody>
+		<tr><td>Ingredient Compliance</td><td>All primary ingredients comply with EU Regulation (EC) No 1223/2009</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Margin of Safety — Alcohol Denat.</td><td>MoS 867 (NOAEL 2600; SED 3.0000 mg/kg/d)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+		<tr><td>Margin of Safety — Fragrance Allergens</td><td>All MoS values for the formulation constituents exceed 100, including Hexamethylindanopyran (MoS: 374) and OTNE (MoS: 154)</td><td><span class="badge badge-safe">Safe</span></td></tr>
+		<tr><td>IFRA Compliance</td><td>T Shirt Mod (P01X566) certified compliant (51st Amendment, Jan 2026)</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+		<tr><td>Allergen Labelling</td><td>22 allergens declared per EU 2023/1545</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+		<tr><td>Stability</td><td>Confirmed over 6 months — accelerated study at 40°C ± 2°C / 75% RH ± 5%</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Microbiological Quality</td><td>Self-preserving (75.00% ethanol); challenge test not required</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		<tr><td>Flammability Classification</td><td>Correctly classified and labelled: H225 (Flammable Liquid Cat. 2)</td><td><span class="badge badge-compliant">Compliant</span></td></tr>
+		<tr><td>Nanomaterials</td><td>No nanomaterials present — compliant with Regulation (EU) 2024/858</td><td><span class="badge badge-pass">PASS</span></td></tr>
+		</tbody></table>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 19</span><span>Confidential</span></div>
+	</div>
+
+	<!-- PAGE 20: PART B: SECTION 13 — Labelled Warnings and Instructions for Use -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>2. Labelled Warnings and Instructions for Use</h1>
+		<h2>Conditions of Safe Use</h2>
+		<div class="method-box"><div class="method-box-title">Conditions of Safe Use (as assessed)</div><ol>
+		<li>For adult use only (18 years and over).</li>
+		<li>Do <span style="text-transform: lowercase;">not</span> use on broken, damaged or irritated skin.</li>
+		<li>Avoid contact with eyes; in case of contact, rinse immediately with water.</li>
+		<li>Keep away from heat, hot surfaces, sparks, open flames and other ignition sources — No smoking.</li>
+		<li>Keep container tightly closed when not in use.</li>
+		<li>For external use only.</li>
+		<li>Keep out of reach of children.</li>
+		<li>Fragrance-sensitive individuals should review the INCI ingredient list prior to use. This product contains 22 declared fragrance allergens per Commission Regulation (EU) 2023/1545.</li>
+		<li>The manufacturer is advised to verify and confirm AHTN (Tetramethyl Acetyloctahydronaphthalenes) concentration compliance against IFRA 51st Amendment guidance and SCCS/1543/14 for spray products on an ongoing basis.</li>
+		<li>Labels must include all required EU cosmetics regulation elements including INCI ingredient list with asterisk-marked allergens, volume declaration, and appropriate warnings.</li>
+		<li>This CPSR is valid for the formula as described (SIL/MFEDP/MM/001-00). Any modification to formula, packaging or intended use requires re-evaluation.</li>
+		</ol></div>
+
+		<h2>Required Hazard Statements (GHS / CLP)</h2>
+		<div class="warning-box"><div class="warning-box-title" style="color:#FF9800;">Hazard Statements — Regulation (EC) No 1272/2008 (CLP)</div>
+		<p><span class="hcode">H225</span> — Highly flammable liquid and vapour. (Flammable Liquid, Category 2)</p>
+		</div>
+		<div class="method-box"><div class="method-box-title">Precautionary Statements (as labelled)</div>
+		<p><span class="pcode">P210</span> — Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking.</p>
+		<p><span class="pcode">P233</span> — Keep container tightly closed.</p>
+		<p>Avoid contact with eyes.</p>
+		<p>Keep out of reach of children.</p>
+		<p>For external use only.</p>
+		<p>Harmful if taken internally.</p>
+		</div>
+
+	<h2>INCI Ingredient List</h2>
+			<div class="inci-box"><p><strong>Ingredients:</strong> Alcohol Denat., Parfum, Aqua, Hexamethylindanopyran, Tetramethyl Acetyloctahydronaphthalenes, Linalool*, Linalyl Acetate*, Hexyl Cinnamal*, Hydroxycitronellal*, Geraniol*, Citronellol*, Benzyl Salicylate*, Limonene*, Citrus Aurantium Peel Oil, Alpha-Isomethyl Ionone*, Juniperus Virginiana Oil, Geranyl Acetate*, Eucalyptus Globulus Oil, Pogostemon Cablin Oil, Coumarin*, Rose Ketones*, Citral*, Terpineol*, Pinene*, Isoeugenol*, CI 42090, CI 17200</p>
+			<p class="inci-footnote">* The presence of these 22 fragrance allergens must be indicated in the list of ingredients when their concentration exceeds 0.001% in leave-on products, in accordance with Commission Regulation (EU) 2023/1545 and Regulation (EC) No 1223/2009 Article 19.</p>
+		</div>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 20</span><span>Confidential</span></div>
+	</div>
+
+	<!-- PAGE 21: PART B: SECTION 14 — 3. Reasoning -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>3. Reasoning</h1>
+		<h2>Basis for Safety Conclusion</h2>
+		<p>The safety assessment of H&M Modern Minimalist Eau De Parfum 100 ml has been performed in accordance with Regulation (EC) No 1223/2009 and the SCCS Notes of Guidance (11th revision, 2021, SCCS/1628/21). The reasoning supports the conclusion that this product is safe for human health when used as intended by adults.</p>
+
+		<p><strong>Formulation:</strong> The product is an alcohol-based fine fragrance. All primary ingredients (Alcohol Denat. 75.00%, Parfum/T Shirt Mod 20.00%, Aqua 4.97%, and trace colorants CI 42090 and CI 17200) are established cosmetic ingredients. The formulation does not contain any ingredients prohibited under Annex II of Regulation (EC) No 1223/2009. The allergen concentrations are well within safety limits.</p>
+
+		<p><strong>Fragrance safety:</strong> The fragrance mixture T Shirt Mod (P01X566) is IFRA 51st Amendment compliant at 20.00% w/w, confirmed by certificate IFRACERTIFICATEEU_GB_EN_P01X566_TSHIRTMOD_20260107_25688239. No ingredients were identified with a Margin of Safety (MoS) below 100 using conservative safety defaults.</p>
+
+		<p><strong>Allergen declaration:</strong> The 22 declared fragrance allergens exceed the 0.001% leave-on threshold. Document "H&M EDP NEW RANGE 100 ml with alller.pdf" confirms their identity and concentrations. All identified allergens, including Hexamethylindanopyran (MoS = 374) and Tetramethyl Acetyloctahydronaphthalenes (MoS = 154), yield MoS values significantly higher than the required threshold of 100. This confirms a high margin of safety for systemic exposure under intended conditions of use.</p>
+
+		<p><strong>Stability and microbiological quality:</strong> The product demonstrates physicochemical stability over 6 months of accelerated testing at 40°C ± 2°C / 75% RH ± 5%. The high ethanol content (75.00% w/w) renders the product inherently self-preserving; microbiological challenge testing per ISO 11930 is not required per SCCS guidelines for products containing ≥20% ethanol.</p>
+
+		<p><strong>Flammability:</strong> The product is classified as Flammable Liquid Category 2 (H225) due to its flash point of ~13°C. This is a physical hazard addressed through appropriate handling instructions and label warnings, not a toxicological risk under intended use.</p>
+
+		<h2>References</h2>
+		<ul class="references-list">
+		<li>Regulation (EC) No 1223/2009 of the European Parliament and of the Council on cosmetic products</li>
+		<li>Commission Regulation (EU) 2023/1545 — Fragrance allergen labelling (80 allergens)</li>
+		<li>SCCS Notes of Guidance for the Testing of Cosmetic Ingredients and their Safety Evaluation, 11th revision (2021), SCCS/1628/21</li>
+		<li>SCCS (2012) Opinion on Ethanol; SCCS/1543/14 on AHTN/OTNE</li>
+		<li>IFRA Code of Practice, 51st Amendment (June 2023)</li>
+		<li>Regulation (EC) No 1272/2008 — CLP Regulation (Classification, Labelling and Packaging)</li>
+		<li>RIFM Fragrance Ingredient Safety Database and Monographs</li>
+		</ul>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 21</span><span>Confidential</span></div>
+	</div>
+
+	<!-- PAGE 22: PART B: 4. Assessor Credentials -->
+	<div class="page">
+		<div class="page-header"><div class="page-header-logo">CPSR</div><div class="page-header-title">H&M Modern Minimalist Eau De Parfum 100 ml</div></div>
+		<h1>4. Assessor Credentials</h1>
+		<h2>Safety Assessor</h2>
+		<div class="info-grid" style="grid-template-columns:165px 1fr;">
+		<div class="info-label">Name</div><div class="info-value">Cassandra Margaret Maddocks</div>
+		<div class="info-label">Qualifications</div><div class="info-value">BSc. Chemistry & Biochemistry — Swinburne University of Technology; Diploma of Laboratory Technology — Swinburne University of Technology; 10+ Years experience formulating and evaluating cosmetic products</div>
+		<div class="info-label">Organisation</div><div class="info-value">MySwissLab+ | SBR Group Sàrl</div>
+		<div class="info-label">Address</div><div class="info-value">1B Route de l'Industrie, 1072 Forel, Switzerland</div>
+		<div class="info-label">Assessment Date</div><div class="info-value">04.03.2026</div>
+		</div>
+
+		<div class="method-box"><div class="method-box-title">Assessor Qualification Statement</div><p>The safety assessor holds a degree in a scientific discipline relevant to the assessment of cosmetic product safety (Chemistry and Biochemistry), supplemented by specialist training in laboratory technology and over 10 years of practical experience in cosmetic formulation and regulatory safety assessment. These qualifications meet the requirements of Article 10(2) of Regulation (EC) No 1223/2009, which stipulates that the safety assessor must hold a degree or other official evidence of formal qualifications awarded on completion of a university course of theoretical and practical study in pharmacy, toxicology, medicine, dermatology or an analogous discipline. Chemistry and Biochemistry constitutes an analogous discipline as confirmed by established EU regulatory practice and SCCS guidance.</p></div>
+
+		<div class="signature-grid">
+			<div class="signature-item"><div class="signature-label">Safety Assessor Signature:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="border-bottom:1px solid #424242;padding-bottom:2px;display:inline-block;min-width:80px;">04.03.2026</span></div></div>
+			<div class="signature-item"><div class="signature-label">Responsible Person Acknowledgement:</div><div class="signature-line"></div><div class="signature-date">Date: <span style="display:inline-block;width:100px;border-bottom:1px solid #424242;"></span></div></div>
+		</div>
+
+		<h2>Document Control</h2>
+		<div class="doc-control-grid">
+		<div class="info-label">Document Reference</div><div class="info-value">CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</div>
+		<div class="info-label">Version</div><div class="info-value">2.0</div>
+		<div class="info-label">Issue Date</div><div class="info-value">04.03.2026</div>
+		<div class="info-label">Formula Reference</div><div class="info-value">SIL/MFEDP/MM/001-00 (dated 14.01.2026)</div>
+		<div class="info-label">Prepared by</div><div class="info-value">MySwissLab+ | SBR Group Sàrl on behalf of M/S STELLA INDUSSTRIES LIMITED</div>
+		<div class="info-label">Regulatory Basis</div><div class="info-value">Regulation (EC) No 1223/2009, Annex I — Cosmetic Product Safety Report requirements</div>
+		<div class="info-label">PIF Retention</div><div class="info-value">This CPSR must be kept available for 10 years after the last batch of the product is placed on the market, in accordance with Article 11 of Regulation (EC) No 1223/2009.</div>		
+		</div>
+		<p class="disclaimer">This Cosmetic Product Safety Report has been prepared on the basis of information supplied by the Responsible Person and is valid only for the product and formula described herein (formula code SIL/MFEDP/MM/001-00, dated 14.01.2026). Any change to the product formula, packaging, intended use, manufacturing process or other relevant parameters shall require re-evaluation of this safety assessment. MySwissLab+ | SBR Group Sàrl accepts no liability for incomplete or inaccurate information supplied by the client. This document is confidential and may be shared only with authorised personnel and competent regulatory authorities. The product bears CPSR reference CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001.</p>
+		<br><br>
+		<div class="page-footer"><span>CPSR-HMBEAUTY-MODERNMINIMALISTEDP100-2026-001</span><span>Page 22</span><span>Confidential</span></div>
+	</div>
+
+</div>
+</body>
+</html>
